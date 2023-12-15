@@ -1,0 +1,11 @@
+:root {
+  --content-width: 1720px;
+  --content-fluid-width: 1920px;
+  --container-offset: 100px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --container-fluid-width: calc(var(--content-fluid-width) + (var(--container-offset) * 2));
+
+  --main-scrollbar-width: 6px;
+  --main-scrollbar-color: var(--secondary);
+  --main-scrollbar-thumb-color: var(--primary);
+}
