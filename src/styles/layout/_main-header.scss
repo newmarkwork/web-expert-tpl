@@ -1,0 +1,29 @@
+.main-header {
+  padding: 24px 0;
+
+  &__container {
+    @extend .flex-wrap;
+    align-items: center;
+  }
+
+  &__action {
+    @extend .flex-wrap;
+    margin-left: auto;
+  }
+
+  &__contacts {
+    @extend .flex-column;
+    align-items: flex-end;
+    padding: 0 10px;
+    margin-right: 20px;
+
+    a {
+      font-size: 24px;
+    }
+
+    a:last-child {
+      font-size: 15px;
+      color: var(--info);
+    }
+  }
+}
