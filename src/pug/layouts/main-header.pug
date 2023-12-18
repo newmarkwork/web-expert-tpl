@@ -2,36 +2,18 @@ include ../mixins/main-btn
 
 header.main-header
   .container.main-header__container
-    a(href="/").main-header__logo
-      img(src="../assets/img/main-logo.svg" alt="Логотип" width="300" height="60")
+    include ../components/main-logo
 
-    nav.main-nav
-      ul.main-nav__list
-        li.main-nav__list-item
-          a(href="#") О компании
-        li.main-nav__list-item
-          a(href="#")
-            | Услуги
-            svg(width="16" height="16")
-              use(xlink:href="./assets/sprite.svg#icon-arrow")
+    include ./main-nav
 
-        li.main-nav__list-item
-          a(href="#") Акции
-        li.main-nav__list-item
-          a(href="#") Блог
-        li.main-nav__list-item
-          a(href="#") Контакты
-
-    .main-header__action
-      .main-header__contacts
-        include ../includes/company-phone
-        include ../includes/company-mail
+    .main-header__side
+      include ../components/contact-block
 
       +main-btn({
         type: 'button',
         text: 'Заказать услугу',
-        class: 'main-btn--primary',
-        imgPath: "../assets/img/icon-phone.svg",
+        cls: 'main-btn--primary',
+        imgPath: "./assets/img/icon-phone.svg",
         imgAlt: "Телефон",
         imgWidth: 24,
         imgHeight: 24

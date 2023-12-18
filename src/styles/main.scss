@@ -6,13 +6,20 @@
 @import "global";
 @import "extends";
 @import "common";
+@import "zindex";
 
 /* Компоненты */
 @import "./components/main-btn";
+@import "./components/main-logo";
 
 /* Секции */
 @import "./layout/main-header";
 @import "./layout/main-nav";
+
+@import "./sections/hero";
+@import "./sections/features";
+
+@import "./layout/main-footer";
 
 /* Модальные окна */
 

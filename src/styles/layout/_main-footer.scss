@@ -1,0 +1,12 @@
+.main-footer {
+  padding: 24px 0;
+
+  &__container {
+    @extend .flex-wrap;
+    align-items: center;
+  }
+
+  .main-logo {
+    width: 195px;
+  }
+}

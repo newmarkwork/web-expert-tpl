@@ -1,6 +1,7 @@
 //- +main-btn({
 //-   type: String['button || link'],
 //-   text: String,
+//-   cls: String,
 //-   icon: String
 //-   iconWidth: Number,
 //-   iconHeight: Number,
@@ -13,7 +14,7 @@
 mixin main-btn(data)
   if data.type === 'button'
 
-    button(type="button" class= data.class ? data.class : null).main-btn
+    button(type="button" class= data.cls ? data.cls : null).main-btn
 
       if data.icon
         svg(width=data.iconWidth height=data.iconHeight)

@@ -1,4 +1,5 @@
 .main-header {
+  position: relative;
   padding: 24px 0;
 
   &__container {
@@ -6,24 +7,25 @@
     align-items: center;
   }
 
-  &__action {
+  &__side {
     @extend .flex-wrap;
     margin-left: auto;
+    gap: 30px;
+  }
+}
+
+.contact-block {
+  @extend .flex-column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 10px;
+
+  a {
+    font-size: 24px;
   }
 
-  &__contacts {
-    @extend .flex-column;
-    align-items: flex-end;
-    padding: 0 10px;
-    margin-right: 20px;
-
-    a {
-      font-size: 24px;
-    }
-
-    a:last-child {
-      font-size: 15px;
-      color: var(--info);
-    }
+  a:last-child {
+    font-size: 15px;
+    color: var(--info);
   }
 }

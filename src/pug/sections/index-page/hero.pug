@@ -1,2 +1,25 @@
-section.lw-section
-  .lw-container
+include ../../mixins/main-btn
+
+section.section.skew-section.hero
+  .container.hero__container
+    .hero__content
+      h1.main-title Не откладывайте развитие своего сайта на потом!
+
+      p.main-desc Обратитесь к профессионалам из компании Веб-эксперт и получите комплексную веб поддержку, которая поможет вашему бизнесу расти и развиваться!
+
+      +main-btn({
+          type: 'button',
+          text: 'Оставить заявку',
+          cls: 'main-btn--secondary',
+          imgPath: "./assets/img/icon-post.svg",
+          imgAlt: "Телефон",
+          imgWidth: 24,
+          imgHeight: 24
+        })
+
+    .hero__side
+      .hero__side-content(style="background-image: url('./assets/img/hero-img.jpg')")
+        video(src="./assets/video/main-hero-video.mp4" loop playsinline preload="auto" autoplay muted)
+
+
+

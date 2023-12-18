@@ -11,6 +11,19 @@
   max-width: var(--container-fluid-width);
 }
 
+.main-title {
+  font-size: 60px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  color: var(--white);
+}
+
+.main-desc {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: var(--white);
+}
+
 .visually-hidden {
   position: absolute;
   overflow: hidden;
@@ -20,4 +33,19 @@
   width: 1px;
   height: 1px;
   clip: rect(0 0 0 0);
+}
+
+.section {
+
+}
+
+.skew-section {
+  margin: 150px 0;
+  transform: skew(0, -10deg);
+  padding: 100px 0;
+  background: radial-gradient(67.45% 66.63% at 110% -18.83%, #06F 0.94%, #8B00FF 100%), #8B00FF;
+
+  .container {
+    transform: skew(0, 10deg);
+  }
 }
