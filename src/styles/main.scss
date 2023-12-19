@@ -12,13 +12,22 @@
 @import "./components/main-btn";
 @import "./components/main-logo";
 
+@import "./components/offer-form";
+@import "./components/page-up-btn";
+
 /* Секции */
 @import "./layout/main-header";
 @import "./layout/main-nav";
 
 @import "./sections/hero";
 @import "./sections/features";
+@import "./sections/about";
+@import "./sections/support";
+@import "./sections/advantages";
+@import "./sections/reviews";
 
+
+@import "./sections/offer";
 @import "./layout/main-footer";
 
 /* Модальные окна */

@@ -1,0 +1,34 @@
+.offer {
+  position: relative;
+  padding: 350px 0;
+
+  // &::after {
+  //   position: absolute;
+  //   bottom: -180px;
+  //   right: 15vw;
+  //   width: 100%;
+  //   max-width: 500px;
+  //   height: 100%;
+  //   max-height: 500px;
+  //   content:'';
+  //   background-image: url("../assets/img/offer-section-figure.svg");
+  //   background-size: contain;
+
+  //   transform: skew(0, 10deg);
+  //   z-index: -1;
+  // }
+
+  .main-title {
+    font-size: 50px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+
+    span {
+      display: inline-block;
+      padding: 5px;
+      background-color: var(--secondary);
+    }
+  }
+}

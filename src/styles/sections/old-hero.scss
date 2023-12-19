@@ -1,21 +1,5 @@
 .hero {
-  position: relative;
   overflow-x: clip;
-
-  &::before {
-    position: absolute;
-    top: -225px;
-    left: 120px;
-
-    content: "";
-    width: 380px;
-    height: 380px;
-    background-image: url(../assets/img/hero-top.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 10;
-    transform: skew(0, 10deg),
-  }
 
   &__container {
     display: grid;
@@ -23,11 +7,29 @@
     grid-gap: 30px;
     transform: none !important;
     padding-right: 0;
+
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: -325px;
+      left: 120px;
+
+      content: "";
+      width: 380px;
+      height: 380px;
+      background-image: url(../assets/img/hero-top.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 10;
+      transform: skew(0, 10deg),
+    }
   }
 
   &__content {
     padding: 100px 0;
     transform: skew(0, 10deg);
+    outline: 1px solid red;
   }
 
   &__side {

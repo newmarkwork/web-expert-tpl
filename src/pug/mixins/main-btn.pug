@@ -1,5 +1,5 @@
 //- +main-btn({
-//-   type: String['button || link'],
+//-   type: String['button|| submit || link'],
 //-   text: String,
 //-   cls: String,
 //-   icon: String
@@ -12,7 +12,7 @@
 //- })
 
 mixin main-btn(data)
-  if data.type === 'button'
+  if data.type === 'button' || data.type === 'submit'
 
     button(type="button" class= data.cls ? data.cls : null).main-btn
 

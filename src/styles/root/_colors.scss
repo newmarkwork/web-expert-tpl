@@ -13,7 +13,14 @@
   --gray-30: #ebebeb;
   --gray-60: #a8a8a8;
 
+  --main-title-color: var(--white);
+  --main-title-dark-color: var(--black);
+  --main-text-color: var(--white);
+  --main-text-dark-color: var(--black);
+
   --base-text-color: var(--black);
   --main-bg-color: var(--white);
   --placeholder-color: var(--gray-8);
+
+  --placeholder-color: var(--gray-60);
 }

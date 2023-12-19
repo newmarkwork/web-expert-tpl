@@ -1,0 +1,106 @@
+.offer-form {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    padding: 60px 40px;
+    margin-bottom: 40px;
+    border-radius: 40px;
+    border: 1px solid #9E00FF;
+    box-shadow: -48px 103px 132.6px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  form {
+    fieldset {
+      @extend .flex-column;
+      justify-content: flex-end;
+
+      label,input {
+        cursor: pointer;
+      }
+
+      label {
+        margin-bottom: 8px;
+      }
+
+      input {
+        min-height: 50px;
+      }
+
+      input[type="text"] {
+        font-size: 14px;
+        padding: 12px 20px;
+
+        border: 1px solid #F0F0F0;
+        border-radius: 10px;
+        background: var(--main-bg-color);
+
+        &::placeholder {
+          font-size: 14px;
+          color: var(--placeholder-color);
+        }
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+    }
+
+    .user-files-field-upload {
+      position: relative;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      padding: 12px 20px;
+      padding-left: 44px;
+      margin-bottom: 0;
+      min-height: 48px;
+      border: 1px solid #F0F0F0;
+      border-radius: 10px;
+      color: var(--placeholder-color);
+      background-color: var(--main-bg-color);
+      background-image: url("../assets/sprite.svg#icon-upload");
+      background-repeat: no-repeat;
+      background-size: 18px;
+      background-position: 20px center;
+    }
+
+    .user-rules-field {
+      grid-column: 1/4;
+      align-self: center;
+      align-items: center;
+      color: var(--placeholder-color);
+
+      label {
+        position: relative;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 0;
+        padding-left: 26px;
+
+        a {
+          text-decoration: underline;
+          color: var(--warning);
+        }
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: '';
+          width: 16px;
+          height: 16px;
+          border-radius: 5px;
+          background-color: var(--main-bg-color);
+        }
+      }
+
+      input[type="checkbox"] {
+        display: none;
+      }
+      input[type="checkbox"]:checked + label::before {
+        background-image: url("../assets/sprite.svg#icon-check");
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.advantages {
+  .main-title {
+    text-align: center;
+  }
+
+  &__container {
+    max-width: 1440px;
+  }
+
+  &__list {
+    @extend .list-reset;
+    @extend .flex-wrap;
+    gap: 24px;
+    justify-content: center;
+  }
+
+  &__list-item {
+    @extend .flex-column;
+    align-items: center;
+    width: calc(100% / 3 - 16px);
+    padding: 10px;
+
+    img {
+      margin-bottom: 16px;
+    }
+
+    &-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .main-text,
+    &-title {
+      display: inline-block;
+      text-align: center;
+    }
+  }
+}
