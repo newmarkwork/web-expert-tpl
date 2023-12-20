@@ -87,9 +87,36 @@
           <div class="about__side"><img src="./assets/img/about-img.png" alt="Комплексная поддержка вашего сайта" width="430" height="400"></div>
         </div>
       </section>
-      <section class="lw-section">
-        <div class="lw-container">
-          <h2>services</h2>
+      <section class="section skew-section services">
+        <div class="container">
+          <h2 class="main-title main-title--dark">Наши услуги</h2>
+          <div class="services__content">
+                  <div class="service-card">
+                    <div class="service-card__header"><small class="service-card__header-overline-text">Поддержка</small><span class="service-card__header-title">Базовая</span></div>
+                    <div class="service-card__body">
+                      <p class="service-card__preview-text">Включает в себя обновление содержимого сайта, поддержку пользователей и базовую оптимизацию для поисковых систем</p><span class="service-card__section-title">Специалисты:</span>
+                      <ul class="service-card__stuff-list">
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Менеджер проекта" width="30" height="30"><span>Менеджер проекта</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="SEO-оптимизатор" width="30" height="30"><span>SEO-оптимизатор</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Копирайтер" width="30" height="30"><span>Копирайтер</span></li>
+                      </ul><span class="service-card__section-title">Выполняемые работы:</span>
+                      <ul class="service-card__works-list">
+                        <li class="service-card__works-list-item">Анализ и аудит сайта.</li>
+                        <li class="service-card__works-list-item">Исследование и анализ ключевых слов.</li>
+                        <li class="service-card__works-list-item">Создание и оптимизация контента.</li>
+                        <li class="service-card__works-list-item">Улучшение структуры и навигации сайта.</li>
+                        <li class="service-card__works-list-item">Оптимизация технических параметров сайта.</li>
+                        <li class="service-card__works-list-item">Внешняя оптимизация.</li>
+                        <li class="service-card__works-list-item">Мониторинг и анализ результатов.</li>
+                        <li class="service-card__works-list-item">Ежемесячный отчет.</li>
+                      </ul><span class="service-card__price">35 000руб.</span>
+                    </div>
+                    <div class="service-card__footer">
+                            <button class="main-btn--primary main-btn" type="button"><img src="./assets/img/icon-post.svg" alt="Иконка конверта" width="24" height="24"><span>Оставить заявку</span>
+                            </button><a class="main-btn--outlined main-btn">Подробнее</a>
+                    </div>
+                  </div>
+          </div>
         </div>
       </section>
       <section class="section skew-section support">
@@ -103,7 +130,7 @@
           <div class="support__side"><img src="./assets/img/support-img.png" alt="Поддержка" width="415" height="390"></div>
         </div>
       </section>
-      <section class="section advantages">
+      <section class="section advantages"><canvas id="canvas"></canvas>
         <div class="container advantages__container">
           <h2 class="main-title main-title--dark">Почему выбирают нас</h2>
           <ul class="advantages__list">
@@ -133,12 +160,119 @@
       </section>
       <section class="section skew-section reviews">
         <div class="container reviews__container">
-          <h2>Отзывы</h2>
+          <h2 class="main-title">Отзывы</h2>
+        </div>
+        <div class="fluid-container">
+          <div class="reviews__content">
+            <div class="review-card">
+              <div class="review-card__header"><span class="review-card__author">Евгений</span>
+                <div class="review-card__rate" aria-label="Рейтинг: 3">
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                </div><span class="review-card__date">08.12.2023</span>
+              </div>
+              <div class="review-card__content">Компания Веб-эксперт помогла нам оптимизировать наш сайт, благодаря чему мы значительно увеличили посещаемость и конверсию. Профессионализм и оперативность работы команды оставили только положительные впечатления.</div>
+            </div>
+            <div class="review-card">
+              <div class="review-card__header"><span class="review-card__author">Евгений</span>
+                <div class="review-card__rate" aria-label="Рейтинг: 5">
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                </div><span class="review-card__date">08.12.2023</span>
+              </div>
+              <div class="review-card__content">Веб поддержка от Веб-эксперт значительно улучшила работу нашего сайта, сделав его более быстрым и удобным для пользователей. Отдельно хочется отметить профессионализм и отзывчивость команды, которая всегда готова помочь и ответить на любые вопросы.</div>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="lw-section">
-        <div class="lw-container">
-          <h2>faq</h2>
+      <section class="section faq">
+        <div class="container faq__container">
+          <div class="faq__side">
+            <h2 class="main-title main-title--dark">Вопрос ответ</h2>
+            <p class="main-text main-text--dark">!!!!!!Чтобы привлекать новых пользователей на сайт из таких поисковых систем, как Google и Яндекс, очень важно сначала оптимизировать контент. Один из эффективных способов привлечения трафика — SEO-текст.</p>
+          </div>
+          <div class="faq__content">
+            <div class="accordeon">
+              <div class="accordeon__item">
+                <div class="accordeon__item-header collapsed"><span>Что такое веб поддержка сайта?</span></div>
+                <div class="accordeon__item-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                </div>
+              </div>
+              <div class="accordeon__item">
+                <div class="accordeon__item-header collapsed"><span>Какие услуги входят в веб поддержку сайта?</span></div>
+                <div class="accordeon__item-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                </div>
+              </div>
+              <div class="accordeon__item">
+                <div class="accordeon__item-header collapsed"><span>Как выбрать надежного провайдера веб поддержки сайта?</span></div>
+                <div class="accordeon__item-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                </div>
+              </div>
+              <div class="accordeon__item">
+                <div class="accordeon__item-header collapsed"><span>Как часто нужно обновлять информацию на сайте?</span></div>
+                <div class="accordeon__item-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                </div>
+              </div>
+              <div class="accordeon__item">
+                <div class="accordeon__item-header collapsed"><span>Какие технологии используются для веб поддержки сайта?</span></div>
+                <div class="accordeon__item-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                </div>
+              </div>
+              <div class="accordeon__item">
+                <div class="accordeon__item-header collapsed"><span>Нужно ли обновлять дизайн сайта?</span></div>
+                <div class="accordeon__item-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="section skew-section offer">

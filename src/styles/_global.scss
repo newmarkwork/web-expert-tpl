@@ -18,6 +18,10 @@ body {
   min-height: fill-available;
   min-height: -webkit-fill-available;
   -webkit-text-size-adjust: none;
+
+  // text-rendering: optimizeLegibility;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
 }
 
 body {

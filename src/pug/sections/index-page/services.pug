@@ -1,3 +1,69 @@
-section.lw-section
-  .lw-container
-    h2 services
+include ../../mixins/service-card
+
+-
+  const servicesMock = [
+    {
+      type: 'Базовая',
+      text: 'Включает в себя обновление содержимого сайта, поддержку пользователей и базовую оптимизацию для поисковых систем',
+
+      stuff: [
+        {
+          img: 'stuff-img',
+          rank: 'Менеджер проекта'
+        },
+        {
+          img: 'stuff-img',
+          rank: 'SEO-оптимизатор'
+        },
+        {
+          img: 'stuff-img',
+          rank: 'Копирайтер'
+        }
+      ],
+
+      works: [
+        {
+          title: 'Анализ и аудит сайта.',
+          isBold: false,
+        },
+        {
+          title: 'Исследование и анализ ключевых слов.',
+          isBold: false,
+        },
+        {
+          title: 'Создание и оптимизация контента.',
+          isBold: false,
+        },
+        {
+          title: 'Улучшение структуры и навигации сайта.',
+          isBold: false,
+        },
+        {
+          title: 'Оптимизация технических параметров сайта.',
+          isBold: false,
+        },
+        {
+          title: 'Внешняя оптимизация.',
+          isBold: false,
+        },
+        {
+          title: 'Мониторинг и анализ результатов.',
+          isBold: false,
+        },
+        {
+          title: 'Ежемесячный отчет.',
+          isBold: false,
+        },
+      ],
+
+      price: '35 000руб.'
+    }
+  ]
+
+section.section.skew-section.services
+  .container
+    h2.main-title.main-title--dark Наши услуги
+
+    .services__content
+      each item of servicesMock
+        +service-card(item)

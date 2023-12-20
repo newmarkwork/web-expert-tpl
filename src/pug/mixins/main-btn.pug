@@ -27,7 +27,7 @@ mixin main-btn(data)
 
   if data.type === 'link'
 
-    a(href=data.link class= data.class ? data.class : null).main-btn!= data.text
+    a(href=data.link class= data.cls ? data.cls : null).main-btn!= data.text
       if data.icon
         svg(width=data.iconWidth height=data.iconHeight)
           use(xlink:href=`./assets/sprite.svg#icon-${data.icon}`)

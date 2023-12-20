@@ -1,0 +1,46 @@
+include ./main-btn
+
+mixin service-card(data)
+  .service-card
+    .service-card__header
+      small.service-card__header-overline-text Поддержка
+      span.service-card__header-title!= data.type
+
+    .service-card__body
+      p.service-card__preview-text!= data.text
+
+      if data.stuff
+        span.service-card__section-title Специалисты:
+
+        ul.service-card__stuff-list
+          each item in data.stuff
+            li.service-card__stuff-list-item
+              img(src=`./assets/img/${item.img}.png` alt=item.rank width="30" height="30")
+              span!= item.rank
+
+      if data.works
+        span.service-card__section-title Выполняемые работы:
+
+        ul.service-card__works-list
+          each item in data.works
+            li.service-card__works-list-item(class= !!item.isBold ? 'service-card__body-works-list-item--bold' : null)!= item.title
+
+      span.service-card__price!= data.price
+
+    .service-card__footer
+      +main-btn({
+        type: 'button',
+        text: 'Оставить заявку',
+        cls: 'main-btn--primary',
+        imgPath: "./assets/img/icon-post.svg",
+        imgAlt: "Иконка конверта",
+        imgWidth: 24,
+        imgHeight: 24
+      })
+
+      +main-btn({
+        type: 'link',
+        text: 'Подробнее',
+        cls: 'main-btn--outlined',
+      })
+

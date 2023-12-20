@@ -21,4 +21,9 @@
     background: linear-gradient(0deg, rgba(235, 0, 255, 0.22) 0%, rgba(235, 0, 255, 0.22) 100%), radial-gradient(53.83% 90.39% at 84.71% 130.77%, #8B00FF 6.05%, rgba(161, 0, 175, 0.00) 100%), radial-gradient(1989.85% 451.88% at 5.1% -250%, #8B00FF 0%, #FFF500 15.88%, #FF00D6 88.69%), linear-gradient(44deg, #EB00FF -2.29%, #EB00FF 43.8%);
     box-shadow: -18px 57px 103.4px 0px #3D006F;
   }
+
+  &--outlined {
+    border: 1px solid var(--primary);
+    color: var(--primary);
+  }
 }
