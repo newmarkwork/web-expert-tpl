@@ -1302,7 +1302,7 @@ fieldset {
 }
 
 /* flex*/
-.flex-wrap, .main-footer__container, .review-card__rate, .review-card__header, .advantages__list, .main-nav__list, .main-header__side, .main-header__container, .service-card__footer, .service-card__stuff-list-item, .service-card__stuff-list {
+.flex-wrap, .main-footer__container, .review-card__rate, .review-card__header, .advantages__list, .main-nav__list, .main-header__side, .main-header__container, .service-card__footer, .service-card__stuff-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1723,6 +1723,8 @@ fieldset {
   max-height: 400px;
   overflow: hidden;
   overflow-y: auto;
+}
+.accordeon__item-body-content {
   -webkit-animation: fadeIn 0.3s ease-in forwards;
   animation: fadeIn 0.3s ease-in forwards;
 }
@@ -1746,7 +1748,9 @@ fieldset {
 }
 .service-card {
   width: 100%;
-  max-width: 485px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 40px;
   background-color: var(--service-card-bg);
   -webkit-box-shadow: 0px 47px 111px 0px rgba(0, 0, 0, 0.25);
@@ -1755,6 +1759,7 @@ fieldset {
 .service-card__header {
   gap: 8px;
   padding: 60px 40px;
+  padding: 6vh 3vw;
   border-radius: 40px 40px 0px 0px;
   border: 2px solid var(--service-card-header-border);
   color: var(--white);
@@ -1762,8 +1767,18 @@ fieldset {
 .service-card__header-overline-text {
   font-size: 14px;
 }
+@supports (font-size: clamp(12px, 2vw, 14px)) {
+  .service-card__header-overline-text {
+    font-size: clamp(12px, 2vw, 14px);
+  }
+}
 .service-card__header-title {
   font-size: 34px;
+}
+@supports (font-size: clamp(16px, 2vw, 34px)) {
+  .service-card__header-title {
+    font-size: clamp(16px, 2vw, 34px);
+  }
 }
 .service-card:nth-child(odd) .service-card__header {
   background: -o-radial-gradient(8.92% 4.3%, 79.95% 69.01%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), rgba(139, 0, 255, 0.7);
@@ -1792,12 +1807,21 @@ fieldset {
   column-gap: 20px;
   row-gap: 4px;
   margin-bottom: 30px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 .service-card__stuff-list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: calc(50% - 10px);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 185px;
 }
 .service-card__stuff-list-item img {
   width: 30px;
@@ -2081,7 +2105,7 @@ fieldset {
 }
 
 .support {
-  padding: 400px 0 200px;
+  padding: 300px 0 200px;
   margin: 0;
 }
 .support__content .main-title span {
@@ -2099,14 +2123,30 @@ fieldset {
 }
 
 .services {
-  padding: 300px 0;
+  position: relative;
+  padding: 200px 0 0;
   margin: 0;
   background-color: var(--gray-20);
+  z-index: 1;
 }
 .services .main-title {
   text-align: center;
   margin-bottom: 75px;
 }
+.services__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+.services__content .service-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .advantages {
   position: relative;
   overflow: hidden;
@@ -2157,7 +2197,7 @@ fieldset {
 }
 
 .reviews {
-  padding: 400px 0;
+  padding: 300px 0;
   margin-top: 0;
 }
 .reviews .main-title {
@@ -2233,7 +2273,7 @@ fieldset {
 
 .offer {
   position: relative;
-  padding: 350px 0 200px;
+  padding: 250px 0;
 }
 .offer .main-title {
   font-size: 50px;

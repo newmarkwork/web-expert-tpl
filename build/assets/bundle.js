@@ -157,6 +157,80 @@ var delay = 200,
 resizeReset();
 setup();
 
+/***/ }),
+
+/***/ "./src/scripts/modules/services.js":
+/*!*****************************************!*\
+  !*** ./src/scripts/modules/services.js ***!
+  \*****************************************/
+/***/ (() => {
+
+var cards = document.querySelectorAll('.service-card');
+
+if (cards) {
+  var services = document.querySelector('.services__content');
+
+  var fillCards = function fillCards(width, translateValue) {
+    cards.forEach(function (card, index) {
+      card.style.width = width + 'px';
+      card.style.transform = "translateX(".concat(translateValue * index, "px)");
+    });
+    services.style.minHeight = "".concat(cards[cards.length - 1].getBoundingClientRect().height / 100 * 90, "px");
+  };
+
+  var calculateCardSize = function calculateCardSize() {
+    var sectionWidth = services.getBoundingClientRect().width;
+    var initial = sectionWidth / cards.length;
+    var offset = initial / 100 * (100 / 3);
+    var result = initial + offset;
+    var translateValue = result / 3 * 2;
+    fillCards(result, translateValue);
+  };
+
+  calculateCardSize();
+
+  var onMouseLeaveHandler = function onMouseLeaveHandler(evt) {
+    var current = evt.currentTarget;
+    current.removeEventListener('mouseleave', onMouseLeaveHandler);
+    current.addEventListener('mouseenter', onMouseEnterHandler);
+    console.log('OUT');
+    cards.forEach(function (card, index) {
+      card.style.zIndex = index * 10;
+    });
+  };
+
+  var onMouseEnterHandler = function onMouseEnterHandler(evt) {
+    var current = evt.currentTarget;
+    current.removeEventListener('mouseenter', onMouseEnterHandler);
+    current.addEventListener('mouseleave', onMouseLeaveHandler);
+    var currentIndex = null;
+    cards.forEach(function (card, index) {
+      if (card === current) {
+        currentIndex = index;
+      }
+    });
+
+    for (var i = 0; i < cards.length; i++) {
+      if (i !== currentIndex) {
+        cards[i].style.zIndex = (i + 1) * 10;
+      }
+
+      if (i === currentIndex) {
+        cards[currentIndex].style.zIndex = cards.length * 10;
+      }
+
+      if (i > currentIndex) {
+        cards[i].style.zIndex = (cards.length - i) * 10;
+      }
+    }
+  };
+
+  cards.forEach(function (card, index) {
+    card.addEventListener('mouseenter', onMouseEnterHandler);
+  });
+  window.addEventListener('resize', calculateCardSize);
+}
+
 /***/ })
 
 /******/ 	});
@@ -235,11 +309,14 @@ var __webpack_exports__ = {};
   !*** ./src/scripts/main.js ***!
   \*****************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/accordeon */ "./src/scripts/modules/accordeon.js");
-/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_accordeon__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _modules_mesh_animation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/mesh-animation */ "./src/scripts/modules/mesh-animation.js");
-/* harmony import */ var _modules_mesh_animation__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_mesh_animation__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _modules_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/services */ "./src/scripts/modules/services.js");
+/* harmony import */ var _modules_services__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_services__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/accordeon */ "./src/scripts/modules/accordeon.js");
+/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_accordeon__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _modules_mesh_animation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/mesh-animation */ "./src/scripts/modules/mesh-animation.js");
+/* harmony import */ var _modules_mesh_animation__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_mesh_animation__WEBPACK_IMPORTED_MODULE_2__);
 //import ./modules/test;
+
  // import "./modules/swiper";
 
 
