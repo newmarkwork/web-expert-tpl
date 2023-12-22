@@ -31,8 +31,6 @@ if( cards ) {
     current.removeEventListener('mouseleave',onMouseLeaveHandler);
     current.addEventListener('mouseenter',onMouseEnterHandler);
 
-    console.log('OUT');
-
     cards.forEach( (card,index) => {
       card.style.zIndex = index * 10;
     });

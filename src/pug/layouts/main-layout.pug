@@ -12,14 +12,16 @@ html(lang="ru")
   +head(title, desc, keywords)
 
   body
-    include ./main-header
+    #smooth-wrapper
+      #smooth-content
+        include ./main-header
 
-    main
-      block content
+        main
+          block content
 
-    include ./main-footer
+        include ./main-footer
 
-    block modals
+        block modals
 
     block scripts
       //script(src="./js/bundle.js")

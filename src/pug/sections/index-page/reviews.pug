@@ -1,105 +1,15 @@
 section.section.skew-section.reviews
   .container.reviews__container
     h2.main-title Отзывы
+    .scrollable-slider-controls
+      .swiper-button-prev
+      .swiper-button-next
 
-  .fluid-container
+  .container-fluid
     .reviews__content
-      .review-card
-        .review-card__header
-          span.review-card__author Евгений
-          .review-card__rate(aria-label="Рейтинг: 3")
-            .review-card__rate-item(aria-hidden="true")
-              svg(width="14" height="14")
-                use(xlink:href="./assets/sprite.svg#icon-rate")
-            .review-card__rate-item(aria-hidden="true")
-              svg(width="14" height="14")
-                use(xlink:href="./assets/sprite.svg#icon-rate")
-            .review-card__rate-item(aria-hidden="true")
-              svg(width="14" height="14")
-                use(xlink:href="./assets/sprite.svg#icon-rate")
+      .swiper.scrollable-slider
+        .swiper-wrapper
+          each item in [1,2,3,4,5]
+            .swiper-slide
+              include ../../components/review-card
 
-          span.review-card__date 08.12.2023
-        .review-card__content
-          | Компания Веб-эксперт помогла нам оптимизировать наш сайт, благодаря чему мы значительно увеличили посещаемость и конверсию. Профессионализм и оперативность работы команды оставили только положительные впечатления.
-
-      .review-card
-        .review-card__header
-          span.review-card__author Евгений
-          .review-card__rate(aria-label="Рейтинг: 5")
-            .review-card__rate-item(aria-hidden="true")
-              svg(width="14" height="14")
-                use(xlink:href="./assets/sprite.svg#icon-rate")
-            .review-card__rate-item(aria-hidden="true")
-              svg(width="14" height="14")
-                use(xlink:href="./assets/sprite.svg#icon-rate")
-            .review-card__rate-item(aria-hidden="true")
-              svg(width="14" height="14")
-                use(xlink:href="./assets/sprite.svg#icon-rate")
-            .review-card__rate-item(aria-hidden="true")
-              svg(width="14" height="14")
-                use(xlink:href="./assets/sprite.svg#icon-rate")
-            .review-card__rate-item(aria-hidden="true")
-              svg(width="14" height="14")
-                use(xlink:href="./assets/sprite.svg#icon-rate")
-
-          span.review-card__date 08.12.2023
-        .review-card__content
-          | Веб поддержка от Веб-эксперт значительно улучшила работу нашего сайта, сделав его более быстрым и удобным для пользователей. Отдельно хочется отметить профессионализм и отзывчивость команды, которая всегда готова помочь и ответить на любые вопросы.
-
-  //- <div class="wrapper">
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          Slide 1
-        </div>
-        <div class="swiper-slide">
-          Slide 2
-        </div>
-        <div class="swiper-slide">
-          Slide 3
-        </div>
-        <div class="swiper-slide">
-          Slide 4
-        </div>
-        <div class="swiper-slide">
-          Slide 1
-        </div>
-        <div class="swiper-slide">
-          Slide 2
-        </div>
-        <div class="swiper-slide">
-          Slide 3
-        </div>
-        <div class="swiper-slide">
-          Slide 4
-        </div>
-        <div class="swiper-slide">
-          Slide 1
-        </div>
-        <div class="swiper-slide">
-          Slide 2
-        </div>
-        <div class="swiper-slide">
-          Slide 3
-        </div>
-        <div class="swiper-slide">
-          Slide 4
-        </div>
-        <div class="swiper-slide">
-          Slide 1
-        </div>
-        <div class="swiper-slide">
-          Slide 2
-        </div>
-        <div class="swiper-slide">
-          Slide 3
-        </div>
-        <div class="swiper-slide">
-          Slide 4
-        </div>
-      </div>
-      //- <div class="swiper-scrollbar"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-    </div>

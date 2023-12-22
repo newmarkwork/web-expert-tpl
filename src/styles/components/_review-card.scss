@@ -1,0 +1,44 @@
+.review-card {
+  @extend .flex-column;
+  gap: 10px;
+  padding: 30px;
+
+  width: 100%;
+  max-width: 440px;
+  height: fit-content;
+  border-radius: 10px;
+  background-color: var(--review-card-bg);
+
+  &__header {
+    @extend .flex-wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  &__author {
+    font-weight: 700;
+  }
+
+  &__rate {
+    @extend .flex-wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex-grow: 1;
+
+    &-item {
+      @extend .flex-centered-content;
+      font-size: 16px;
+      color: var(--black);
+
+      svg {
+        fill: var(--warning);
+      }
+    }
+  }
+
+  &__content {
+    font-size: 14px;
+  }
+}
