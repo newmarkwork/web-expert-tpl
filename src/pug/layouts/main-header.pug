@@ -1,2 +1,20 @@
-header
-  p headerd
+include ../mixins/main-btn
+
+header.main-header
+  .container.main-header__container
+    include ../components/main-logo
+
+    include ./main-nav
+
+    .main-header__side
+      include ../components/contact-block
+
+      +main-btn({
+        type: 'button',
+        text: 'Заказать услугу',
+        cls: 'main-btn--primary',
+        imgPath: "./assets/img/icon-phone.svg",
+        imgAlt: "Телефон",
+        imgWidth: 24,
+        imgHeight: 24
+      })

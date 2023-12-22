@@ -23,6 +23,14 @@
   text-overflow: ellipsis;
 }
 
+/*grid*/
+
+.base-grid-container {
+  display: grid;
+  grid-template-columns: auto 450px;
+  grid-gap: 6vw;
+}
+
 /*scroll*/
 .main-scroll {
   &::-webkit-scrollbar {

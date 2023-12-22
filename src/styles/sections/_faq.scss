@@ -1,0 +1,14 @@
+.faq {
+  &__container {
+    display: grid;
+    grid-template-columns: 4fr 7fr;
+    grid-gap: 5vw;
+  }
+
+  &__side {
+    position: sticky;
+    top: 0;
+    height: fit-content;
+    padding-top: 150px;
+  }
+}

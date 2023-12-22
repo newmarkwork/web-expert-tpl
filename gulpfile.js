@@ -257,6 +257,12 @@ const images = () => {
   .pipe(dest(PATHS.images.dest))
 }
 
+const videos = () => {
+  return src(PATHS.videos.src)
+
+  .pipe(dest(PATHS.videos.dest))
+}
+
 const toWebp = () => {
   return src(PATHS.images.src)
     .pipe(webp())
@@ -278,6 +284,7 @@ const server = () => {
     watch(PATHS.scripts.watchSrc, series(js, refresh));
     isVueEnabled ? watch(PATHS.vue.watchSrc, series(js, refresh)) : null;
     watch(PATHS.images.watchSrc, series(images, toWebp, refresh));
+    watch(PATHS.videos.watchSrc, series(videos, refresh));
     watch(PATHS.svg.watchSrc, series(svg, refresh));
     watch(PATHS.sprite.watchSrc, series(sprite, refresh));
     watch(PATHS.fonts.watchSrc, series(fonts, refresh));
@@ -288,6 +295,6 @@ const refresh = (done) => {
     done();
 }
 
-exports.start = series(clean, fonts, isPugEnabled ? pug : html, styles, js, resources, sprite, images, toWebp, svg, server);
-exports.build = series(toProd, clean, fonts, isPugEnabled ? pug : html, styles, js, resources, sprite, images, toWebp, svg);
-exports.buildMinAll = series(htmlMinify, toProd, clean, fonts, isPugEnabled ? pug : html, styles, js, resources, sprite, images, toWebp, svg);
+exports.start = series(clean, fonts, isPugEnabled ? pug : html, styles, js, resources, sprite, images, videos, toWebp, svg, server);
+exports.build = series(toProd, clean, fonts, isPugEnabled ? pug : html, styles, js, resources, sprite, images, videos, toWebp, svg);
+exports.buildMinAll = series(htmlMinify, toProd, clean, fonts, isPugEnabled ? pug : html, styles, js, resources, sprite, images, videos, toWebp, svg);

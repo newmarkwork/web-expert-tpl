@@ -1,0 +1,23 @@
+.support {
+  padding: 300px 0 200px;
+  margin: 0;
+
+  &__container {
+    @extend .base-grid-container;
+  }
+
+  &__content {
+    .main-title span {
+      display: block;
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__side {
+    height: fit-content;
+    position: sticky;
+    top: 5vh;
+  }
+}

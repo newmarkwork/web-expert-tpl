@@ -6,10 +6,33 @@
 @import "global";
 @import "extends";
 @import "common";
+@import "zindex";
 
 /* Компоненты */
+@import "./components/main-btn";
+@import "./components/main-logo";
+
+@import "./components/offer-form";
+@import "./components/page-up-btn";
+@import "./components/accordeon";
+@import "./components/service-card";
 
 /* Секции */
+@import "./layout/main-header";
+@import "./layout/main-nav";
+
+@import "./sections/hero";
+@import "./sections/features";
+@import "./sections/about";
+@import "./sections/support";
+@import "./sections/services";
+@import "./sections/advantages";
+@import "./sections/reviews";
+@import "./sections/faq";
+
+@import "./sections/offer";
+@import "./layout/main-footer";
+
 /* Модальные окна */
 
 

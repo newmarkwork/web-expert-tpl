@@ -7,8 +7,37 @@
 .container-fluid {
   width: 100%;
   margin: 0 auto;
-  padding: 0 var(--container-offset);
+  padding: 0 var(--container-fluid-offset);
   max-width: var(--container-fluid-width);
+}
+
+.main-title {
+  font-size: 60px;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 40px;
+  color: var(--main-title-color);
+
+  &--dark {
+    color: var(--main-title-dark-color);
+  }
+}
+
+.main-desc {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: var(--white);
+}
+
+.main-text {
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 40px;
+  color: var(--main-text-color);
+
+  &--dark {
+    color: var(--main-text-dark-color);
+  }
 }
 
 .visually-hidden {
@@ -20,4 +49,24 @@
   width: 1px;
   height: 1px;
   clip: rect(0 0 0 0);
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.skew-section {
+  margin: 150px 0;
+  transform: skew(0, -10deg);
+  padding: 100px 0;
+  background-color: var(--primary);
+
+  .container,
+  .fluid-container {
+    transform: skew(0, 10deg);
+  }
+
+  &--bg-radial {
+    background: radial-gradient(67.45% 66.63% at 110% -18.83%, #06F 0.94%, #8B00FF 100%), #8B00FF;
+  }
 }

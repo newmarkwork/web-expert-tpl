@@ -1,2 +1,36 @@
+//- +main-btn({
+//-   type: String['button|| submit || link'],
+//-   text: String,
+//-   cls: String,
+//-   icon: String
+//-   iconWidth: Number,
+//-   iconHeight: Number,
+//-   imgPath: String,
+//-   imgAlt: String,
+//-   imgWidth Number,
+//-   imgHeight Number
+//- })
+
 mixin main-btn(data)
- button(type="button") button
+  if data.type === 'button' || data.type === 'submit'
+
+    button(type="button" class= data.cls ? data.cls : null).main-btn
+
+      if data.icon
+        svg(width=data.iconWidth height=data.iconHeight)
+          use(xlink:href=`./assets/sprite.svg#icon-${data.icon}`)
+
+      if data.imgPath
+        img(src= data.imgPath alt= data.imgAlt width= data.imgWidth height= data.imgHeight)
+
+      span!= data.text
+
+  if data.type === 'link'
+
+    a(href=data.link class= data.cls ? data.cls : null).main-btn!= data.text
+      if data.icon
+        svg(width=data.iconWidth height=data.iconHeight)
+          use(xlink:href=`./assets/sprite.svg#icon-${data.icon}`)
+
+      if data.imgPath
+        img(src= data.imgPath alt= data.imgAlt width= data.imgWidth height= data.imgHeight)

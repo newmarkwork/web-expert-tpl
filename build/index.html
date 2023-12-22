@@ -11,50 +11,463 @@
     <script defer="defer" src="./assets/bundle.js"></script>
   </head>
   <body>
-    <header>
-      <p>headerd</p>
+    <header class="main-header">
+      <div class="container main-header__container"><a class="main-logo" href="/"><img src="../assets/img/main-logo.svg" alt="Логотип" width="300" height="60"></a>
+        <nav class="main-nav">
+          <ul class="main-nav__list">
+            <li class="main-nav__list-item"><a href="#">О компании</a></li>
+            <li class="main-nav__list-item"><a href="#">Услуги
+                <svg width="16" height="16">
+                  <use xlink:href="./assets/sprite.svg#icon-arrow"></use>
+                </svg></a></li>
+            <li class="main-nav__list-item"><a href="#">Акции</a></li>
+            <li class="main-nav__list-item"><a href="#">Блог</a></li>
+            <li class="main-nav__list-item"><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="main-header__side">
+          <div class="contact-block"><a href="tel:+78127151077">+7 (812) 715-10-77</a><a href="mailto:office@web-expert.pro">office@web-expert.pro</a></div>
+              <button class="main-btn--primary main-btn" type="button"><img src="./assets/img/icon-phone.svg" alt="Телефон" width="24" height="24"><span>Заказать услугу</span>
+              </button>
+        </div>
+      </div>
     </header>
     <main>
-      <section class="lw-section">
-        <div class="lw-container"></div>
+      <section class="section skew-section skew-section--bg-radial hero">
+        <div class="container hero__container">
+          <div class="hero__content">
+            <h1 class="main-title">Не откладывайте развитие своего сайта на потом!</h1>
+            <p class="main-desc">Обратитесь к профессионалам из компании Веб-эксперт и получите комплексную веб поддержку, которая поможет вашему бизнесу расти и развиваться!</p>
+                  <button class="main-btn--secondary main-btn" type="button"><img src="./assets/img/icon-post.svg" alt="Иконка конверта" width="24" height="24"><span>Оставить заявку</span>
+                  </button>
+          </div>
+          <div class="hero__side">
+            <div class="hero__side-wrapper" style="background-image: url('./assets/img/hero-img.jpg')">
+              <video src="./assets/video/main-hero-video.mp4" loop playsinline preload="auto" autoplay muted></video><svg  max-width="100%" width="100" max-height="100vh" height="100" width="0" height="0">
+<defs>
+<clipPath id="heroClipPathId">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M132.5 4.5C149.5 -3 124.786 8.5 124.786 16.844L1.14796 399.673C-1.04794 406.472 0.550358 413.927 5.34086 419.228L268 712.5C272.096 717.032 277 724.231 299.5 724.231H2728.5V0H169H149.5L132.5 4.5Z" fill="black"/>
+</clipPath>
+</defs>
+</svg>
+            </div>
+          </div>
+        </div>
       </section>
-      <section class="lw-section">
-        <div class="lw-container"></div>
+      <section class="section features">
+        <div class="container features__container">
+          <ul class="features__list">
+            <li class="features__list-item"><img src="./assets/img/feature-icon-1.png" alt="Устали от технических проблем на сайте?" width="60" height="60"><span class="features__list-item-title">Устали от технических проблем на сайте?</span><span class="features__list-item-text">Доверьте его нам и забудьте о заботах!</span></li>
+            <li class="features__list-item"><img src="./assets/img/feature-icon-2.png" alt="Ваш сайт нуждается в оптимизации?" width="60" height="60"><span class="features__list-item-title">Ваш сайт нуждается в оптимизации?</span><span class="features__list-item-text">Мы поможем увеличить его видимость в поиске!</span></li>
+            <li class="features__list-item"><img src="./assets/img/feature-icon-3.png" alt="Ваш бизнес зависит от работоспособности сайта?" width="60" height="60"><span class="features__list-item-title">Ваш бизнес зависит от работоспособности сайта?</span><span class="features__list-item-text">Обеспечьте его надежность с нашей поддержкой!</span></li>
+            <li class="features__list-item"><img src="./assets/img/feature-icon-4.png" alt="Заметили снижение трафика на сайте?" width="60" height="60"><span class="features__list-item-title">Заметили снижение трафика на сайте?</span><span class="features__list-item-text">Исправьте это с нашей профессиональной поддержкой!</span></li>
+          </ul>
+        </div>
       </section>
-      <section class="lw-section">
-        <div class="lw-container"></div>
+      <section class="section about">
+        <div class="container about__container">
+          <div class="about__content">
+            <h2 class="main-title main-title--dark">Комплексная поддержка вашего сайта.</h2>
+            <p class="main-text main-text--dark">Обращение в компанию “Веб-Эксперт” за комплексной поддержкой сайта имеет ряд преимуществ перед содержанием собственного IT-отдела:</p>
+            <ul class="about__list">
+              <li class="about__list-item">
+                <p><span>Экономия средств:</span> Содержание собственного IT-отдела требует значительных финансовых вложений. В то время как обращение к профессионалам “Веб-Эксперта” обойдется значительно дешевле, так как они предоставляют услуги по более низким ценам, чем это было бы в случае найма отдельных специалистов.</p>
+              </li>
+              <li class="about__list-item">
+                <p><span>Качество работы:</span> Специалисты “Веб-Эксперта” обладают высокой квалификацией и опытом работы в сфере IT. Они могут предложить более качественные и эффективные решения для вашего сайта, чем отдельные специалисты, нанятые через рекрутинговые агентства.</p>
+              </li>
+              <li class="about__list-item">
+                <p><span>Оперативность решения проблем:</span> В случае возникновения проблем на вашем сайте, специалисты “Веб-Эксперта” смогут оперативно их устранить, в то время как собственный IT-отдел может потребовать времени на решение проблемы.</p>
+              </li>
+              <li class="about__list-item">
+                <p><span>Отсутствие необходимости в постоянном контроле:</span> Вам не нужно будет контролировать работу собственного IT-отдела, так как специалисты “Веб-Эксперта” будут предоставлять вам регулярные отчеты о проделанной работе и достигнутых результатах.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="about__side"><img src="./assets/img/about-img.png" alt="Комплексная поддержка вашего сайта" width="430" height="400"></div>
+        </div>
       </section>
-      <section class="lw-section">
-        <div class="lw-container"></div>
+      <section class="section skew-section services">
+        <div class="container services__container">
+          <h2 class="main-title main-title--dark">Наши услуги</h2>
+          <div class="services__content">
+                  <div class="service-card">
+                    <div class="service-card__header"><small class="service-card__header-overline-text">Поддержка</small><span class="service-card__header-title">Базовая</span></div>
+                    <div class="service-card__body">
+                      <p class="service-card__preview-text">Включает в себя обновление содержимого сайта, поддержку пользователей и базовую оптимизацию для поисковых систем</p><span class="service-card__section-title">Специалисты:</span>
+                      <ul class="service-card__stuff-list">
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Менеджер проекта" width="30" height="30"><span>Менеджер проекта</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="SEO-оптимизатор" width="30" height="30"><span>SEO-оптимизатор</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Копирайтер" width="30" height="30"><span>Копирайтер</span></li>
+                      </ul><span class="service-card__section-title">Выполняемые работы:</span>
+                      <ul class="service-card__works-list">
+                        <li class="service-card__works-list-item">Анализ и аудит сайта.</li>
+                        <li class="service-card__works-list-item">Исследование и анализ ключевых слов.</li>
+                        <li class="service-card__works-list-item">Создание и оптимизация контента.</li>
+                        <li class="service-card__works-list-item">Улучшение структуры и навигации сайта.</li>
+                        <li class="service-card__works-list-item">Оптимизация технических параметров сайта.</li>
+                        <li class="service-card__works-list-item">Внешняя оптимизация.</li>
+                        <li class="service-card__works-list-item">Мониторинг и анализ результатов.</li>
+                        <li class="service-card__works-list-item">Ежемесячный отчет.</li>
+                      </ul><span class="service-card__price">35 000 руб.</span>
+                    </div>
+                    <div class="service-card__footer">
+                            <button class="main-btn--primary main-btn" type="button"><img src="./assets/img/icon-post.svg" alt="Иконка конверта" width="24" height="24"><span>Оставить заявку</span>
+                            </button><a class="main-btn--outlined main-btn">Подробнее</a>
+                    </div>
+                  </div>
+                  <div class="service-card">
+                    <div class="service-card__header"><small class="service-card__header-overline-text">Поддержка</small><span class="service-card__header-title">Стандартная</span></div>
+                    <div class="service-card__body">
+                      <p class="service-card__preview-text">Включает все опции базового тарифа, а также дополнительные услуги, такие как анализ конкурентов, улучшение дизайна и юзабилити сайта</p><span class="service-card__section-title">Специалисты:</span>
+                      <ul class="service-card__stuff-list">
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Менеджер проекта" width="30" height="30"><span>Менеджер проекта</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Верстальщик" width="30" height="30"><span>Верстальщик</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Дизайнер" width="30" height="30"><span>Дизайнер</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="SEO-оптимизатор" width="30" height="30"><span>SEO-оптимизатор</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Копирайтер" width="30" height="30"><span>Копирайтер</span></li>
+                      </ul><span class="service-card__section-title">Выполняемые работы:</span>
+                      <ul class="service-card__works-list">
+                        <li class="service-card__works-list-item">Анализ и аудит сайта.</li>
+                        <li class="service-card__works-list-item">Исследование и анализ ключевых слов.</li>
+                        <li class="service-card__works-list-item">Создание и оптимизация контента.</li>
+                        <li class="service-card__works-list-item">Улучшение структуры и навигации сайта.</li>
+                        <li class="service-card__works-list-item">Оптимизация технических параметров сайта.</li>
+                        <li class="service-card__works-list-item">Внешняя оптимизация.</li>
+                        <li class="service-card__works-list-item">Мониторинг и анализ результатов.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Исследование и анализ требований клиента.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Разработка концепции и стиля проекта.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Проектирование и верстка макетов.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Подготовка графических материалов.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Адаптивная и кроссбраузерная верстка.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Тестирование и отладка проекта.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Поддержка и сопровождение проекта.</li>
+                        <li class="service-card__works-list-item">Ежемесячный отчет.</li>
+                      </ul><span class="service-card__price">55 000 руб.</span>
+                    </div>
+                    <div class="service-card__footer">
+                            <button class="main-btn--primary main-btn" type="button"><img src="./assets/img/icon-post.svg" alt="Иконка конверта" width="24" height="24"><span>Оставить заявку</span>
+                            </button><a class="main-btn--outlined main-btn">Подробнее</a>
+                    </div>
+                  </div>
+                  <div class="service-card">
+                    <div class="service-card__header"><small class="service-card__header-overline-text">Поддержка</small><span class="service-card__header-title">Улучшенная</span></div>
+                    <div class="service-card__body">
+                      <p class="service-card__preview-text">Включает в себя все опции стандартного тарифа, а также индивидуальную разработку стратегии продвижения сайта и работу с контекстом в интернете</p><span class="service-card__section-title">Специалисты:</span>
+                      <ul class="service-card__stuff-list">
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Менеджер проекта" width="30" height="30"><span>Менеджер проекта</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Программист" width="30" height="30"><span>Программист</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Директолог" width="30" height="30"><span>Директолог</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Верстальщик" width="30" height="30"><span>Верстальщик</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Дизайнер" width="30" height="30"><span>Дизайнер</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="SEO-оптимизатор" width="30" height="30"><span>SEO-оптимизатор</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Копирайтер" width="30" height="30"><span>Копирайтер</span></li>
+                      </ul><span class="service-card__section-title">Выполняемые работы:</span>
+                      <ul class="service-card__works-list">
+                        <li class="service-card__works-list-item">Анализ и аудит сайта.</li>
+                        <li class="service-card__works-list-item">Исследование и анализ ключевых слов.</li>
+                        <li class="service-card__works-list-item">Создание и оптимизация контента.</li>
+                        <li class="service-card__works-list-item">Улучшение структуры и навигации сайта.</li>
+                        <li class="service-card__works-list-item">Оптимизация технических параметров сайта.</li>
+                        <li class="service-card__works-list-item">Внешняя оптимизация.</li>
+                        <li class="service-card__works-list-item">Мониторинг и анализ результатов.</li>
+                        <li class="service-card__works-list-item">Исследование и анализ требований клиента.</li>
+                        <li class="service-card__works-list-item">Разработка концепции и стиля проекта.</li>
+                        <li class="service-card__works-list-item">Проектирование и верстка макетов.</li>
+                        <li class="service-card__works-list-item">Подготовка графических материалов.</li>
+                        <li class="service-card__works-list-item">Адаптивная и кроссбраузерная верстка.</li>
+                        <li class="service-card__works-list-item">Тестирование и отладка проекта.</li>
+                        <li class="service-card__works-list-item">Поддержка и сопровождение проекта.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Анализ бизнеса и конкурентов.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Определение стратегии и тактики продвижения.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Сбор и кластеризация ключевых слов.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Настройка и запуск рекламных кампаний.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Мониторинг и оптимизация кампаний.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Анализ и улучшение рекламных материалов.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Работа с обратной связью и отчетность.</li>
+                        <li class="service-card__works-list-item">Ежемесячный отчет.</li>
+                      </ul><span class="service-card__price">70 000 руб.</span>
+                    </div>
+                    <div class="service-card__footer">
+                            <button class="main-btn--primary main-btn" type="button"><img src="./assets/img/icon-post.svg" alt="Иконка конверта" width="24" height="24"><span>Оставить заявку</span>
+                            </button><a class="main-btn--outlined main-btn">Подробнее</a>
+                    </div>
+                  </div>
+                  <div class="service-card">
+                    <div class="service-card__header"><small class="service-card__header-overline-text">Поддержка</small><span class="service-card__header-title">Профессиональная</span></div>
+                    <div class="service-card__body">
+                      <p class="service-card__preview-text">Включает в себя полный комплекс услуг по веб-поддержке, включая разработку и продвижение новых проектов, а также мониторинг и оптимизацию уже существующих ресурсов</p><span class="service-card__section-title">Специалисты:</span>
+                      <ul class="service-card__stuff-list">
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Менеджер проекта" width="30" height="30"><span>Менеджер проекта</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Программист" width="30" height="30"><span>Программист</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Директолог" width="30" height="30"><span>Директолог</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Верстальщик" width="30" height="30"><span>Верстальщик</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Дизайнер" width="30" height="30"><span>Дизайнер</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="SEO-оптимизатор" width="30" height="30"><span>SEO-оптимизатор</span></li>
+                        <li class="service-card__stuff-list-item"><img src="./assets/img/stuff-img.png" alt="Копирайтер" width="30" height="30"><span>Копирайтер</span></li>
+                      </ul><span class="service-card__section-title">Выполняемые работы:</span>
+                      <ul class="service-card__works-list">
+                        <li class="service-card__works-list-item">Анализ и аудит сайта.</li>
+                        <li class="service-card__works-list-item">Исследование и анализ ключевых слов.</li>
+                        <li class="service-card__works-list-item">Создание и оптимизация контента.</li>
+                        <li class="service-card__works-list-item">Улучшение структуры и навигации сайта.</li>
+                        <li class="service-card__works-list-item">Оптимизация технических параметров сайта.</li>
+                        <li class="service-card__works-list-item">Внешняя оптимизация.</li>
+                        <li class="service-card__works-list-item">Мониторинг и анализ результатов.</li>
+                        <li class="service-card__works-list-item">Исследование и анализ требований клиента.</li>
+                        <li class="service-card__works-list-item">Разработка концепции и стиля проекта.</li>
+                        <li class="service-card__works-list-item">Проектирование и верстка макетов.</li>
+                        <li class="service-card__works-list-item">Подготовка графических материалов.</li>
+                        <li class="service-card__works-list-item">Адаптивная и кроссбраузерная верстка.</li>
+                        <li class="service-card__works-list-item">Тестирование и отладка проекта.</li>
+                        <li class="service-card__works-list-item">Поддержка и сопровождение проекта.</li>
+                        <li class="service-card__works-list-item">Анализ бизнеса и конкурентов.</li>
+                        <li class="service-card__works-list-item">Определение стратегии и тактики продвижения.</li>
+                        <li class="service-card__works-list-item">Сбор и кластеризация ключевых слов.</li>
+                        <li class="service-card__works-list-item">Настройка и запуск рекламных кампаний.</li>
+                        <li class="service-card__works-list-item">Мониторинг и оптимизация кампаний.</li>
+                        <li class="service-card__works-list-item">Анализ и улучшение рекламных материалов.</li>
+                        <li class="service-card__works-list-item">Работа с обратной связью и отчетность.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Изучение требований и пожеланий заказчика.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Разработка технического задания и проектирование системы.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Написание кода и создание модулей программы.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Тестирование и исправление ошибок.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Внедрение и настройка системы на сервере.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Обучение пользователей и поддержка системы.</li>
+                        <li class="service-card__works-list-item service-card__body-works-list-item--bold">Развитие и модернизация системы в соответствии с новыми требованиями.</li>
+                        <li class="service-card__works-list-item">Ежемесячный отчет.</li>
+                      </ul><span class="service-card__price">90 000 руб.</span>
+                    </div>
+                    <div class="service-card__footer">
+                            <button class="main-btn--primary main-btn" type="button"><img src="./assets/img/icon-post.svg" alt="Иконка конверта" width="24" height="24"><span>Оставить заявку</span>
+                            </button><a class="main-btn--outlined main-btn">Подробнее</a>
+                    </div>
+                  </div>
+          </div>
+        </div>
       </section>
-      <section class="lw-section">
-        <div class="lw-container"></div>
+      <section class="section skew-section support">
+        <div class="container support__container">
+          <div class="support__content">
+            <h2 class="main-title"><span>Поддержка</span> Под индивидуальный запрос</h2>
+            <p class="main-text">Поддержка сайта под индивидуальный запрос - это услуга, которая подходит для владельцев сайтов, нуждающихся в специализированной помощи и индивидуальном подходе к решению задач. Она включает в себя широкий спектр услуг, таких как аудит сайта, оптимизация контента, улучшение SEO, техническая поддержка, улучшение дизайна, поддержка пользователей и многое другое. Благодаря индивидуальному подходу, наши специалисты смогут максимально точно определить потребности вашего сайта и предложить наиболее эффективные решения для его развития и продвижения.</p>
+                  <button class="main-btn--secondary main-btn" type="button"><img src="./assets/img/icon-post.svg" alt="Иконка конверта" width="24" height="24"><span>Заполнить бриф онлайн</span>
+                  </button>
+          </div>
+          <div class="support__side"><img src="./assets/img/support-img.png" alt="Поддержка" width="415" height="390"></div>
+        </div>
       </section>
-      <section class="lw-section">
-        <div class="lw-container"></div>
+      <section class="section advantages"><canvas id="canvas"></canvas>
+        <div class="container advantages__container">
+          <h2 class="main-title main-title--dark">Почему выбирают нас</h2>
+          <ul class="advantages__list">
+            <li class="advantages__list-item"><img src="./assets/img/advantages-icon-1.png" alt="Индивидуальный подход" width="100" height="100"><span class="advantages__list-item-title">Индивидуальный подход</span>
+              <p class="main-text main-text--dark">Мы предлагаем индивидуальный подход к каждому клиенту, учитывая все его потребности и пожелания. Мы стремимся создать максимально эффективный и удобный сайт для вашего бизнеса.</p>
+            </li>
+            <li class="advantages__list-item"><img src="./assets/img/advantages-icon-2.png" alt="Индивидуальный подход" width="100" height="100"><span class="advantages__list-item-title">Индивидуальный подход</span>
+              <p class="main-text main-text--dark">Мы предлагаем индивидуальный подход к каждому клиенту, учитывая все его потребности и пожелания. Мы стремимся создать максимально эффективный и удобный сайт для вашего бизнеса.</p>
+            </li>
+            <li class="advantages__list-item"><img src="./assets/img/advantages-icon-3.png" alt="Комплексный подход" width="100" height="100"><span class="advantages__list-item-title">Комплексный подход</span>
+              <p class="main-text main-text--dark">Мы предоставляем полный комплекс услуг по поддержке и развитию сайта, начиная от аудита и оптимизации, заканчивая продвижением и технической поддержкой.</p>
+            </li>
+            <li class="advantages__list-item"><img src="./assets/img/advantages-icon-4.png" alt="Оперативность" width="100" height="100"><span class="advantages__list-item-title">Оперативность</span>
+              <p class="main-text main-text--dark">Мы всегда стараемся оперативно реагировать на запросы клиентов и решать возникающие проблемы в кратчайшие сроки.</p>
+            </li>
+            <li class="advantages__list-item"><img src="./assets/img/advantages-icon-5.png" alt="Гибкость" width="100" height="100"><span class="advantages__list-item-title">Гибкость</span>
+              <p class="main-text main-text--dark">Мы готовы предложить гибкие условия сотрудничества и адаптировать наши услуги под ваши потребности и бюджет.</p>
+            </li>
+            <li class="advantages__list-item"><img src="./assets/img/advantages-icon-6.png" alt="Надежность" width="100" height="100"><span class="advantages__list-item-title">Надежность</span>
+              <p class="main-text main-text--dark">Мы гарантируем надежность и стабильность работы вашего сайта, так как используем только проверенные и надежные технологии и инструменты.</p>
+            </li>
+            <li class="advantages__list-item"><img src="./assets/img/advantages-icon-7.png" alt="Прозрачность" width="100" height="100"><span class="advantages__list-item-title">Прозрачность</span>
+              <p class="main-text main-text--dark">Мы всегда открыты и честны с нашими клиентами, предоставляя полную информацию о ходе выполнения работ и результатах.</p>
+            </li>
+          </ul>
+        </div>
       </section>
-      <section class="lw-section">
-        <div class="lw-container"></div>
+      <section class="section skew-section reviews">
+        <div class="container reviews__container">
+          <h2 class="main-title">Отзывы</h2>
+        </div>
+        <div class="fluid-container">
+          <div class="reviews__content">
+            <div class="review-card">
+              <div class="review-card__header"><span class="review-card__author">Евгений</span>
+                <div class="review-card__rate" aria-label="Рейтинг: 3">
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                </div><span class="review-card__date">08.12.2023</span>
+              </div>
+              <div class="review-card__content">Компания Веб-эксперт помогла нам оптимизировать наш сайт, благодаря чему мы значительно увеличили посещаемость и конверсию. Профессионализм и оперативность работы команды оставили только положительные впечатления.</div>
+            </div>
+            <div class="review-card">
+              <div class="review-card__header"><span class="review-card__author">Евгений</span>
+                <div class="review-card__rate" aria-label="Рейтинг: 5">
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                  <div class="review-card__rate-item" aria-hidden="true">
+                    <svg width="14" height="14">
+                      <use xlink:href="./assets/sprite.svg#icon-rate"></use>
+                    </svg>
+                  </div>
+                </div><span class="review-card__date">08.12.2023</span>
+              </div>
+              <div class="review-card__content">Веб поддержка от Веб-эксперт значительно улучшила работу нашего сайта, сделав его более быстрым и удобным для пользователей. Отдельно хочется отметить профессионализм и отзывчивость команды, которая всегда готова помочь и ответить на любые вопросы.</div>
+            </div>
+          </div>
+        </div>
       </section>
-      <section class="lw-section">
-        <div class="lw-container"></div>
+      <section class="section faq">
+        <div class="container faq__container">
+          <div class="faq__side">
+            <h2 class="main-title main-title--dark">Вопрос ответ</h2>
+            <p class="main-text main-text--dark">!!!!!!Чтобы привлекать новых пользователей на сайт из таких поисковых систем, как Google и Яндекс, очень важно сначала оптимизировать контент. Один из эффективных способов привлечения трафика — SEO-текст.</p>
+          </div>
+          <div class="faq__content">
+            <div class="accordeon">
+              <div class="accordeon__item">
+                <div class="accordeon__item-header collapsed"><span>Что такое веб поддержка сайта?</span></div>
+                <div class="accordeon__item-body">
+                  <div class="accordeon__item-body-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                  </div>
+                </div>
+              </div>
+              <div class="accordeon__item">
+                <div class="accordeon__item-header collapsed"><span>Какие услуги входят в веб поддержку сайта?</span></div>
+                <div class="accordeon__item-body">
+                  <div class="accordeon__item-body-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                  </div>
+                </div>
+              </div>
+              <div class="accordeon__item">
+                <div class="accordeon__item-header collapsed"><span>Как выбрать надежного провайдера веб поддержки сайта?</span></div>
+                <div class="accordeon__item-body">
+                  <div class="accordeon__item-body-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                  </div>
+                </div>
+              </div>
+              <div class="accordeon__item">
+                <div class="accordeon__item-header collapsed"><span>Как часто нужно обновлять информацию на сайте?</span></div>
+                <div class="accordeon__item-body">
+                  <div class="accordeon__item-body-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                  </div>
+                </div>
+              </div>
+              <div class="accordeon__item">
+                <div class="accordeon__item-header collapsed"><span>Какие технологии используются для веб поддержки сайта?</span></div>
+                <div class="accordeon__item-body">
+                  <div class="accordeon__item-body-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                  </div>
+                </div>
+              </div>
+              <div class="accordeon__item">
+                <div class="accordeon__item-header collapsed"><span>Нужно ли обновлять дизайн сайта?</span></div>
+                <div class="accordeon__item-body">
+                  <div class="accordeon__item-body-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor tempora doloribus dignissimos, exercitationem minus dolorum fugiat magnam aliquid dicta corrupti ex quaerat beatae quae dolorem atque excepturi nihil nemo at!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-      <section class="lw-section">
-        <div class="lw-container"></div>
-      </section>
-      <section class="lw-section">
-        <div class="lw-container"></div>
-      </section>
-      <section class="lw-section offer">
-        <div class="lw-container"></div>
-      </section>
-      <section class="lw-section">
-        <div class="lw-container"></div>
+      <section class="section skew-section offer">
+        <div class="container offer__container">
+          <h2 class="main-title">Нужна <span>профессиональная</span> поддержка?</h2>
+          <div class="offer-form">
+            <form action="#">
+              <div class="offer-form__wrapper">
+                <fieldset>
+                  <label class="main-text" for="user_name">Имя *</label>
+                  <input type="text" placeholder="Иван Иванов">
+                </fieldset>
+                <fieldset>
+                  <label class="main-text" for="user_phone">Телефон *</label>
+                  <input type="text" id="user_phone" placeholder="+7 000 000 00 00">
+                </fieldset>
+                <fieldset>
+                  <label class="main-text" for="user_link">Ссылка на Ваш сайт</label>
+                  <input type="text" id="user_link" placeholder="www.">
+                </fieldset>
+                <fieldset class="user-files-field">
+                  <label class="main-text" for="user_file">Файл с информацией о проекте</label>
+                  <label class="main-text user-files-field-upload" for="user_file">Нет файла</label>
+                  <input type="file" id="user_file" placeholder="Нет файла">
+                </fieldset>
+                <fieldset>
+                        <button class="main-btn--secondary main-btn" type="button"><img src="./assets/img/icon-post.svg" alt="Иконка конверта" width="24" height="24"><span>Отправить заявку</span>
+                        </button>
+                </fieldset>
+              </div>
+              <fieldset class="user-rules-field">
+                <input type="checkbox" id="user_accept_rules">
+                <label class="main-text" for="user_accept_rules">Заполняя данную форму, я даю согласие на <a href="#">обработку персональных данных</a></label>
+              </fieldset>
+            </form>
+          </div>
+        </div>
       </section>
     </main>
-    <footer>
-      <p>footer</p>
-    </footer>
+    <footer class="main-footer">
+      <div class="container main-footer__container"><a class="main-logo" href="/"><img src="../assets/img/main-logo.svg" alt="Логотип" width="300" height="60"></a>
+        <nav class="main-nav">
+          <ul class="main-nav__list">
+            <li class="main-nav__list-item"><a href="#">О компании</a></li>
+            <li class="main-nav__list-item"><a href="#">Услуги
+                <svg width="16" height="16">
+                  <use xlink:href="./assets/sprite.svg#icon-arrow"></use>
+                </svg></a></li>
+            <li class="main-nav__list-item"><a href="#">Акции</a></li>
+            <li class="main-nav__list-item"><a href="#">Блог</a></li>
+            <li class="main-nav__list-item"><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="contact-block"><a href="tel:+78127151077">+7 (812) 715-10-77</a><a href="mailto:office@web-expert.pro">office@web-expert.pro</a></div>
+      </div>
+    </footer><a class="page-up-btn" href="#"><img src="./assets/img/rocket-img.png" alt="Листать вверх" width="285" height="420"></a>
     <!--include ./modals/...-->
     <!--script(src="./js/bundle.js")-->
   </body>

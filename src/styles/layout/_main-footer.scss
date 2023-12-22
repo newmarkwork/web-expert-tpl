@@ -1,0 +1,26 @@
+.main-footer {
+  padding: 24px 0;
+
+  position: relative;
+  &::after {
+    position: absolute;
+    top: -550px;
+    right: 15vw;
+    width: 500px;
+    height: 500px;
+    content:'';
+    background-image: url("../assets/img/offer-section-figure.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  &__container {
+    @extend .flex-wrap;
+    align-items: center;
+  }
+
+  .main-logo {
+    width: 195px;
+  }
+}

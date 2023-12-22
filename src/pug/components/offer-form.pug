@@ -1,0 +1,34 @@
+.offer-form
+  form(action="#")
+    .offer-form__wrapper
+      fieldset
+        label(for="user_name").main-text Имя *
+        input(type="text" placeholder="Иван Иванов")
+
+      fieldset
+        label(for="user_phone").main-text Телефон *
+        input(type="text" id="user_phone" placeholder="+7 000 000 00 00")
+
+      fieldset
+        label(for="user_link").main-text Ссылка на Ваш сайт
+        input(type="text" id="user_link" placeholder="www.")
+
+      fieldset.user-files-field
+        label(for="user_file").main-text Файл с информацией о проекте
+        label(for="user_file").main-text.user-files-field-upload Нет файла
+        input(type="file" id="user_file" placeholder="Нет файла")
+
+      fieldset
+        +main-btn({
+          type: 'submit',
+          text: 'Отправить заявку',
+          cls: 'main-btn--secondary',
+          imgPath: "./assets/img/icon-post.svg",
+          imgAlt: "Иконка конверта",
+          imgWidth: 24,
+          imgHeight: 24
+        })
+
+    fieldset.user-rules-field
+      input(type="checkbox" id="user_accept_rules")
+      label(for="user_accept_rules").main-text Заполняя данную форму, я даю согласие на <a href="#">обработку персональных данных</a>

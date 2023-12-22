@@ -1,0 +1,27 @@
+.main-nav {
+  padding: 0 30px;
+  flex-grow: 1;
+
+  &__list {
+    @extend .list-reset;
+    @extend .flex-wrap;
+    align-items: center;
+
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  &__list-item {
+    flex-grow: 1;
+    a {
+      @extend .flex-centered-content;
+      padding: 15px;
+      color: var(--base-text-color);
+
+      svg {
+        margin-left: 10px;
+      }
+    }
+  }
+}
