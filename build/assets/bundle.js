@@ -190,10 +190,7 @@ setup();
 /*!*****************************************!*\
   !*** ./src/scripts/modules/services.js ***!
   \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
+/***/ (() => {
 
 var cards = document.querySelectorAll('.service-card');
 
@@ -23611,6 +23608,7 @@ var __webpack_exports__ = {};
   \*****************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/services */ "./src/scripts/modules/services.js");
+/* harmony import */ var _modules_services__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_services__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/accordeon */ "./src/scripts/modules/accordeon.js");
 /* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_accordeon__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _modules_swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/swiper */ "./src/scripts/modules/swiper.js");
