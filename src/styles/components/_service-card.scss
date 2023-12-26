@@ -1,5 +1,6 @@
 .service-card {
   width: 100%;
+  // max-width: 485px;
 
   height: fit-content;
   border-radius: 40px;
@@ -10,7 +11,7 @@
     @extend .flex-column;
     gap: 8px;
     padding: 60px 40px;
-    padding: 6vh 3vw;
+    padding: 6vh 2vw;
     border-radius: 40px 40px 0px 0px;
     border: 2px solid var(--service-card-header-border);
     color: var(--white);
@@ -63,13 +64,11 @@
     column-gap: 20px;
     row-gap: 4px;
     margin-bottom: 30px;
-    justify-content: space-between;
 
     &-item {
       display: flex;
       align-items: center;
       width: fit-content;
-      min-width: 185px;
 
       img {
         width: 30px;
