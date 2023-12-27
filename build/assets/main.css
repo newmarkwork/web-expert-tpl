@@ -1160,7 +1160,7 @@ button.swiper-pagination-bullet {
   --content-width: 1720px;
   --content-fluid-width: 1920px;
   --container-offset: 100px;
-  --container-fluid-offset: 20px;
+  --container-fluid-offset: 40px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
   --container-fluid-width: calc(var(--content-fluid-width));
   --main-scrollbar-width: 6px;
@@ -1407,6 +1407,12 @@ fieldset {
   margin: 0 auto;
   padding: 0 var(--container-offset);
   max-width: var(--container-width);
+  /* up/down desktop-lg(1920),desktop(1440),laptop(1140),tablet-lg(960),tablet(768),mobile-lg(534)*/
+}
+@media (max-width: 1439px) {
+  .container {
+    padding: 0 60px;
+  }
 }
 
 .container-fluid {
@@ -1459,11 +1465,10 @@ fieldset {
 }
 
 .skew-section {
-  margin: 150px 0;
   -webkit-transform: skew(0, -10deg);
   -ms-transform: skew(0, -10deg);
   transform: skew(0, -10deg);
-  padding: 100px 0;
+  padding: 300px 0;
   background-color: var(--primary);
 }
 .skew-section .container,
@@ -1477,7 +1482,24 @@ fieldset {
   background: radial-gradient(67.45% 66.63% at 110% -18.83%, #06F 0.94%, #8B00FF 100%), #8B00FF;
 }
 
+.grid-section {
+  position: relative;
+}
+.grid-section-line {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(177, 177, 176, 0.3);
+  z-index: -1;
+}
+
 .main-header {
+  z-index: 10;
+}
+
+.reviews,
+.offer {
   z-index: 10;
 }
 
@@ -1881,6 +1903,45 @@ fieldset {
   width: auto;
 }
 
+.scrollable-slider-controls {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 10vw;
+  width: 140px;
+  height: 52px;
+}
+.scrollable-slider-controls .swiper-button-prev::after,
+.scrollable-slider-controls .swiper-button-next::after {
+  font-size: 20px;
+  color: var(--white);
+}
+.scrollable-slider-controls .swiper-button-prev,
+.scrollable-slider-controls .swiper-button-next {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 5px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+}
+.scrollable-slider-controls .swiper-button-prev {
+  left: 0;
+}
+.scrollable-slider-controls .swiper-button-next {
+  right: 0;
+}
+
 .review-card {
   gap: 10px;
   padding: 30px;
@@ -1987,6 +2048,8 @@ fieldset {
 .hero {
   position: relative;
   overflow-x: clip;
+  margin-top: 150px;
+  padding: 100px 0 200px;
 }
 .hero__container.container {
   -webkit-transform: none;
@@ -2136,9 +2199,6 @@ fieldset {
   text-align: center;
 }
 
-.about {
-  padding-bottom: 200px;
-}
 .about__side {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -2157,7 +2217,6 @@ fieldset {
 }
 
 .support {
-  padding: 300px 0 200px;
   margin: 0;
 }
 .support__content .main-title span {
@@ -2177,7 +2236,6 @@ fieldset {
 .services {
   position: relative;
   padding: 200px 0 0;
-  margin: 0;
   background-color: var(--gray-20);
   z-index: 1;
 }
@@ -2198,7 +2256,7 @@ fieldset {
 .advantages {
   position: relative;
   overflow: hidden;
-  padding: 150px 0 50px;
+  margin: 0;
   background-color: transparent;
 }
 .advantages #canvas {
@@ -2209,6 +2267,9 @@ fieldset {
   z-index: -1;
   width: 100%;
   height: 100%;
+  -webkit-transform: skew(0, 10deg);
+  -ms-transform: skew(0, 10deg);
+  transform: skew(0, 10deg);
 }
 .advantages .main-title {
   text-align: center;
@@ -2243,13 +2304,15 @@ fieldset {
 }
 
 .reviews {
-  padding: 300px 0;
   margin-top: 0;
 }
 .reviews .main-title {
   text-align: center;
 }
-.reviews .reviews__content {
+.reviews__container {
+  position: relative;
+}
+.reviews__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2257,6 +2320,12 @@ fieldset {
   width: 100%;
 }
 
+.faq {
+  position: relative;
+}
+.faq.skew-section {
+  background-color: transparent;
+}
 .faq__container {
   display: -ms-grid;
   display: grid;
@@ -2272,10 +2341,25 @@ fieldset {
   height: fit-content;
   padding-top: 150px;
 }
+.faq__label {
+  position: absolute;
+  font-size: 500px;
+  line-height: 1;
+  font-weight: 600;
+  color: #FAFAFA;
+}
+.faq__label--top {
+  top: -500px;
+  right: -100vw;
+}
+.faq__label--bottom {
+  bottom: -500px;
+  left: -100vw;
+}
 
 .offer {
   position: relative;
-  padding: 250px 0;
+  margin-bottom: 150px;
 }
 .offer .main-title {
   font-size: 50px;

@@ -50,7 +50,7 @@ if( cards ) {
 
       let cardAnimation = gsap.timeline({paused: true, delay: .2});
 
-      cardAnimation.to(current, {duration: .05, scale: 0.99, ease: "none"});
+      // cardAnimation.to(current, {duration: .05, scale: 0.99, ease: "none"});
       cardAnimation.to(current, {y: 5, duration: .05, scale: 0.99, ease: "none"});
       cardAnimation.to(current, {
         scale: 1.02,
@@ -97,7 +97,9 @@ if( cards ) {
           });
         }
 
-      services.style.minHeight = `${ ( ( cards[cards.length - 1].getBoundingClientRect().height ) / 100 ) * 90 }px`;
+      setTimeout(() => {
+        services.style.minHeight = `${ ( ( cards[cards.length - 1].getBoundingClientRect().height ) / 100 ) * 90 }px`;
+      }, 0);
     }
 
     init();

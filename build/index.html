@@ -43,21 +43,22 @@
                           <button class="main-btn--secondary main-btn" type="button"><img src="./assets/img/icon-post.svg" alt="Иконка конверта" width="24" height="24"><span>Оставить заявку</span>
                           </button>
               </div>
-              <div class="hero__side">
-                <div class="hero__side-wrapper" style="background-image: url('./assets/img/hero-img.jpg')">
-                  <video src="./assets/video/main-hero-video.mp4" loop playsinline preload="auto" autoplay muted></video><svg  max-width="100%" width="100" max-height="100vh" height="100" width="0" height="0">
-<defs>
-<clipPath id="heroClipPathId">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M132.5 4.5C149.5 -3 124.786 8.5 124.786 16.844L1.14796 399.673C-1.04794 406.472 0.550358 413.927 5.34086 419.228L268 712.5C272.096 717.032 277 724.231 299.5 724.231H2728.5V0H169H149.5L132.5 4.5Z" fill="black"/>
-</clipPath>
-</defs>
-</svg>
-                </div>
-              </div>
+              <!--.hero__side
+              .hero__side-wrapper(style="background-image: url('./assets/img/hero-img.jpg')")
+                video(src="./assets/video/main-hero-video.mp4" loop playsinline preload="auto" autoplay muted)
+              
+                <svg  max-width="100%" width="100" max-height="100vh" height="100" width="0" height="0">
+                  <defs>
+                    <clipPath id="heroClipPathId">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M132.5 4.5C149.5 -3 124.786 8.5 124.786 16.844L1.14796 399.673C-1.04794 406.472 0.550358 413.927 5.34086 419.228L268 712.5C272.096 717.032 277 724.231 299.5 724.231H2728.5V0H169H149.5L132.5 4.5Z" fill="black"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              -->
             </div>
           </section>
           <section class="section features">
-            <div class="container features__container">
+            <div class="container-fluid features__container">
               <ul class="features__list">
                 <li class="features__list-item"><img src="./assets/img/feature-icon-1.png" alt="Устали от технических проблем на сайте?" width="60" height="60"><span class="features__list-item-title">Устали от технических проблем на сайте?</span><span class="features__list-item-text">Доверьте его нам и забудьте о заботах!</span></li>
                 <li class="features__list-item"><img src="./assets/img/feature-icon-2.png" alt="Ваш сайт нуждается в оптимизации?" width="60" height="60"><span class="features__list-item-title">Ваш сайт нуждается в оптимизации?</span><span class="features__list-item-text">Мы поможем увеличить его видимость в поиске!</span></li>
@@ -259,7 +260,8 @@
               <div class="support__side"><img src="./assets/img/support-img.png" alt="Поддержка" width="415" height="390"></div>
             </div>
           </section>
-          <section class="section skew-section advantages"><canvas id="canvas"></canvas>
+          <section class="section skew-section advantages">
+            <canvas id="canvas"></canvas>
             <div class="container advantages__container">
               <h2 class="main-title main-title--dark">Почему выбирают нас</h2>
               <ul class="advantages__list">
@@ -287,7 +289,7 @@
               </ul>
             </div>
           </section>
-          <section class="section skew-section reviews">
+          <section class="section skew-section grid-section reviews">
             <div class="container reviews__container">
               <h2 class="main-title">Отзывы</h2>
               <div class="scrollable-slider-controls">
@@ -424,8 +426,8 @@
               </div>
             </div>
           </section>
-          <section class="section faq">
-            <div class="container faq__container">
+          <section class="section skew-section grid-section faq">
+            <div class="container faq__container"><span class="faq__label faq__label--top" aria-hidden="true">Ответ</span><span class="faq__label faq__label--bottom" aria-hidden="true">Вопрос</span>
               <div class="faq__side">
                 <h2 class="main-title main-title--dark">Вопрос ответ</h2>
                 <p class="main-text main-text--dark">!!!!!!Чтобы привлекать новых пользователей на сайт из таких поисковых систем, как Google и Яндекс, очень важно сначала оптимизировать контент. Один из эффективных способов привлечения трафика — SEO-текст.</p>
@@ -490,7 +492,7 @@
               </div>
             </div>
           </section>
-          <section class="section skew-section offer">
+          <section class="section skew-section grid-section offer">
             <div class="container offer__container">
               <h2 class="main-title">Нужна <span>профессиональная</span> поддержка?</h2>
               <div class="offer-form">

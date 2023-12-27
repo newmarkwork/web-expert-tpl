@@ -1,4 +1,10 @@
 .faq {
+  position: relative;
+
+  &.skew-section {
+    background-color: transparent;
+  }
+
   &__container {
     display: grid;
     grid-template-columns: 4fr 7fr;
@@ -10,5 +16,24 @@
     top: 0;
     height: fit-content;
     padding-top: 150px;
+  }
+
+  &__label {
+    position: absolute;
+
+    font-size: 500px;
+    line-height: 1;
+    font-weight: 600;
+    color: #FAFAFA;
+
+    &--top {
+      top: -500px;
+      right: -100vw;
+    }
+
+    &--bottom {
+      bottom: -500px;
+      left: -100vw;
+    }
   }
 }

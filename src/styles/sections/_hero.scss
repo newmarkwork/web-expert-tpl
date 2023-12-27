@@ -1,6 +1,8 @@
 .hero {
   position: relative;
   overflow-x: clip;
+  margin-top: 150px;
+  padding: 100px 0 200px;
 
   &__container.container {
     transform: none;
