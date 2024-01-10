@@ -42,52 +42,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
-var labels = document.querySelectorAll('.faq__label');
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.faq__label--top', {
+  scrollTrigger: {
+    trigger: '.faq',
+    start: 'top center',
+    scrub: true,
+    end: '+=3000'
+  },
+  right: '100vw'
+});
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.faq__label--bottom', {
+  scrollTrigger: {
+    trigger: '.faq',
+    start: 'bottom bottom',
+    scrub: true,
+    end: '+=3000',
+    markers: true
+  },
+  left: '100vw' // x ????
 
-if (labels) {
-  labels.forEach(function (label) {
-    if (label.classList.contains('faq__label--top')) {
-      console.log('TOP');
-      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.faq__label--top', {
-        scrollTrigger: {
-          trigger: '.faq',
-          start: 'top center',
-          scrub: true,
-          end: '+=3000'
-        },
-        right: '100vw',
-        ease: 'back'
-      });
-    }
-
-    if (label.classList.contains('faq__label--top')) {
-      console.log('TOP');
-      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to('.faq__label--bottom', {
-        scrollTrigger: {
-          trigger: '.faq',
-          start: 'bottom bottom',
-          scrub: true,
-          end: '+=3000',
-          markers: true
-        },
-        left: '100vw',
-        ease: 'back'
-      });
-    } // label.classList.contains('faq__label--bottom') ?
-    //   gsap.to(section, {
-    //     scrollTrigger: {
-    //         trigger: section,
-    //         start: 'top top',
-    //         scrub: true,
-    //         end: '+=500',
-    //         markers: true
-    //     },
-    //     skewY: '8deg'
-    //   })
-    // : null;
-
-  });
-}
+});
 
 /***/ }),
 
@@ -97,19 +71,18 @@ if (labels) {
   \**************************************************/
 /***/ (() => {
 
-var sections = document.querySelectorAll('.grid-section');
+var sections = document.querySelectorAll(".grid-section");
 
 if (sections) {
-  console.log(sections);
   var _LINES_COUNT = 4;
 
   var fillLines = function fillLines(parentNode, offset, nodeWidth) {
-    var isExist = parentNode.querySelector('.grid-section-line');
+    var isExist = parentNode.querySelector(".grid-section-line");
 
     if (isExist === null) {
       for (var i = 0; i < _LINES_COUNT; i++) {
         var line = document.createElement("div");
-        line.classList.add('grid-section-line');
+        line.classList.add("grid-section-line");
         parentNode.append(line);
       }
     }
@@ -118,7 +91,7 @@ if (sections) {
   };
 
   var calculateLinePos = function calculateLinePos(parentNode, nodeWidth, offset) {
-    var lines = parentNode.querySelectorAll('.grid-section-line');
+    var lines = parentNode.querySelectorAll(".grid-section-line");
     lines.forEach(function (line, i) {
       i === 0 ? line.style.left = offset : i === 1 ? line.style.left = "".concat(nodeWidth / (_LINES_COUNT - 1), "px") : i === 2 ? line.style.right = "".concat(nodeWidth / (_LINES_COUNT - 1), "px") : i === 3 ? line.style.right = offset : null;
     });
@@ -126,7 +99,7 @@ if (sections) {
 
   var calculateLineProps = function calculateLineProps() {
     sections.forEach(function (section) {
-      var container = section.querySelector('.container');
+      var container = section.querySelector(".container");
       var nodeWidth = container.getBoundingClientRect().width;
       var offset = getComputedStyle(container).paddingLeft;
       fillLines(section, offset, nodeWidth);
@@ -134,7 +107,7 @@ if (sections) {
   };
 
   calculateLineProps();
-  window.addEventListener('resize', calculateLineProps);
+  window.addEventListener("resize", calculateLineProps);
 }
 
 /***/ }),
@@ -154,7 +127,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger, gsap_ScrollSmoother__WEBPACK_IMPORTED_MODULE_2__.ScrollSmoother);
-console.log(gsap__WEBPACK_IMPORTED_MODULE_0__.gsap);
 gsap_ScrollSmoother__WEBPACK_IMPORTED_MODULE_2__.ScrollSmoother.create({
   smooth: 1,
   // how long (in seconds) it takes to "catch up" to the native scroll position
@@ -162,58 +134,94 @@ gsap_ScrollSmoother__WEBPACK_IMPORTED_MODULE_2__.ScrollSmoother.create({
   // looks for data-speed and data-lag attributes on elements
   smoothTouch: 0.1 // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
 
-}); // const sections = gsap.utils.toArray('.skew-section');
-// sections.forEach((section) => {
-//   gsap.to(section, {
-//     scrollTrigger: {
-//         trigger: section,
-//         start: 'top top',
-//         scrub: true,
-//         end: '+=500',
-//         markers: true
-//     },
-//     skewY: '8deg'
-// });
-// })
-// top+=100
-// end: () => `+=${elem.offsetHeight}` // will be updated
-
-gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to('.features', {
+});
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(".features", {
   scrollTrigger: {
-    trigger: '.features',
-    start: 'top top+=100',
+    trigger: ".features",
+    start: "top top+=100",
     scrub: true,
     markers: true
   },
   y: 75
 });
-gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to('.hero', {
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(".hero", {
   scrollTrigger: {
     trigger: "header",
     start: "top top",
     end: "+=1500",
     scrub: 1,
-    markers: true,
-    onEnter: function onEnter() {
-      console.log('ENTER');
-    }
+    markers: true
   },
-  skewY: '8deg'
+  skewY: "8deg"
 });
-gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to('.hero__content', {
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(".hero__content", {
   scrollTrigger: {
     trigger: "header",
     start: "top top",
     end: "+=1500",
-    // end: "bottom center",
     scrub: 1,
-    markers: true,
-    onEnter: function onEnter() {
-      console.log('ENTER');
-    }
+    markers: true // onEnter: () => {
+    //   console.log("ENTER");
+    // },
+
   },
-  skewY: '-8deg'
+  skewY: "-8deg"
 });
+
+/***/ }),
+
+/***/ "./src/scripts/modules/gsap/services.js":
+/*!**********************************************!*\
+  !*** ./src/scripts/modules/gsap/services.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+
+var cards = document.querySelectorAll(".service-card");
+
+if (cards) {
+  var cardsArr = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray(cards);
+
+  var onMouseLeaveHandler = function onMouseLeaveHandler(evt) {
+    var current = evt.currentTarget;
+    current.removeEventListener("mouseleave", onMouseLeaveHandler);
+    current.addEventListener("mouseenter", onMouseEnterHandler);
+  };
+
+  var onMouseEnterHandler = function onMouseEnterHandler(evt) {
+    console.log("ENETER");
+    var current = evt.currentTarget;
+    current.removeEventListener("mouseenter", onMouseEnterHandler);
+    current.addEventListener("mouseleave", onMouseLeaveHandler);
+    var cardAnimation = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
+      paused: true,
+      delay: 0.25
+    });
+    cardAnimation.to(current, {
+      scale: 1.02,
+      y: -10,
+      duration: 0.5,
+      zIndex: 100,
+      ease: "linear",
+      boxShadow: "rgba(0, 0, 0, 0.5) 0px 47px 211px 0px"
+    });
+    cardAnimation.play();
+
+    var onLeaveHandler = function onLeaveHandler() {
+      cardAnimation.reverse();
+      current.removeEventListener("mouseleave", onLeaveHandler);
+    };
+
+    current.addEventListener("mouseleave", onLeaveHandler);
+  };
+
+  cardsArr.forEach(function (card) {
+    card.addEventListener("mouseenter", onMouseEnterHandler);
+  });
+}
 
 /***/ }),
 
@@ -344,128 +352,6 @@ var delay = 200,
     rgb = opts.lineColor.match(/\d+/g);
 resizeReset();
 setup();
-
-/***/ }),
-
-/***/ "./src/scripts/modules/services.js":
-/*!*****************************************!*\
-  !*** ./src/scripts/modules/services.js ***!
-  \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-
-var cards = document.querySelectorAll('.service-card');
-
-if (cards) {
-  document.addEventListener("DOMContentLoaded", function () {
-    var cardsArr = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray(cards);
-    var services = document.querySelector('.services__content');
-    var minContentWidth = 1720;
-
-    var onMouseLeaveHandler = function onMouseLeaveHandler(evt) {
-      var current = evt.currentTarget;
-      current.removeEventListener('mouseleave', onMouseLeaveHandler);
-      current.addEventListener('mouseenter', onMouseEnterHandler); // cards.forEach( (card,index) => {
-      //   card.style.zIndex = index * 10;
-      // });
-      // gsap.to('.service-card', {opacity: 1, duration: .1, ease: 'none'});
-    };
-
-    var onMouseEnterHandler = function onMouseEnterHandler(evt) {
-      var current = evt.currentTarget;
-      current.removeEventListener('mouseenter', onMouseEnterHandler);
-      current.addEventListener('mouseleave', onMouseLeaveHandler); //---------------
-      // let currentIndex = null;
-      // cards.forEach( (card,index) => {
-      //   if(card === current) {
-      //     currentIndex = index;
-      //   }
-      // });
-      // for (let i = 0; i < cards.length; i++) {
-      //   if(i !== currentIndex) {
-      //     cards[i].style.zIndex = (i + 1) * 10;
-      //   }
-      //   if(i === currentIndex) {
-      //     cards[currentIndex].style.zIndex = cards.length * 100;
-      //   }
-      //   if(i > currentIndex) {
-      //     cards[i].style.zIndex = (cards.length - i ) * 10;
-      //   }
-      // }
-      //-----------
-
-      var cardAnimation = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline({
-        paused: true,
-        delay: .2
-      }); // cardAnimation.to(current, {duration: .05, scale: 0.99, ease: "none"});
-
-      cardAnimation.to(current, {
-        y: 5,
-        duration: .05,
-        scale: 0.99,
-        ease: "none"
-      });
-      cardAnimation.to(current, {
-        scale: 1.02,
-        y: -10,
-        duration: .2,
-        zIndex: 100,
-        ease: "none"
-      });
-      cardAnimation.play();
-
-      var onLeaveHandler = function onLeaveHandler() {
-        cardAnimation.reverse();
-        current.removeEventListener('mouseleave', onLeaveHandler);
-      };
-
-      current.addEventListener('mouseleave', onLeaveHandler);
-    };
-
-    var init = function init() {
-      var contentWidth = services.getBoundingClientRect().width; // Ширина контентной области с карточками услуг
-
-      if (contentWidth > minContentWidth) {
-        var gap = 20; // Расстояние между карточками
-
-        var cardWidth = contentWidth / cards.length; // Ширина карточки
-
-        var offsetWidth = cards.length * gap / (cards.length - 1); // Вычимсляем расстояние между карточками, для симметричного расположения
-
-        cards.forEach(function (card, index) {
-          card.style.width = cardWidth - offsetWidth + 'px';
-          card.style.left = cardWidth * index + offsetWidth - offsetWidth / 2 + 'px';
-        });
-      } else {
-        var initialCardWidth = contentWidth / cards.length;
-        var offset = initialCardWidth / 100 * (100 / cards.length);
-
-        var _cardWidth = initialCardWidth + offset;
-
-        var translateValue = _cardWidth / (cards.length - 1) * 2;
-        cards.forEach(function (card, index) {
-          card.style.width = _cardWidth + 'px';
-          card.style.left = "".concat(translateValue * index + offset / 2, "px");
-        });
-      }
-
-      setTimeout(function () {
-        services.style.minHeight = "".concat(cards[cards.length - 1].getBoundingClientRect().height / 100 * 90, "px");
-      }, 0);
-    };
-
-    init();
-    cards.forEach(function (card, index) {
-      card.style.position = 'absolute';
-      card.style.top = 0;
-      card.addEventListener('mouseenter', onMouseEnterHandler);
-    });
-    window.addEventListener('resize', init);
-  });
-}
 
 /***/ }),
 
@@ -23784,7 +23670,7 @@ var __webpack_exports__ = {};
   !*** ./src/scripts/main.js ***!
   \*****************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/services */ "./src/scripts/modules/services.js");
+/* harmony import */ var _modules_gsap_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/gsap/services */ "./src/scripts/modules/gsap/services.js");
 /* harmony import */ var _modules_gsap_grid_section_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/gsap/grid-section.js */ "./src/scripts/modules/gsap/grid-section.js");
 /* harmony import */ var _modules_gsap_grid_section_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_gsap_grid_section_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _modules_gsap_faq_text_line_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/gsap/faq-text-line.js */ "./src/scripts/modules/gsap/faq-text-line.js");
@@ -23796,13 +23682,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_gsap_scrollSmoother__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/gsap/scrollSmoother */ "./src/scripts/modules/gsap/scrollSmoother.js");
 //import ./modules/test;
 // import "./modules/old-services";
+// import "./modules/services";
 
 
 
 
 
 
-
+ // const services = document.querySelector(".services");
+// const calculateHeight = () => {
+//   const height = services.getBoundingClientRect().height;
+//   services.style.height = height - 450 + "px";
+// };
+// window.addEventListener("resize", () => {
+//   services.style.height = "initial";
+//   calculateHeight();
+// });
+// calculateHeight();
 })();
 
 /******/ })()
