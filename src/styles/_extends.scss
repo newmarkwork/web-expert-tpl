@@ -27,19 +27,19 @@
 
 .base-grid-container {
   display: grid;
-  grid-template-columns: auto 450px;
+  grid-template-columns: auto 650px;
   grid-gap: 6vw;
 }
 
 /*scroll*/
 .main-scroll {
   &::-webkit-scrollbar {
-      background-color: var(--main-scrollbar-color);
-      width: var(--main-scrollbar-width);
+    background-color: var(--main-scrollbar-color);
+    width: var(--main-scrollbar-width);
   }
 
   &::-webkit-scrollbar-thumb {
-      background-color: var(--main-scrollbar-thumb-color);
+    background-color: var(--main-scrollbar-thumb-color);
   }
 }
 

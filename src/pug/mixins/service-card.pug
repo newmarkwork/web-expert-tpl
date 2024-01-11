@@ -23,7 +23,7 @@ mixin service-card(data)
 
         ul.service-card__works-list
           each item in data.works
-            li.service-card__works-list-item(class= !!item.isBold ? 'service-card__body-works-list-item--bold' : null)!= item.title
+            li.service-card__works-list-item(class= !!item.isBold ? 'service-card__works-list-item--bold' : null)!= item.title
 
       span.service-card__price!= data.price
 

@@ -1,11 +1,8 @@
 .about {
-  // padding-bottom: 200px;
+  padding: 60px 0 120px;
 
   &__container {
     @extend .base-grid-container;
-  }
-
-  &__content {
   }
 
   &__side {
@@ -19,7 +16,13 @@
   }
 
   &__list-item {
-    margin-bottom: 30px;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    p {
+      margin: 0;
+    }
 
     span {
       display: inline-block;

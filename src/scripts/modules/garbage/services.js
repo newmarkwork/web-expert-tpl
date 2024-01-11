@@ -1,10 +1,8 @@
 import { gsap } from "gsap";
 
-const cards = document.querySelectorAll(".service-card");
+const cards = gsap.utils.toArray(".service-card");
 
 if (cards) {
-  const cardsArr = gsap.utils.toArray(cards);
-
   const onMouseLeaveHandler = (evt) => {
     const current = evt.currentTarget;
 
@@ -13,7 +11,6 @@ if (cards) {
   };
 
   const onMouseEnterHandler = (evt) => {
-    console.log("ENETER");
     const current = evt.currentTarget;
 
     current.removeEventListener("mouseenter", onMouseEnterHandler);
@@ -40,7 +37,7 @@ if (cards) {
     current.addEventListener("mouseleave", onLeaveHandler);
   };
 
-  cardsArr.forEach((card) => {
+  cards.forEach((card) => {
     card.addEventListener("mouseenter", onMouseEnterHandler);
   });
 }

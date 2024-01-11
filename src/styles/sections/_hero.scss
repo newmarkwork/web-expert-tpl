@@ -10,7 +10,7 @@
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 100px;
     min-height: 720px;
 
@@ -28,12 +28,14 @@
       background-size: contain;
       background-repeat: no-repeat;
       z-index: 10;
-      transform: skew(0, 10deg),
+      will-change: auto;
+      transform: skew(0, 10deg);
     }
   }
 
   &__content {
     padding: 100px 0;
+    will-change: auto;
     transform: skew(0, 10deg);
   }
 
@@ -82,7 +84,6 @@
       height: inherit;
       max-height: 100%;
       object-fit: cover;
-
     }
 
     svg {

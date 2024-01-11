@@ -1166,6 +1166,7 @@ button.swiper-pagination-bullet {
   --main-scrollbar-width: 6px;
   --main-scrollbar-color: var(--secondary);
   --main-scrollbar-thumb-color: var(--primary);
+  --service-card-transition: 0.5s 0.1s linear;
 }
 
 :root {
@@ -1347,8 +1348,8 @@ fieldset {
 .base-grid-container, .support__container, .about__container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 450px;
-  grid-template-columns: auto 450px;
+  -ms-grid-columns: auto 650px;
+  grid-template-columns: auto 650px;
   grid-gap: 6vw;
 }
 
@@ -1777,10 +1778,26 @@ fieldset {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  will-change: auto;
   border-radius: 40px;
   background-color: var(--service-card-bg);
-  -webkit-box-shadow: 0px 47px 111px 0px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 47px 111px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+  -webkit-transition: -webkit-box-shadow var(--service-card-transition), -webkit-transform var(--service-card-transition);
+  transition: -webkit-box-shadow var(--service-card-transition), -webkit-transform var(--service-card-transition);
+  -o-transition: box-shadow var(--service-card-transition), transform var(--service-card-transition);
+  transition: box-shadow var(--service-card-transition), transform var(--service-card-transition);
+  transition: box-shadow var(--service-card-transition), transform var(--service-card-transition), -webkit-box-shadow var(--service-card-transition), -webkit-transform var(--service-card-transition);
+  -webkit-transform: scale(1.001);
+  -ms-transform: scale(1.001);
+  transform: scale(1.001);
+}
+.service-card:hover, .service-card:focus {
+  -webkit-box-shadow: 0px 47px 200px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 47px 200px 0px rgba(0, 0, 0, 0.25);
+  -webkit-transform: scale(1.02) translateY(-10px);
+  -ms-transform: scale(1.02) translateY(-10px);
+  transform: scale(1.02) translateY(-10px);
 }
 .service-card__header {
   gap: 8px;
@@ -2085,12 +2102,14 @@ fieldset {
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 10;
+  will-change: auto;
   -webkit-transform: skew(0, 10deg);
   -ms-transform: skew(0, 10deg);
   transform: skew(0, 10deg);
 }
 .hero__content {
   padding: 100px 0;
+  will-change: auto;
   -webkit-transform: skew(0, 10deg);
   -ms-transform: skew(0, 10deg);
   transform: skew(0, 10deg);
@@ -2169,7 +2188,7 @@ fieldset {
   position: relative;
   width: 100%;
   height: 100%;
-  margin-top: -300px;
+  margin-top: -250px;
   z-index: 11;
 }
 .features__list {
@@ -2208,6 +2227,9 @@ fieldset {
   text-align: center;
 }
 
+.about {
+  padding: 60px 0 120px;
+}
 .about__side {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -2215,8 +2237,11 @@ fieldset {
   position: sticky;
   top: 5vh;
 }
-.about__list-item {
+.about__list-item:not(:last-child) {
   margin-bottom: 30px;
+}
+.about__list-item p {
+  margin: 0;
 }
 .about__list-item span {
   display: inline-block;
@@ -2247,6 +2272,20 @@ fieldset {
   padding: 200px 0 0;
   background-color: var(--gray-20);
   z-index: 1;
+}
+.services__container {
+  position: relative;
+}
+.services__container::before {
+  position: absolute;
+  bottom: 0;
+  left: -15vw;
+  content: "";
+  width: 60vw;
+  height: 760px;
+  background-image: url("../assets/img/services-figure.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .services .main-title {
   text-align: center;
@@ -2318,6 +2357,10 @@ fieldset {
 }
 .reviews__container {
   position: relative;
+  padding-right: 0;
+}
+.reviews .container-fluid {
+  padding-right: 0;
 }
 .reviews__content {
   display: -webkit-box;
@@ -2331,6 +2374,7 @@ fieldset {
   position: relative;
 }
 .faq.skew-section {
+  padding: 0;
   background-color: transparent;
 }
 .faq__container {
@@ -2339,6 +2383,9 @@ fieldset {
   -ms-grid-columns: 4fr 7fr;
   grid-template-columns: 4fr 7fr;
   grid-gap: 5vw;
+  padding-top: 400px;
+  padding-bottom: 400px;
+  overflow-x: hidden;
 }
 .faq__side {
   position: sticky;
@@ -2348,19 +2395,25 @@ fieldset {
   height: fit-content;
   padding-top: 150px;
 }
+.faq__content {
+  position: relative;
+  z-index: 2;
+}
 .faq__label {
   position: absolute;
-  font-size: 500px;
+  font-size: 400px;
   line-height: 1;
   font-weight: 600;
-  color: #FAFAFA;
+  will-change: scroll-position;
+  color: var(--gray-10);
+  z-index: 0;
 }
 .faq__label--top {
-  top: -500px;
+  top: 100px;
   right: -100vw;
 }
 .faq__label--bottom {
-  bottom: -500px;
+  bottom: 100px;
   left: -100vw;
 }
 
