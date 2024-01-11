@@ -319,11 +319,16 @@ var scrollableSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".scro
   slidesPerView: "auto",
   loop: true,
   // freeMode: true,
-  spaceBetween: 30,
-  observer: true,
+  spaceBetween: 15,
+  // observer: true,
   navigation: {
-    nextEl: '.scrollable-slider-controls .swiper-button-next',
-    prevEl: '.scrollable-slider-controls .swiper-button-prev'
+    nextEl: ".scrollable-slider-controls .swiper-button-next",
+    prevEl: ".scrollable-slider-controls .swiper-button-prev"
+  },
+  breakpoints: {
+    535: {
+      spaceBetween: 30
+    }
   }
 });
 

@@ -6,6 +6,12 @@
 .scrollable-slider {
   .swiper-slide {
     width: auto;
+    box-sizing: border-box;
+
+    @include m-b-mobile-lg-down {
+      width: auto;
+      max-width: 100%;
+    }
   }
 }
 
@@ -15,12 +21,25 @@
   transform: translateY(-50%);
   right: 10vw;
   width: 140px;
-  height: 52px;
+  height: 46px;
+
+  @include m-b-down(961px) {
+    width: 100px;
+    height: 36px;
+  }
+
+  @include m-b-mobile-lg-down {
+    right: 15px;
+  }
 
   .swiper-button-prev::after,
   .swiper-button-next::after {
     font-size: 20px;
     color: var(--white);
+
+    @include m-b-down(961px) {
+      font-size: 18px;
+    }
   }
 
   .swiper-button-prev,
@@ -33,8 +52,16 @@
     height: 46px;
     padding: 5px;
 
+    margin: 0;
+    transform: translateY(-50%);
+
     border: 2px solid var(--white);
     border-radius: 50%;
+
+    @include m-b-down(961px) {
+      width: 36px;
+      height: 36px;
+    }
   }
 
   .swiper-button-prev {
@@ -45,6 +72,3 @@
     right: 0;
   }
 }
-
-
-

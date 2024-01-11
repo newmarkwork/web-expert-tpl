@@ -10,16 +10,34 @@
     display: grid;
     grid-template-columns: 4fr 7fr;
     grid-gap: 5vw;
-    padding-top: 400px;
-    padding-bottom: 400px;
+    padding-top: clamp(150px, 36vw, 400px);
+    padding-bottom: clamp(150px, 36vw, 400px);
     overflow-x: hidden;
+
+    @include m-b-laptop-down {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__side {
-    position: sticky;
-    top: 0;
-    height: fit-content;
+    position: relative;
+    z-index: 2;
     padding-top: 150px;
+
+    .main-text {
+      margin: 0;
+    }
+
+    @include m-b-laptop-down {
+      padding-top: 0;
+    }
+
+    @include m-b-tablet-down {
+      .main-text,
+      .main-title {
+        text-align: center;
+      }
+    }
   }
 
   &__content {
@@ -30,7 +48,7 @@
   &__label {
     position: absolute;
 
-    font-size: 400px;
+    font-size: clamp(150px, 36vw, 400px);
     line-height: 1;
     font-weight: 600;
     will-change: scroll-position;
@@ -38,12 +56,14 @@
     z-index: 0;
 
     &--top {
-      top: 100px;
+      // top: 100px;
+      top: clamp(38px, 9vw, 100px);
       right: -100vw;
     }
 
     &--bottom {
-      bottom: 100px;
+      // bottom: 100px;
+      bottom: clamp(38px, 9vw, 100px);
       left: -100vw;
     }
   }

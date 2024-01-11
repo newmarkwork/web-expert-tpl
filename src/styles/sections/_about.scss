@@ -6,9 +6,19 @@
   }
 
   &__side {
+    display: flex;
     height: fit-content;
     position: sticky;
     top: 5vh;
+
+    img {
+      margin: 0 auto;
+
+      @include m-b-tablet-down {
+        position: static;
+        top: unset;
+      }
+    }
   }
 
   &__list {
@@ -19,7 +29,7 @@
     &:not(:last-child) {
       margin-bottom: 30px;
     }
-
+    font-size: clamp(14px, 2vw, 18px);
     p {
       margin: 0;
     }

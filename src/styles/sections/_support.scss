@@ -1,5 +1,4 @@
 .support {
-  // padding: 300px 0 200px;
   margin: 0;
 
   &__container {
@@ -9,15 +8,20 @@
   &__content {
     .main-title span {
       display: block;
-      font-size: 20px;
+      font-size: clamp(14px, 2vw, 20px);
       text-transform: uppercase;
       margin-bottom: 12px;
     }
   }
 
   &__side {
+    display: flex;
     height: fit-content;
     position: sticky;
     top: 5vh;
+
+    img {
+      margin: 0 auto;
+    }
   }
 }

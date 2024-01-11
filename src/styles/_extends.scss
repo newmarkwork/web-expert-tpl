@@ -24,11 +24,14 @@
 }
 
 /*grid*/
-
 .base-grid-container {
   display: grid;
-  grid-template-columns: auto 650px;
+  grid-template-columns: 5fr 3fr;
   grid-gap: 6vw;
+
+  @include m-b-tablet-down {
+    grid-template-columns: 1fr;
+  }
 }
 
 /*scroll*/
