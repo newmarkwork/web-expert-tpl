@@ -16,7 +16,7 @@
     flex-grow: 1;
     a {
       @extend .flex-centered-content;
-      padding: 15px;
+      padding: 10px;
       color: var(--base-text-color);
 
       svg {
