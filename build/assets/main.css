@@ -1314,7 +1314,7 @@ fieldset {
   flex-wrap: wrap;
 }
 
-.flex-centered-content, .main-nav__list-item a, .review-card__rate-item, .main-btn {
+.flex-centered-content, .main-nav__list-item a, .review-card__rate-item, .page-up-btn, .main-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1381,7 +1381,7 @@ fieldset {
   border: 0;
 }
 
-.btn-reset, .main-btn {
+.btn-reset, .page-up-btn, .main-btn {
   border: none;
   padding: 0;
   background: transparent;
@@ -1745,11 +1745,29 @@ fieldset {
 .page-up-btn {
   position: fixed;
   bottom: 150px;
-  right: 5vw;
+  right: 20px;
+  width: 100px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 30;
+}
+@media (max-width: 1023px) {
+  .page-up-btn {
+    width: 20vw;
+    max-width: 100px;
+  }
+}
+.page-up-btn img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+  object-fit: contain;
   -webkit-transform: rotate(30deg);
   -ms-transform: rotate(30deg);
   transform: rotate(30deg);
-  display: none;
 }
 
 .accordeon {
