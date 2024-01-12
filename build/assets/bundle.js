@@ -189,7 +189,7 @@ var opts = {
   particleColor: "rgb(240,240,240)",
   lineColor: "rgb(240,240,240)",
   particleAmount: 60,
-  defaultSpeed: .3,
+  defaultSpeed: 0.3,
   variantSpeed: 1,
   defaultRadius: 2,
   variantRadius: 2,

@@ -31,11 +31,12 @@
     justify-content: center;
 
     @media (min-width: 768px) and (max-width: 1023px) {
+      display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 18px;
     }
 
-    @include m-b-laptop-down {
+    @include m-b-tablet-down {
       display: grid;
       grid-template-columns: 1fr;
     }
