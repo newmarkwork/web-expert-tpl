@@ -2527,7 +2527,7 @@ fieldset {
   margin: 0;
   background-color: transparent;
 }
-.advantages #canvas {
+.advantages #particles {
   position: absolute;
   display: block;
   top: 0;

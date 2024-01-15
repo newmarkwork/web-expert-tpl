@@ -4,9 +4,7 @@ Swiper.use([FreeMode, Mousewheel, Scrollbar, Navigation]);
 const scrollableSlider = new Swiper(".scrollable-slider", {
   slidesPerView: "auto",
   loop: true,
-  // freeMode: true,
   spaceBetween: 15,
-  // observer: true,
 
   navigation: {
     nextEl: ".scrollable-slider-controls .swiper-button-next",
