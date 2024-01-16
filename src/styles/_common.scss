@@ -53,7 +53,7 @@
 }
 
 .main-desc {
-  font-size: 18px;
+  font-size: clamp(14px, 2.5vw, 18px);
   margin-bottom: 40px;
   color: var(--white);
 }

@@ -4,17 +4,28 @@
   margin-top: 150px;
   padding: 100px 0 100px;
 
+  @include m-b-tablet-down {
+    padding: 35px 0;
+  }
+
+  @include m-b-mobile-lg-down {
+    .main-btn {
+      width: 100%;
+    }
+  }
+
   &__container.container {
     transform: none;
   }
 
   &__container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-    min-height: 720px;
-
     position: relative;
+    display: flex;
+    align-items: flex-start;
+
+    @include m-b-tablet-down {
+      flex-direction: column-reverse;
+    }
 
     &::before {
       position: absolute;
@@ -36,82 +47,136 @@
       }
 
       @include m-b-laptop-down {
-        top: -225px;
+        top: -240px;
         left: 30px;
         width: 240px;
         height: 240px;
+      }
+
+      @include m-b-tablet-down {
+        top: -100px;
+        left: -60px;
+
+        width: 120px;
+        height: 120px;
       }
     }
   }
 
   &__content {
     padding: 100px 0;
+    width: 50%;
+    max-width: fit-content;
     will-change: auto;
     transform: skew(0, 10deg);
+    margin: 0 auto;
+
+    @include m-b-laptop-down {
+      padding-top: 60px;
+    }
+
+    @include m-b-tablet-down {
+      width: 100%;
+    }
+
+    @include m-b-mobile-lg-down {
+      padding-top: 30px;
+    }
+
+    .main-title {
+      font-size: clamp(30px, 5vw, 60px);
+    }
 
     .main-title,
     .main-desc {
       max-width: 580px;
+
+      @include m-b-tablet-down {
+        max-width: 100%;
+      }
     }
   }
 
   &__side {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%);
-
+    width: 50%;
     height: 100%;
-    width: 50vw;
-
-    &::before {
-      position: absolute;
-      top: -70px;
-      left: -2vw;
-
-      transform: skew(0, 10deg) rotate(3deg);
-      content: "";
-      width: 900px;
-      height: calc(100% + 90px);
-      background-image: url(../assets/img/hero-overlay.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left;
-      z-index: 10;
-
-      @include m-b-laptop-down {
-        left: 0;
-      }
-    }
 
     &-wrapper {
-      display: inline-block;
-      height: inherit;
-      width: inherit;
+      position: relative;
+      width: 100%;
       background-size: cover;
 
-      clip-path: url(#heroClipPathId);
       transform: translateX(100px) skew(10deg, 0deg);
+
+      &::before {
+        position: absolute;
+        top: -15%;
+        left: -30%;
+        content: "";
+        width: 140%;
+        min-width: 800px;
+        height: 120%;
+        transform: rotate(-5.8deg);
+        background-image: url(../assets/img/hero-overlay-2.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: left;
+        z-index: 10;
+
+        @include m-b-down(1280px) {
+          top: -50%;
+          left: -150px;
+          min-width: 800px;
+          height: 175%;
+          transform: rotate(15deg);
+        }
+
+        @include m-b-tablet-down {
+          top: -5vw;
+          left: -20vw;
+          width: 100vw;
+          min-width: 400px;
+          height: 120%;
+          transform: rotate(-5deg);
+        }
+
+        @include m-b-down(420px) {
+          top: -7vw;
+          left: -24vw;
+        }
+      }
 
       @include m-b-laptop-down {
         transform: translateX(70px) skew(10deg, 0deg);
       }
+
+      @include m-b-mobile-lg-down {
+        transform: translateX(55px) skew(10deg, 0deg);
+      }
     }
 
     video {
-      display: inline-block;
-      width: 100%;
-      height: inherit;
-      max-height: 100%;
+      display: block;
+      width: 68vw;
+      min-width: 1000px;
+      max-width: 1285px;
+      height: auto;
       object-fit: cover;
-    }
 
-    // svg {
-    //   width: 100%;
-    //   height: 100%;
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    // }
+      -webkit-mask-image: url("../assets/img/svg-mask.svg");
+      -webkit-mask-position: center center;
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: cover;
+
+      mask-image: url("../assets/img/svg-mask.svg");
+      mask-position: center left;
+      mask-repeat: no-repeat;
+      mask-size: cover;
+
+      @include m-b-tablet-down {
+        width: 100vw;
+        min-width: 400px;
+      }
+    }
   }
 }
