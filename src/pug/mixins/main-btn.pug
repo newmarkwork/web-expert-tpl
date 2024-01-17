@@ -12,6 +12,19 @@
 //- })
 
 mixin main-btn(data)
+  if data.type === 'offer'
+
+    button(type="button" class= data.cls ? data.cls : null).main-btn
+
+      if data.icon
+        svg(width=data.iconWidth height=data.iconHeight)
+          use(xlink:href=`./assets/sprite.svg#icon-${data.icon}`)
+
+      if data.imgPath
+        img(src= data.imgPath alt= data.imgAlt width= data.imgWidth height= data.imgHeight)
+
+      span!= data.text
+
   if data.type === 'button' || data.type === 'submit'
 
     button(type="button" class= data.cls ? data.cls : null).main-btn

@@ -2,6 +2,21 @@
   position: relative;
   padding: 24px 0;
 
+  .main-logo {
+    width: 100%;
+    max-width: 15vw;
+    min-width: 125px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @include m-b-tablet-down {
+      min-width: 185px;
+    }
+  }
+
   &__container {
     @extend .flex-wrap;
     align-items: center;
@@ -10,7 +25,73 @@
   &__side {
     @extend .flex-wrap;
     margin-left: auto;
-    gap: 30px;
+    gap: 1.5vw;
+
+    @include m-b-tablet-down {
+      gap: 4.5vw;
+    }
+  }
+
+  &__offer-btn {
+    @include m-b-desktop-sm-down {
+      width: 50px;
+      height: 50px;
+      padding: 5px;
+      span {
+        display: none;
+      }
+
+      img {
+        margin-right: 0;
+      }
+    }
+
+    @include m-b-mobile-lg-down {
+      display: none;
+    }
+  }
+}
+
+.burger {
+  display: none;
+
+  @include m-b-tablet-down {
+    display: flex;
+  }
+  @include m-b-mobile-lg-down {
+    width: 36px;
+    height: 36px;
+
+    img {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}
+
+.contact-block-opener {
+  @extend .btn-reset;
+  @extend .flex-centered-content;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--primary);
+  box-shadow: 0px 30px 60px 0px rgba(178, 0, 255, 0.5);
+
+  display: none;
+
+  @include m-b-tablet-down {
+    display: flex;
+  }
+
+  @include m-b-mobile-lg-down {
+    width: 36px;
+    height: 36px;
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
   }
 }
 
@@ -20,12 +101,19 @@
   justify-content: center;
   padding: 0 10px;
 
-  a {
-    font-size: 24px;
+  @include m-b-tablet-down {
+    display: none;
+  }
+
+  a:first-child {
+    font-size: clamp(14px, 1.8vw, 24px);
+    @include m-b-desktop-sm-down {
+      font-weight: 700;
+    }
   }
 
   a:last-child {
-    font-size: 15px;
+    font-size: clamp(12px, 1.4vw, 15px);
     color: var(--info);
   }
 }

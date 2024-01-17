@@ -1,6 +1,10 @@
 .main-nav {
-  padding: 0 30px;
+  padding: 0 1.5vw;
   flex-grow: 1;
+
+  @include m-b-tablet-down {
+    display: none;
+  }
 
   &__list {
     @extend .list-reset;
@@ -16,11 +20,15 @@
     flex-grow: 1;
     a {
       @extend .flex-centered-content;
-      padding: 10px;
+      padding: 10px 1vw;
       color: var(--base-text-color);
 
       svg {
         margin-left: 10px;
+      }
+
+      @include m-b-laptop-lg-down {
+        font-size: 14px;
       }
     }
   }

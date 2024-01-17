@@ -7,14 +7,19 @@ header.main-header
     include ./main-nav
 
     .main-header__side
+      button(type="button" aria-label="Открыть контакты").contact-block-opener
+        img(src="./assets/img/icon-phone-purple.svg" alt="Открыть контакты" width="24" height="24")
+
       include ../components/contact-block
 
       +main-btn({
-        type: 'button',
+        type: 'offer',
         text: 'Заказать услугу',
-        cls: 'main-btn--primary',
+        cls: 'main-btn--primary main-header__offer-btn',
         imgPath: "./assets/img/icon-phone.svg",
         imgAlt: "Телефон",
         imgWidth: 24,
         imgHeight: 24
       })
+
+      include ../components/burger
