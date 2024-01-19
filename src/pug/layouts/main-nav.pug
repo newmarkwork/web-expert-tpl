@@ -1,16 +1,64 @@
 nav.main-nav
-  ul.main-nav__list
-    li.main-nav__list-item
-      a(href="#") О компании
-    li.main-nav__list-item
-      a(href="#")
-        | Услуги
-        //- svg(width="16" height="16")
-        //-   use(xlink:href="./assets/sprite.svg#icon-arrow")
+  .main-nav__header
+    button(type="button" aria-label="Назад").main-nav__back-btn
+      img(src="./assets/img/icon-back.svg" alt="Закрыть" width="20" height="10")
+    button(type="button" aria-label="Закрыть мобильное меню").main-nav__closer
+      img(src="./assets/img/icon-close.svg" alt="Закрыть" width="18" height="18")
 
-    li.main-nav__list-item
-      a(href="#") Акции
-    li.main-nav__list-item
-      a(href="#") Блог
-    li.main-nav__list-item
-      a(href="#") Контакты
+  <ul class="main-nav__list">
+    <li class="main-nav__list-item">
+      <a href="#">
+        <div class="main-nav__list-item-icon">
+          <img src="./assets/img/icon-menu-company.svg" alt="Закрыть" width="20" height="20">
+        </div>
+        <span>О компании</span>
+      </a>
+    </li>
+    <li class="main-nav__list-item opned">
+      <a href="#">
+        <div class="main-nav__list-item-icon">
+          <img src="./assets/img/icon-menu-services.svg" alt="Закрыть" width="20" height="20">
+        </div>
+        <span>Услуги</span>
+      </a>
+      <ul class="main-nav__inner-list">
+        <li class="main-nav__inner-list-item">
+          <a href="#">Базовая поддержка</a>
+        </li>
+        <li class="main-nav__inner-list-item"><a href="#">Стандартная поддержка</a></li>
+        <li class="main-nav__inner-list-item"><a href="#">Улучшенная поддержка</a></li>
+        <li class="main-nav__inner-list-item"><a href="#">Профессиональная поддержка</a></li>
+        <li class="main-nav__inner-list-item"><a href="#">Аудит сайта</a></li>
+      </ul>
+      <button class="main-nav__next-btn" type="button" aria-label="Далее"><img src="./assets/img/icon-menu-arrow.svg" alt="Закрыть" width="20" height="20"></button>
+    </li>
+    <li class="main-nav__list-item">
+
+      <a href="#">
+        <div class="main-nav__list-item-icon">
+          <img src="./assets/img/icon-menu-sale.svg" alt="Закрыть" width="20" height="20">
+        </div>
+        <span>Акции</span>
+      </a>
+    </li>
+    <li class="main-nav__list-item">
+
+      <a href="#">
+        <div class="main-nav__list-item-icon">
+          <img src="./assets/img/icon-menu-blog.svg" alt="Закрыть" width="20" height="20">
+        </div>
+        <span>Блог</span>
+      </a>
+    </li>
+    <li class="main-nav__list-item">
+      <a href="#">
+        <div class="main-nav__list-item-icon">
+          <img src="./assets/img/icon-menu-contacts.svg" alt="Закрыть" width="20" height="20">
+        </div>
+        <span>Контакты</span>
+      </a>
+    </li>
+  </ul>
+
+  include ../components/contact-block
+

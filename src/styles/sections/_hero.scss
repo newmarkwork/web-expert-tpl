@@ -54,11 +54,11 @@
       }
 
       @include m-b-tablet-down {
-        top: -100px;
-        left: -60px;
+        top: -145px;
+        left: -80px;
 
-        width: 120px;
-        height: 120px;
+        width: 180px;
+        height: 180px;
       }
     }
   }
@@ -140,10 +140,10 @@
           transform: rotate(-5deg);
         }
 
-        @include m-b-down(420px) {
-          top: -7vw;
-          left: -24vw;
-        }
+        // @include m-b-down(420px) {
+        //   top: -7vw;
+        //   left: -24vw;
+        // }
       }
 
       @include m-b-laptop-down {
