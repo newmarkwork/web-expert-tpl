@@ -1,5 +1,12 @@
 .about {
-  padding: 60px 0 120px;
+  padding: 60px 0 15vw;
+  @include m-b-down(360px) {
+    padding: 60px 0;
+  }
+
+  @include m-b-up(1240px) {
+    padding: 60px 0 120px;
+  }
 
   &__container {
     @extend .base-grid-container;

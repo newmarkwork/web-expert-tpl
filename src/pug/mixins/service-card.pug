@@ -1,46 +1,57 @@
-include ./main-btn
-
 mixin service-card(data)
   .service-card
     .service-card__header
-      small.service-card__header-overline-text Поддержка
-      span.service-card__header-title!= data.type
+      .service-card__header-title-section
+        small.service-card__header-overline-text Поддержка
+        span.service-card__header-title!= data.type
 
-    .service-card__body
-      p.service-card__preview-text!= data.text
+      .service-card__header-side
+        span.service-card__header-price!= data.price + '<small> руб.</small>'
+        button(type="button").service-card__header-more-btn
+          span Что входит
+          img(src="./assets/img/icon-arrow.svg" alt="Развернуть" width="12" height="12")
 
-      if data.stuff
-        span.service-card__section-title Специалисты:
+    .service-card__content.collapsed
 
-        ul.service-card__stuff-list
-          each item in data.stuff
-            li.service-card__stuff-list-item
-              img(src=`./assets/img/${item.img}.png` alt=item.rank width="30" height="30")
-              span!= item.rank
+      .service-card__content-body
+        p.service-card__preview-text!= data.text
 
-      if data.works
-        span.service-card__section-title Выполняемые работы:
+        .service-card__section.service-card__section--stuff
+          if data.stuff
+            span Специалисты:
 
-        ul.service-card__works-list
-          each item in data.works
-            li.service-card__works-list-item(class= !!item.isBold ? 'service-card__works-list-item--bold' : null)!= item.title
+            ul
+              each item in data.stuff
+                li
+                  img(src=`./assets/img/${item.img}.png` alt=item.rank width="30" height="30")
+                  span!= item.rank
 
-      span.service-card__price!= data.price
+        if data.works
+          .service-card__section.service-card__section--desc
+            span Выполняемые работы:
 
-    .service-card__footer
-      +main-btn({
-        type: 'button',
-        text: 'Оставить заявку',
-        cls: 'main-btn--primary',
-        imgPath: "./assets/img/icon-post.svg",
-        imgAlt: "Иконка конверта",
-        imgWidth: 24,
-        imgHeight: 24
-      })
+            ul
+              li!= 'Команда специалистов ' + data.stuff.length + ' чел.'
 
-      +main-btn({
-        type: 'link',
-        text: 'Подробнее',
-        cls: 'main-btn--outlined',
-      })
+              each item in data.works
+                li(class= !!item.isBold ? 'text-bold' : null)!= item.title
+
+        span.service-card__price!= data.price +' руб.'
+
+      .service-card__content-footer
+        +main-btn({
+          type: 'button',
+          text: 'Оставить заявку',
+          cls: 'main-btn--primary service-card__offer-btn',
+          imgPath: "./assets/img/icon-post.svg",
+          imgAlt: "Иконка конверта",
+          imgWidth: 24,
+          imgHeight: 24
+        })
+
+        +main-btn({
+          type: 'link',
+          text: 'Подробнее',
+          cls: 'main-btn--outlined',
+        })
 

@@ -47,6 +47,7 @@ if (nav) {
   });
 
   const refreshSubMenu = () => {
+    console.log("TEST2");
     if (nav.querySelector(".main-nav__list-item.opened")) {
       gsap.set(".main-nav__list-item.opened .main-nav__list-item-icon", {
         pointerEvents: "initial",
@@ -62,6 +63,7 @@ if (nav) {
       gsap.set(".main-nav__list-item.opened", {
         classList: "main-nav__list-item",
         onComplete: () => {
+          console.log("TEST");
           gsap.fromTo(
             ".main-nav__back-btn",
             {
@@ -132,6 +134,8 @@ if (nav) {
       display: "flex",
       opacity: 1,
     });
+
+    refreshSubMenu();
   });
 
   matchMedia.add("(max-width: 767px)", () => {

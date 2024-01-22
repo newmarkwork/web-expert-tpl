@@ -104,6 +104,8 @@
   }
 
   &__list-item {
+    flex-grow: 1;
+
     &-icon {
       display: none;
       width: 10vw;
@@ -124,7 +126,7 @@
 
       transition: background-color var(--main-transition);
     }
-    flex-grow: 1;
+
     a {
       @extend .flex-centered-content;
       padding: 10px 1vw;

@@ -1,7 +1,15 @@
 .hero {
   position: relative;
   overflow-x: clip;
-  margin-top: 150px;
+  margin-top: 10vw;
+
+  @include m-b-down(360px) {
+    margin-top: 80px;
+  }
+
+  @include m-b-up(1500px) {
+    margin-top: 150px;
+  }
   padding: 100px 0 100px;
 
   @include m-b-tablet-down {

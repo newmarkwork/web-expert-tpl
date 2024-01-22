@@ -1,5 +1,6 @@
 import "./modules/mobile-nav";
 import "./modules/gsap/features";
+import "./modules/services";
 import "./modules/particles";
 import "./modules/gsap/grid-lines";
 import "./modules/gsap/faq-text-line.js";

@@ -71,6 +71,10 @@
   }
 }
 
+.text-bold {
+  font-weight: 700;
+}
+
 .visually-hidden {
   position: absolute;
   overflow: hidden;
@@ -89,8 +93,17 @@
 .skew-section {
   will-change: auto;
   transform: skew(0, -10deg);
-  padding: 300px 0;
+  // padding: 300px 0;
+  padding: 20vw 0;
   background-color: var(--primary);
+
+  @include m-b-down(360px) {
+    padding: 60px 0;
+  }
+
+  @include m-b-up(1500px) {
+    padding: 300px 0;
+  }
 
   .container,
   .container-fluid {
