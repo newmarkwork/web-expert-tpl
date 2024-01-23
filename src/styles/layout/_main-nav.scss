@@ -272,7 +272,6 @@
     }
 
     &.active {
-      // display: flex;
       flex-direction: column;
       position: fixed;
       top: 0;
@@ -280,6 +279,7 @@
       width: 100vw;
       height: 100vh;
       padding: 0;
+      padding-bottom: 70px;
       background: radial-gradient(
           98.67% 127.78% at 118.62% -31.34%,
           #06f 0.94%,

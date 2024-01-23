@@ -393,7 +393,6 @@ template {
   display: flex;
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
-  -o-transition-property: transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
   -webkit-box-sizing: content-box;
@@ -423,7 +422,6 @@ template {
   position: relative;
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
-  -o-transition-property: transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
 }
@@ -442,7 +440,6 @@ template {
   align-items: flex-start;
   -webkit-transition-property: height, -webkit-transform;
   transition-property: height, -webkit-transform;
-  -o-transition-property: transform, height;
   transition-property: transform, height;
   transition-property: transform, height, -webkit-transform;
 }
@@ -480,25 +477,21 @@ template {
 
 .swiper-3d .swiper-slide-shadow-left {
   background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
-  background-image: -o-linear-gradient(right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-3d .swiper-slide-shadow-right {
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-3d .swiper-slide-shadow-top {
   background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
-  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
 .swiper-3d .swiper-slide-shadow-bottom {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
 }
 
@@ -661,7 +654,6 @@ template {
   position: absolute;
   text-align: center;
   -webkit-transition: 0.3s opacity;
-  -o-transition: 0.3s opacity;
   transition: 0.3s opacity;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -787,7 +779,6 @@ button.swiper-pagination-bullet {
   display: inline-block;
   -webkit-transition: 0.2s top, 0.2s -webkit-transform;
   transition: 0.2s top, 0.2s -webkit-transform;
-  -o-transition: 0.2s transform, 0.2s top;
   transition: 0.2s transform, 0.2s top;
   transition: 0.2s transform, 0.2s top, 0.2s -webkit-transform;
 }
@@ -807,7 +798,6 @@ button.swiper-pagination-bullet {
 .swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
   -webkit-transition: 0.2s left, 0.2s -webkit-transform;
   transition: 0.2s left, 0.2s -webkit-transform;
-  -o-transition: 0.2s transform, 0.2s left;
   transition: 0.2s transform, 0.2s left;
   transition: 0.2s transform, 0.2s left, 0.2s -webkit-transform;
 }
@@ -815,7 +805,6 @@ button.swiper-pagination-bullet {
 .swiper-horizontal.swiper-rtl > .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
   -webkit-transition: 0.2s right, 0.2s -webkit-transform;
   transition: 0.2s right, 0.2s -webkit-transform;
-  -o-transition: 0.2s transform, 0.2s right;
   transition: 0.2s transform, 0.2s right;
   transition: 0.2s transform, 0.2s right, 0.2s -webkit-transform;
 }
@@ -1001,7 +990,6 @@ button.swiper-pagination-bullet {
 
 .swiper-free-mode > .swiper-wrapper {
   -webkit-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
   margin: 0 auto;
 }
@@ -1022,14 +1010,12 @@ button.swiper-pagination-bullet {
 
 .swiper-fade.swiper-free-mode .swiper-slide {
   -webkit-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
 
 .swiper-fade .swiper-slide {
   pointer-events: none;
   -webkit-transition-property: opacity;
-  -o-transition-property: opacity;
   transition-property: opacity;
 }
 
@@ -1136,7 +1122,6 @@ button.swiper-pagination-bullet {
   overflow: hidden;
   -webkit-transition-property: opacity, height, -webkit-transform;
   transition-property: opacity, height, -webkit-transform;
-  -o-transition-property: transform, opacity, height;
   transition-property: transform, opacity, height;
   transition-property: transform, opacity, height, -webkit-transform;
 }
@@ -1342,7 +1327,6 @@ fieldset {
 .text-truncate {
   white-space: nowrap;
   overflow: hidden;
-  -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
 
@@ -1405,7 +1389,6 @@ fieldset {
 /*transitions*/
 .hover-opacity {
   -webkit-transition: opacity var(--main-transition);
-  -o-transition: opacity var(--main-transition);
   transition: opacity var(--main-transition);
 }
 .hover-opacity:hover, .hover-opacity:focus {
@@ -1543,7 +1526,6 @@ fieldset {
   will-change: auto;
 }
 .skew-section--bg-radial {
-  background: -o-radial-gradient(110% -18.83%, 67.45% 66.63%, #06f 0.94%, #8b00ff 100%), #8b00ff;
   background: radial-gradient(67.45% 66.63% at 110% -18.83%, #06f 0.94%, #8b00ff 100%), #8b00ff;
 }
 
@@ -1582,13 +1564,11 @@ fieldset {
   margin-right: 10px;
 }
 .main-btn--primary {
-  background: -o-radial-gradient(1.29% -21.15%, 183.6% 73.98%, #fff500 6.05%, rgba(139, 0, 255, 0) 100%), -o-radial-gradient(69.19% 116.35%, 57.04% 43.55%, #06f 0%, rgba(0, 224, 255, 0) 100%), -o-linear-gradient(174deg, #8b00ff 58.9%, #eb00ff 105.39%);
   background: radial-gradient(183.6% 73.98% at 1.29% -21.15%, #fff500 6.05%, rgba(139, 0, 255, 0) 100%), radial-gradient(57.04% 43.55% at 69.19% 116.35%, #06f 0%, rgba(0, 224, 255, 0) 100%), linear-gradient(276deg, #8b00ff 58.9%, #eb00ff 105.39%);
   -webkit-box-shadow: 0px 30px 60px 0px rgba(178, 0, 255, 0.5);
   box-shadow: 0px 30px 60px 0px rgba(178, 0, 255, 0.5);
 }
 .main-btn--secondary {
-  background: -o-linear-gradient(bottom, rgba(235, 0, 255, 0.22) 0%, rgba(235, 0, 255, 0.22) 100%), -o-radial-gradient(84.71% 130.77%, 53.83% 90.39%, #8b00ff 6.05%, rgba(161, 0, 175, 0) 100%), -o-radial-gradient(5.1% -250%, 1989.85% 451.88%, #8b00ff 0%, #fff500 15.88%, #ff00d6 88.69%), -o-linear-gradient(46deg, #eb00ff -2.29%, #eb00ff 43.8%);
   background: linear-gradient(0deg, rgba(235, 0, 255, 0.22) 0%, rgba(235, 0, 255, 0.22) 100%), radial-gradient(53.83% 90.39% at 84.71% 130.77%, #8b00ff 6.05%, rgba(161, 0, 175, 0) 100%), radial-gradient(1989.85% 451.88% at 5.1% -250%, #8b00ff 0%, #fff500 15.88%, #ff00d6 88.69%), linear-gradient(44deg, #eb00ff -2.29%, #eb00ff 43.8%);
   -webkit-box-shadow: -18px 57px 103.4px 0px #3d006f;
   box-shadow: -18px 57px 103.4px 0px #3d006f;
@@ -1620,7 +1600,6 @@ fieldset {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: -o-radial-gradient(1.29% -21.15%, 183.6% 73.98%, #fff500 6.05%, rgba(139, 0, 255, 0) 100%), -o-radial-gradient(69.19% 116.35%, 57.04% 43.55%, #06f 0%, rgba(0, 224, 255, 0) 100%), -o-linear-gradient(174deg, #8b00ff 58.9%, #eb00ff 105.39%);
   background: radial-gradient(183.6% 73.98% at 1.29% -21.15%, #fff500 6.05%, rgba(139, 0, 255, 0) 100%), radial-gradient(57.04% 43.55% at 69.19% 116.35%, #06f 0%, rgba(0, 224, 255, 0) 100%), linear-gradient(276deg, #8b00ff 58.9%, #eb00ff 105.39%);
   -webkit-box-shadow: 0px 30px 60px 0px rgba(178, 0, 255, 0.5);
   box-shadow: 0px 30px 60px 0px rgba(178, 0, 255, 0.5);
@@ -1869,7 +1848,6 @@ fieldset {
   background-color: #8b00ff;
   -webkit-transition: -webkit-transform 0.3s linear;
   transition: -webkit-transform 0.3s linear;
-  -o-transition: transform 0.3s linear;
   transition: transform 0.3s linear;
   transition: transform 0.3s linear, -webkit-transform 0.3s linear;
 }
@@ -1936,24 +1914,21 @@ fieldset {
     transform: scale(1.001);
     -webkit-transition: -webkit-box-shadow var(--service-card-transition), -webkit-transform var(--service-card-transition);
     transition: -webkit-box-shadow var(--service-card-transition), -webkit-transform var(--service-card-transition);
-    -o-transition: box-shadow var(--service-card-transition), transform var(--service-card-transition);
     transition: box-shadow var(--service-card-transition), transform var(--service-card-transition);
     transition: box-shadow var(--service-card-transition), transform var(--service-card-transition), -webkit-box-shadow var(--service-card-transition), -webkit-transform var(--service-card-transition);
   }
   .service-card:hover, .service-card:focus {
-    -webkit-box-shadow: 0px 47px 200px 0px rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 47px 200px 0px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 20px 100px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 20px 100px 0px rgba(0, 0, 0, 0.25);
     -webkit-transform: scale(1.02) translateY(-10px);
     -ms-transform: scale(1.02) translateY(-10px);
     transform: scale(1.02) translateY(-10px);
   }
 }
 .service-card:nth-child(odd) .service-card__header {
-  background: -o-radial-gradient(8.92% 4.3%, 79.95% 69.01%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #ae4dff;
   background: radial-gradient(79.95% 69.01% at 8.92% 4.3%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #ae4dff;
 }
 .service-card:nth-child(even) .service-card__header {
-  background: -o-radial-gradient(8.92% 4.3%, 79.95% 69.01%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #8b00ff;
   background: radial-gradient(79.95% 69.01% at 8.92% 4.3%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #8b00ff;
 }
 .service-card__header {
@@ -2042,7 +2017,6 @@ fieldset {
   margin-left: 6px;
   -webkit-transition: -webkit-transform var(--main-transition);
   transition: -webkit-transform var(--main-transition);
-  -o-transition: transform var(--main-transition);
   transition: transform var(--main-transition);
   transition: transform var(--main-transition), -webkit-transform var(--main-transition);
 }
@@ -2274,7 +2248,7 @@ fieldset {
 }
 @media (max-width: 961px) {
   .scrollable-slider-controls .swiper-button-prev::after,
-.scrollable-slider-controls .swiper-button-next::after {
+  .scrollable-slider-controls .swiper-button-next::after {
     font-size: 18px;
   }
 }
@@ -2301,7 +2275,7 @@ fieldset {
 }
 @media (max-width: 961px) {
   .scrollable-slider-controls .swiper-button-prev,
-.scrollable-slider-controls .swiper-button-next {
+  .scrollable-slider-controls .swiper-button-next {
     width: 36px;
     height: 36px;
   }
@@ -2517,7 +2491,6 @@ fieldset {
   min-height: 52px;
   z-index: 10;
   -webkit-transition: background-color var(--main-transition);
-  -o-transition: background-color var(--main-transition);
   transition: background-color var(--main-transition);
 }
 .main-nav__back-btn img {
@@ -2540,7 +2513,6 @@ fieldset {
   margin-left: auto;
   z-index: 10;
   -webkit-transition: opacity var(--main-transition);
-  -o-transition: opacity var(--main-transition);
   transition: opacity var(--main-transition);
 }
 .main-nav__closer img {
@@ -2588,7 +2560,6 @@ fieldset {
   min-height: 52px;
   margin-right: 2vw;
   -webkit-transition: background-color var(--main-transition);
-  -o-transition: background-color var(--main-transition);
   transition: background-color var(--main-transition);
 }
 .main-nav__list-item-icon img {
@@ -2604,7 +2575,6 @@ fieldset {
   padding: 10px 1vw;
   color: var(--base-text-color);
   -webkit-transition: text-shadow var(--main-transition);
-  -o-transition: text-shadow var(--main-transition);
   transition: text-shadow var(--main-transition);
 }
 .main-nav__list-item a svg {
@@ -2671,7 +2641,6 @@ fieldset {
   font-weight: 400;
   padding: 15px;
   -webkit-transition: text-shadow var(--main-transition);
-  -o-transition: text-shadow var(--main-transition);
   transition: text-shadow var(--main-transition);
 }
 .main-nav__inner-list-item a:hover, .main-nav__inner-list-item a:focus {
@@ -2777,7 +2746,7 @@ fieldset {
     width: 100vw;
     height: 100vh;
     padding: 0;
-    background: -o-radial-gradient(118.62% -31.34%, 98.67% 127.78%, #06f 0.94%, #8b00ff 100%), #8b00ff;
+    padding-bottom: 70px;
     background: radial-gradient(98.67% 127.78% at 118.62% -31.34%, #06f 0.94%, #8b00ff 100%), #8b00ff;
   }
 }
@@ -2903,7 +2872,7 @@ fieldset {
 }
 @media (max-width: 767px) {
   .hero__content .main-title,
-.hero__content .main-desc {
+  .hero__content .main-desc {
     max-width: 100%;
   }
 }
@@ -3004,6 +2973,7 @@ fieldset {
   height: 100%;
   margin-top: -150px;
   z-index: 11;
+  will-change: transform;
 }
 .features__list {
   display: -ms-grid;
@@ -3402,7 +3372,7 @@ fieldset {
 }
 @media (max-width: 767px) {
   .faq__side .main-text,
-.faq__side .main-title {
+  .faq__side .main-title {
     text-align: center;
   }
 }
@@ -3570,6 +3540,9 @@ fieldset {
     display: none;
   }
   .main-footer .contact-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     margin-left: auto;
     -webkit-box-align: center;
     -ms-flex-align: center;

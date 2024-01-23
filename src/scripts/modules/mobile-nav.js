@@ -2,7 +2,7 @@ import gsap from "gsap";
 
 let matchMedia = gsap.matchMedia();
 
-const nav = document.querySelector(".main-nav");
+const nav = document.querySelector(".main-header .main-nav");
 const bodyLocker = (bool) => {
   const body = document.querySelector("body");
 
@@ -47,13 +47,13 @@ if (nav) {
   });
 
   const refreshSubMenu = () => {
-    console.log("TEST2");
+
     if (nav.querySelector(".main-nav__list-item.opened")) {
       gsap.set(".main-nav__list-item.opened .main-nav__list-item-icon", {
         pointerEvents: "initial",
       });
 
-      gsap.to(".main-nav .contact-block", {
+      gsap.to(".main-header .main-nav .contact-block", {
         opacity: 1,
         duration: 0.6,
         pointerEvents: "initial",
@@ -114,7 +114,7 @@ if (nav) {
       }
     );
 
-    gsap.to(".main-nav .contact-block", {
+    gsap.to(".main-header .main-nav .contact-block", {
       opacity: 0,
       duration: 0.6,
       pointerEvents: "none",
@@ -127,10 +127,10 @@ if (nav) {
   });
 
   matchMedia.add("(min-width: 768px)", () => {
-    if (document.querySelector(".main-nav.active")) {
+    if (document.querySelector(".main-header .main-nav.active")) {
       bodyLocker(false);
     }
-    gsap.set(".main-nav", {
+    gsap.set(".main-header .main-nav", {
       display: "flex",
       opacity: 1,
     });
@@ -139,7 +139,7 @@ if (nav) {
   });
 
   matchMedia.add("(max-width: 767px)", () => {
-    if (document.querySelector(".main-nav.active")) {
+    if (document.querySelector(".main-header .main-nav.active")) {
       bodyLocker(true);
     }
     gsap.set(".main-nav__back-btn", {
@@ -154,7 +154,7 @@ if (nav) {
       closer.addEventListener("click", onClickCloseNavHandler);
 
       gsap.fromTo(
-        ".main-nav",
+        ".main-header .main-nav",
         {
           opacity: 0,
           display: "flex",
@@ -169,7 +169,7 @@ if (nav) {
     const onClickCloseNavHandler = () => {
       closer.removeEventListener("click", onClickCloseNavHandler);
 
-      gsap.to(".main-nav", {
+      gsap.to(".main-header .main-nav", {
         opacity: 0,
         duration: 0.6,
         display: "none",

@@ -5,6 +5,7 @@
 
   margin-top: -150px;
   z-index: 11;
+  will-change: transform;
 
   &__list {
     @extend .list-reset;
