@@ -1,0 +1,7 @@
+mixin service-stuff-card(data)
+    .service-stuff-card
+        .service-stuff-card__header
+            img(src="./assets/img/service-stuff-img.png" alt="Сео специалист" width="80" height="80")
+            span.main-text.main-text--dark.text-bold!= data.title
+        .service-stuff-card__content
+            p.main-text.main-text--dark!= data.text

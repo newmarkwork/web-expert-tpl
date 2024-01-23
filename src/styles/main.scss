@@ -19,12 +19,15 @@
 @import "./components/service-card";
 @import "./components/scrollable-slider";
 @import "./components/review-card";
+@import "./components/service-stuff-card";
 // @import "./components/swiper";
 
-/* Секции */
+/* Layout */
 @import "./layout/main-header";
 @import "./layout/main-nav";
+@import "./layout/main-footer";
 
+/* Секции */
 @import "./sections/hero";
 @import "./sections/features";
 @import "./sections/about";
@@ -33,8 +36,8 @@
 @import "./sections/advantages";
 @import "./sections/reviews";
 @import "./sections/faq";
-
 @import "./sections/offer";
-@import "./layout/main-footer";
 
+@import "./sections/service-content";
+@import "./sections/service-stuff";
 /* Модальные окна */

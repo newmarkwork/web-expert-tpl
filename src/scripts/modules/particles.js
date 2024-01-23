@@ -108,9 +108,11 @@ const interactivity = {
     },
   },
 };
-
-particlesJS("particles", {
-  particles,
-  interactivity,
-  retina_detect: true,
-});
+const isExisted = document.querySelector("#particles");
+if(isExisted) {
+  particlesJS("particles", {
+    particles,
+    interactivity,
+    retina_detect: true,
+  });
+}

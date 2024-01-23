@@ -1,0 +1,51 @@
+.service-content {
+    .main-title {
+        text-align: center;
+        
+        @extend .main-title-mb;
+    }
+
+    &__list {
+        @extend .list-reset;
+        @extend .flex-column;
+        gap: 16px;
+        max-width: 1280px;
+        margin: 0 auto;
+        margin-left: 32px;
+    }
+
+    &__list-item {
+        position: relative;
+        @extend .flex-column;
+        padding: clamp(15px, 2vw, 25px) clamp(25px, 3vw, 40px);;
+        border-radius: 10px;
+
+        border: 1px solid var(--white);
+        background-color: var(--white);
+
+        &-title {
+            display: inline-block;
+            margin-bottom: 4px;
+            font-size: clamp(16px, 2vw, 20px);
+        }
+
+        &-text {
+            font-size: clamp(14px, 1.5vw, 16px);
+            color: var(--gray-70);
+        }
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: -16px;
+            transform: translateY(-50%);
+
+            width: 32px;
+            height: 32px;
+            content: '';
+            background-image: url("../assets/img/icon-service-check.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+}

@@ -74,15 +74,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
-gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(".features", {
-  scrollTrigger: {
-    trigger: ".hero",
-    start: "center center",
-    scrub: true
-    // markers: true,
-  },
-  y: 75
-});
+const features = document.querySelector(".features");
+if (features) {
+  gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(".features", {
+    scrollTrigger: {
+      trigger: ".hero",
+      start: "center center",
+      scrub: true
+      // markers: true,
+    },
+    y: 75
+  });
+}
 
 /***/ }),
 
@@ -467,11 +470,14 @@ const interactivity = {
     }
   }
 };
-particlesJS("particles", {
-  particles,
-  interactivity,
-  retina_detect: true
-});
+const isExisted = document.querySelector("#particles");
+if (isExisted) {
+  particlesJS("particles", {
+    particles,
+    interactivity,
+    retina_detect: true
+  });
+}
 
 /***/ }),
 

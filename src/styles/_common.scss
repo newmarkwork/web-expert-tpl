@@ -52,6 +52,10 @@
   }
 }
 
+.main-title-mb {
+  margin-bottom: clamp(30px, 4vw, 70px);
+}
+
 .main-desc {
   font-size: clamp(14px, 2.5vw, 18px);
   margin-bottom: 40px;
@@ -59,8 +63,6 @@
 }
 
 .main-text {
-  font-size: 18px;
-
   font-size: clamp(14px, 2vw, 18px);
   margin: 0;
   margin-bottom: 40px;
@@ -90,10 +92,13 @@
   padding: 60px 0;
 }
 
+.section--bg-gray {
+  background-color: var(--gray-20) !important;
+}
+
 .skew-section {
   will-change: auto;
   transform: skew(0, -10deg);
-  // padding: 300px 0;
   padding: 20vw 0;
   background-color: var(--primary);
 
