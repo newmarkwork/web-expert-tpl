@@ -4,7 +4,7 @@
 
   // &::after {
   //   position: absolute;
-  //   bottom: 115px;
+  //   top: 0;
   //   right: 15vw;
   //   width: 500px;
   //   height: 500px;
@@ -13,6 +13,7 @@
   //   background-size: contain;
   //   background-repeat: no-repeat;
   //   z-index: -1;
+  //   outline: 1px solid red;
   // }
 
   &__container {
