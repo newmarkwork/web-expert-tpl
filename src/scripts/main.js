@@ -7,3 +7,4 @@ import "./modules/gsap/faq-text-line.js";
 import "./modules/accordeon";
 import "./modules/swiper";
 import "./modules/gsap/page-up-btn";
+import "./modules/stuff-card";

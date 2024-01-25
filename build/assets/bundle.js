@@ -569,6 +569,47 @@ if (cardTogglers) {
 
 /***/ }),
 
+/***/ "./src/scripts/modules/stuff-card.js":
+/*!*******************************************!*\
+  !*** ./src/scripts/modules/stuff-card.js ***!
+  \*******************************************/
+/***/ (() => {
+
+var items = document.querySelectorAll(".service-stuff__list-item");
+
+if (items) {
+  var isOdd = items.length % 2 === 1 ? true : false;
+
+  var setClass = function setClass(item) {
+    var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    item.classList.add("service-stuff__list-item--related");
+
+    if (type && type === "top") {
+      item.classList.add("service-stuff__list-item--related-position-top");
+    }
+
+    if (type && type === "right") {
+      item.classList.add("service-stuff__list-item--related-position-right");
+    }
+  };
+
+  if (items.length === 2) {
+    setClass(items[0], "right");
+  } else {
+    for (var i = 2; i < items.length - 1; i++) {
+      if (i % 2 === 0) {
+        setClass(items[i]);
+      }
+    }
+
+    if (isOdd && items.length !== 1) {
+      setClass(items[items.length - 1], "top");
+    }
+  }
+}
+
+/***/ }),
+
 /***/ "./src/scripts/modules/swiper.js":
 /*!***************************************!*\
   !*** ./src/scripts/modules/swiper.js ***!
@@ -24826,6 +24867,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_accordeon__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _modules_swiper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/swiper */ "./src/scripts/modules/swiper.js");
 /* harmony import */ var _modules_gsap_page_up_btn__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/gsap/page-up-btn */ "./src/scripts/modules/gsap/page-up-btn.js");
+/* harmony import */ var _modules_stuff_card__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/stuff-card */ "./src/scripts/modules/stuff-card.js");
+/* harmony import */ var _modules_stuff_card__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_modules_stuff_card__WEBPACK_IMPORTED_MODULE_9__);
+
 
 
 
