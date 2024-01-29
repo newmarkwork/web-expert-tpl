@@ -1,5 +1,5 @@
 .offer-form
-  form(action="#")
+  form(action="#" method="POST" enctype="multipart/form-data")
     .offer-form__wrapper
       fieldset
         label(for="user_name").main-text Имя *
@@ -16,7 +16,7 @@
       fieldset.user-files-field
         label(for="user_file").main-text Файл с информацией о проекте
         label(for="user_file").main-text.user-files-field-upload Нет файла
-        input(type="file" id="user_file" placeholder="Нет файла")
+        input(type="file" id="user_file" multiple name="files[]" placeholder="Нет файла")
 
       fieldset
         +main-btn({

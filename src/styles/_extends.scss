@@ -102,3 +102,35 @@
     height: 18px;
   }
 }
+
+.section-before-element {
+  position: absolute;
+  top: 0;
+  left: 11vw;
+
+  content: "";
+  width: 30vw;
+  max-width: 380px;
+  min-width: 180px;
+  height: 30vw;
+  max-height: 380px;
+  min-height: 180px;
+  background-image: url(../assets/img/hero-top.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
+  will-change: auto;
+  transform: skew(0, 10deg) translateY(-50%);
+
+  @include m-b-desktop-down {
+    left: 40px;
+  }
+
+  @include m-b-laptop-down {
+    left: 30px;
+  }
+
+  @include m-b-tablet-down {
+    left: -80px;
+  }
+}

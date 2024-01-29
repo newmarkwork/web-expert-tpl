@@ -1,4 +1,5 @@
 extends layouts/main-layout.pug
+include ./mixins/page-top-section
 
 block variables
   -
@@ -7,6 +8,16 @@ block variables
     const keywords = ""
 
 block content
+  +page-top-section({
+    title: 'Базовая поддержка вашего&nbsp;сайта',
+    text: 'SEO-оптимизатор и копирайтер для работы с сайтом всего&nbsp;за',
+    price: '35 000',
+    offerBtn: true,
+    img: "service-img.png",
+    imgAlt: "Тариф 'Базовый'",
+    imgWidth: 782,
+    imgHeight: 782
+  })
   include ./views/service-detail-page-view
 
 block modals

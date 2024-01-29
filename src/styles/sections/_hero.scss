@@ -3,8 +3,8 @@
   overflow-x: clip;
   margin-top: 10vw;
 
-  @include m-b-down(360px) {
-    margin-top: 80px;
+  &::before {
+    @extend .section-before-element;
   }
 
   @include m-b-up(1500px) {
@@ -14,6 +14,7 @@
 
   @include m-b-tablet-down {
     padding: 35px 0;
+    margin-top: 80px;
   }
 
   @include m-b-mobile-lg-down {
@@ -27,47 +28,11 @@
   }
 
   &__container {
-    position: relative;
     display: flex;
     align-items: flex-start;
 
     @include m-b-tablet-down {
       flex-direction: column-reverse;
-    }
-
-    &::before {
-      position: absolute;
-      top: -325px;
-      left: 100px;
-
-      content: "";
-      width: 380px;
-      height: 380px;
-      background-image: url(../assets/img/hero-top.png);
-      background-size: contain;
-      background-repeat: no-repeat;
-      z-index: 10;
-      will-change: auto;
-      transform: skew(0, 10deg);
-
-      @include m-b-desktop-down {
-        left: 40px;
-      }
-
-      @include m-b-laptop-down {
-        top: -240px;
-        left: 30px;
-        width: 240px;
-        height: 240px;
-      }
-
-      @include m-b-tablet-down {
-        top: -145px;
-        left: -80px;
-
-        width: 180px;
-        height: 180px;
-      }
     }
   }
 

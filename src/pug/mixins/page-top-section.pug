@@ -1,0 +1,29 @@
+include ./main-btn
+
+mixin page-top-section(data)
+    section.skew-section.page-top-section
+        .container.page-top-section__container
+            .page-top-section__content
+                if data.title
+                    h2.main-title!= data.title
+                
+                if data.text
+                    p.main-desc!= data.text
+                
+                if data.price
+                    span.page-top-section__price!= data.price + ' руб.'
+                
+                if data.offerBtn
+                    +main-btn({
+                        type: 'button',
+                        text: 'Оставить заявку',
+                        cls: 'main-btn--secondary',
+                        imgPath: "./assets/img/icon-post.svg",
+                        imgAlt: "Иконка конверта",
+                        imgWidth: 24,
+                        imgHeight: 24
+                    })
+
+            if data.img
+                .page-top-section__side
+                    img(src=`./assets/img/${data.img}` alt!= data.alt width= data.imgW height= data.imgH )
