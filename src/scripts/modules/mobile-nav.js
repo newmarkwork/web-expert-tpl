@@ -48,36 +48,35 @@ if (nav) {
 
   const refreshSubMenu = () => {
 
-    if (nav.querySelector(".main-nav__list-item.opened")) {
-      gsap.set(".main-nav__list-item.opened .main-nav__list-item-icon", {
-        pointerEvents: "initial",
-      });
+    if (!nav.querySelector(".main-nav__list-item.opened")) return;
 
-      gsap.to(".main-header .main-nav .contact-block", {
-        opacity: 1,
-        duration: 0.6,
-        pointerEvents: "initial",
-        visibility: "visible",
-      });
+    gsap.set(".main-nav__list-item.opened .main-nav__list-item-icon", {
+      pointerEvents: "initial",
+    });
 
-      gsap.set(".main-nav__list-item.opened", {
-        classList: "main-nav__list-item",
-        onComplete: () => {
-          console.log("TEST");
-          gsap.fromTo(
-            ".main-nav__back-btn",
-            {
-              opacity: 1,
-            },
-            {
-              opacity: 0,
-              duration: 0.6,
-              display: "none",
-            }
-          );
-        },
-      });
-    }
+    gsap.to(".main-header .main-nav .contact-block", {
+      opacity: 1,
+      duration: 0.6,
+      pointerEvents: "initial",
+      visibility: "visible",
+    });
+
+    gsap.set(".main-nav__list-item.opened", {
+      classList: "main-nav__list-item",
+      onComplete: () => {
+        gsap.fromTo(
+          ".main-nav__back-btn",
+          {
+            opacity: 1,
+          },
+          {
+            opacity: 0,
+            duration: 0.6,
+            display: "none",
+          }
+        );
+      },
+    });
   };
 
   const onClickOpenSubmenu = (evt) => {

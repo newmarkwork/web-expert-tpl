@@ -242,30 +242,28 @@ if (nav) {
     item.addEventListener("click", onClickHandler);
   });
   const refreshSubMenu = () => {
-    if (nav.querySelector(".main-nav__list-item.opened")) {
-      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].set(".main-nav__list-item.opened .main-nav__list-item-icon", {
-        pointerEvents: "initial"
-      });
-      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(".main-header .main-nav .contact-block", {
-        opacity: 1,
-        duration: 0.6,
-        pointerEvents: "initial",
-        visibility: "visible"
-      });
-      gsap__WEBPACK_IMPORTED_MODULE_0__["default"].set(".main-nav__list-item.opened", {
-        classList: "main-nav__list-item",
-        onComplete: () => {
-          console.log("TEST");
-          gsap__WEBPACK_IMPORTED_MODULE_0__["default"].fromTo(".main-nav__back-btn", {
-            opacity: 1
-          }, {
-            opacity: 0,
-            duration: 0.6,
-            display: "none"
-          });
-        }
-      });
-    }
+    if (!nav.querySelector(".main-nav__list-item.opened")) return;
+    gsap__WEBPACK_IMPORTED_MODULE_0__["default"].set(".main-nav__list-item.opened .main-nav__list-item-icon", {
+      pointerEvents: "initial"
+    });
+    gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(".main-header .main-nav .contact-block", {
+      opacity: 1,
+      duration: 0.6,
+      pointerEvents: "initial",
+      visibility: "visible"
+    });
+    gsap__WEBPACK_IMPORTED_MODULE_0__["default"].set(".main-nav__list-item.opened", {
+      classList: "main-nav__list-item",
+      onComplete: () => {
+        gsap__WEBPACK_IMPORTED_MODULE_0__["default"].fromTo(".main-nav__back-btn", {
+          opacity: 1
+        }, {
+          opacity: 0,
+          duration: 0.6,
+          display: "none"
+        });
+      }
+    });
   };
   const onClickOpenSubmenu = evt => {
     const subMenu = evt.currentTarget.parentNode;
