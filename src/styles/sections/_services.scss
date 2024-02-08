@@ -6,9 +6,8 @@
   }
 
   @include m-b-up(1500px) {
-    padding: 200px 0;
+    padding: 200px 0 0;
   }
-  // background-color: var(--gray-20);
   z-index: 1;
 
   &__container {
