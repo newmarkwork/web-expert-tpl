@@ -12,7 +12,7 @@ if (btn) {
 
   let media = gsap.matchMedia();
 
-  media.add("(min-width: 1024px)", () => {
+  media.add("(min-width: 1639px)", () => {
     gsap.to(btn, {
       scrollTrigger: {
         trigger: ".offer",
@@ -22,7 +22,7 @@ if (btn) {
         // markers: true,
       },
 
-      width: "185px",
+      width: "285px",
       rotate: 0,
     });
   });
@@ -30,7 +30,7 @@ if (btn) {
 
 gsap.to(btn, {
   scrollTrigger: {
-    trigger: ".faq",
+    trigger: ".support",
     start: "top top",
     end: "bottom bottom",
     scrub: true,
@@ -40,22 +40,3 @@ gsap.to(btn, {
   opacity: 1,
   visibility: "visible",
 });
-
-// document.addEventListener("mousewheel", (evt) => {
-//   console.log(evt);
-//   if (evt.wheelDelta >= 0) {
-//     // up
-//     console.log("up");
-//     gsap.to(btn, {
-//       duration: 0.5,
-//       rotate: 0,
-//     });
-//   } else {
-//     // down
-//     console.log("down");
-//     gsap.to(btn, {
-//       duration: 0.5,
-//       rotate: "-180deg",
-//     });
-//   }
-// });

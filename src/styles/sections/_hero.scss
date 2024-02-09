@@ -112,11 +112,6 @@
           height: 120%;
           transform: rotate(-5deg);
         }
-
-        // @include m-b-down(420px) {
-        //   top: -7vw;
-        //   left: -24vw;
-        // }
       }
 
       @include m-b-laptop-down {

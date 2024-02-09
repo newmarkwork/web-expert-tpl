@@ -5,6 +5,7 @@ const scrollableSlider = new Swiper(".scrollable-slider", {
   slidesPerView: "auto",
   loop: true,
   spaceBetween: 15,
+  speed: 1000,
 
   navigation: {
     nextEl: ".scrollable-slider-controls .swiper-button-next",

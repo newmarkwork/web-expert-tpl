@@ -4,22 +4,22 @@
   position: fixed;
   bottom: 150px;
   right: 20px;
-  width: 100px;
+  width: 185px;
   height: fit-content;
   visibility: hidden;
   opacity: 0;
 
   z-index: 30;
 
+  @include m-b-desktop-down {
+    width: 20vw;
+    max-width: 120px;
+  }
+
   @include m-b-laptop-down {
     width: 20vw;
     max-width: 100px;
   }
-
-  // display: none;
-
-  // box-shadow: 49px -169px 250px 0px rgba(235, 0, 255, 0.5),
-  //   -32px 190px 110.4px 0px rgba(255, 245, 0, 0.2);
 
   img {
     width: 100%;

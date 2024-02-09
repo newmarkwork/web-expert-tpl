@@ -166,7 +166,7 @@ if (btn) {
     });
   });
   var media = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.matchMedia();
-  media.add("(min-width: 1024px)", function () {
+  media.add("(min-width: 1639px)", function () {
     gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(btn, {
       scrollTrigger: {
         trigger: ".offer",
@@ -175,7 +175,7 @@ if (btn) {
         scrub: true // markers: true,
 
       },
-      width: "185px",
+      width: "285px",
       rotate: 0
     });
   });
@@ -183,7 +183,7 @@ if (btn) {
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(btn, {
   scrollTrigger: {
-    trigger: ".faq",
+    trigger: ".support",
     start: "top top",
     end: "bottom bottom",
     scrub: true // markers: true,
@@ -191,24 +191,7 @@ gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(btn, {
   },
   opacity: 1,
   visibility: "visible"
-}); // document.addEventListener("mousewheel", (evt) => {
-//   console.log(evt);
-//   if (evt.wheelDelta >= 0) {
-//     // up
-//     console.log("up");
-//     gsap.to(btn, {
-//       duration: 0.5,
-//       rotate: 0,
-//     });
-//   } else {
-//     // down
-//     console.log("down");
-//     gsap.to(btn, {
-//       duration: 0.5,
-//       rotate: "-180deg",
-//     });
-//   }
-// });
+});
 
 /***/ }),
 
@@ -567,6 +550,48 @@ if (cardTogglers) {
 
 /***/ }),
 
+/***/ "./src/scripts/modules/setEqualBlockHeight.js":
+/*!****************************************************!*\
+  !*** ./src/scripts/modules/setEqualBlockHeight.js ***!
+  \****************************************************/
+/***/ (() => {
+
+function setEqualBlockHeight(arr) {
+  arr.forEach(function (el) {
+    el.style.minHeight = "initial";
+  });
+  var max = arr[0].offsetHeight;
+  arr.forEach(function (el) {
+    if (max < el.offsetHeight) {
+      max = el.offsetHeight;
+    }
+  });
+  arr.forEach(function (el) {
+    el.style.minHeight = "".concat(max, "px");
+  });
+}
+
+var init = function init(arr) {
+  setEqualBlockHeight(arr);
+  window.addEventListener("resize", function () {
+    setEqualBlockHeight(arr);
+  });
+};
+
+var serviceCardPreviewTextBlocks = document.querySelectorAll(".service-card__preview-text");
+
+if (serviceCardPreviewTextBlocks) {
+  init(serviceCardPreviewTextBlocks);
+}
+
+var serviceCardStuffBlocks = document.querySelectorAll(".service-card__section--stuff");
+
+if (serviceCardStuffBlocks) {
+  init(serviceCardStuffBlocks);
+}
+
+/***/ }),
+
 /***/ "./src/scripts/modules/stuff-card.js":
 /*!*******************************************!*\
   !*** ./src/scripts/modules/stuff-card.js ***!
@@ -623,6 +648,7 @@ var scrollableSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".scro
   slidesPerView: "auto",
   loop: true,
   spaceBetween: 15,
+  speed: 1000,
   navigation: {
     nextEl: ".scrollable-slider-controls .swiper-button-next",
     prevEl: ".scrollable-slider-controls .swiper-button-prev"
@@ -24856,17 +24882,20 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mobile_nav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/mobile-nav */ "./src/scripts/modules/mobile-nav.js");
 /* harmony import */ var _modules_gsap_features__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/gsap/features */ "./src/scripts/modules/gsap/features.js");
-/* harmony import */ var _modules_services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/services */ "./src/scripts/modules/services.js");
-/* harmony import */ var _modules_particles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/particles */ "./src/scripts/modules/particles.js");
-/* harmony import */ var _modules_gsap_grid_lines__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/gsap/grid-lines */ "./src/scripts/modules/gsap/grid-lines.js");
-/* harmony import */ var _modules_gsap_grid_lines__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_gsap_grid_lines__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _modules_gsap_faq_text_line_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/gsap/faq-text-line.js */ "./src/scripts/modules/gsap/faq-text-line.js");
-/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/accordeon */ "./src/scripts/modules/accordeon.js");
-/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_accordeon__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _modules_swiper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/swiper */ "./src/scripts/modules/swiper.js");
-/* harmony import */ var _modules_gsap_page_up_btn__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/gsap/page-up-btn */ "./src/scripts/modules/gsap/page-up-btn.js");
-/* harmony import */ var _modules_stuff_card__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/stuff-card */ "./src/scripts/modules/stuff-card.js");
-/* harmony import */ var _modules_stuff_card__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_modules_stuff_card__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _modules_setEqualBlockHeight__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/setEqualBlockHeight */ "./src/scripts/modules/setEqualBlockHeight.js");
+/* harmony import */ var _modules_setEqualBlockHeight__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_setEqualBlockHeight__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _modules_services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/services */ "./src/scripts/modules/services.js");
+/* harmony import */ var _modules_particles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/particles */ "./src/scripts/modules/particles.js");
+/* harmony import */ var _modules_gsap_grid_lines__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/gsap/grid-lines */ "./src/scripts/modules/gsap/grid-lines.js");
+/* harmony import */ var _modules_gsap_grid_lines__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_gsap_grid_lines__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _modules_gsap_faq_text_line_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/gsap/faq-text-line.js */ "./src/scripts/modules/gsap/faq-text-line.js");
+/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/accordeon */ "./src/scripts/modules/accordeon.js");
+/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_accordeon__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _modules_swiper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/swiper */ "./src/scripts/modules/swiper.js");
+/* harmony import */ var _modules_gsap_page_up_btn__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/gsap/page-up-btn */ "./src/scripts/modules/gsap/page-up-btn.js");
+/* harmony import */ var _modules_stuff_card__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/stuff-card */ "./src/scripts/modules/stuff-card.js");
+/* harmony import */ var _modules_stuff_card__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_modules_stuff_card__WEBPACK_IMPORTED_MODULE_10__);
+
 
 
 

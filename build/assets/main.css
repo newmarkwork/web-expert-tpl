@@ -1424,7 +1424,7 @@ fieldset {
 
 .section-before-element, .hero::before, .page-top-section::before {
   position: absolute;
-  top: 0;
+  top: -10px;
   left: 11vw;
   content: "";
   width: 30vw;
@@ -1433,7 +1433,7 @@ fieldset {
   height: 30vw;
   max-height: 380px;
   min-height: 180px;
-  background-image: url(../assets/img/hero-top.png);
+  background-image: url(../assets/img/hero-top-figure.svg);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 10;
@@ -1615,7 +1615,7 @@ fieldset {
   width: -moz-fit-content;
   width: fit-content;
   min-height: 50px;
-  font-size: 16px;
+  font-size: 20px;
   padding: 10px 24px;
   border-radius: 100px;
   color: var(--white);
@@ -1699,6 +1699,7 @@ fieldset {
   margin-bottom: 40px;
   border-radius: 40px;
   border: 1px solid #9e00ff;
+  background-color: #9e00ff;
   -webkit-box-shadow: -48px 103px 132.6px 0px rgba(0, 0, 0, 0.15);
   box-shadow: -48px 103px 132.6px 0px rgba(0, 0, 0, 0.15);
 }
@@ -1827,13 +1828,19 @@ fieldset {
   position: fixed;
   bottom: 150px;
   right: 20px;
-  width: 100px;
+  width: 185px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   visibility: hidden;
   opacity: 0;
   z-index: 30;
+}
+@media (max-width: 1439px) {
+  .page-up-btn {
+    width: 20vw;
+    max-width: 120px;
+  }
 }
 @media (max-width: 1023px) {
   .page-up-btn {
@@ -2100,7 +2107,7 @@ fieldset {
   -webkit-box-shadow: 0px 30px 60px 0px rgba(178, 0, 255, 0.5);
   box-shadow: 0px 30px 60px 0px rgba(178, 0, 255, 0.5);
 }
-@media (max-width: 1200px) {
+@media (max-width: 1320px) {
   .service-card__offer-btn img {
     display: none;
   }
@@ -3727,7 +3734,9 @@ fieldset {
 }
 .offer .main-title span {
   display: inline-block;
-  padding: 3px;
+  padding: 0 3px 8px 3px;
+  font-weight: 700;
+  line-height: 1;
   background-color: var(--secondary);
 }
 .offer .offer-form {

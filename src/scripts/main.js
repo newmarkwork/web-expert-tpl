@@ -1,5 +1,6 @@
 import "./modules/mobile-nav";
 import "./modules/gsap/features";
+import "./modules/setEqualBlockHeight";
 import "./modules/services";
 import "./modules/particles";
 import "./modules/gsap/grid-lines";

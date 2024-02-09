@@ -105,7 +105,7 @@
 
 .section-before-element {
   position: absolute;
-  top: 0;
+  top: -10px;
   left: 11vw;
 
   content: "";
@@ -115,7 +115,7 @@
   height: 30vw;
   max-height: 380px;
   min-height: 180px;
-  background-image: url(../assets/img/hero-top.png);
+  background-image: url(../assets/img/hero-top-figure.svg);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 10;
