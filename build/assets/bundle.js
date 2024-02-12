@@ -195,6 +195,57 @@ gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(btn, {
 
 /***/ }),
 
+/***/ "./src/scripts/modules/gsap/sticky-header.js":
+/*!***************************************************!*\
+  !*** ./src/scripts/modules/gsap/sticky-header.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
+var header = document.querySelector(".main-header");
+
+if (header) {
+  console.log("header");
+  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
+    start: "top -70",
+    end: "bottom bottom",
+    toggleClass: {
+      className: "main-header--fix-prepared",
+      targets: ".main-header"
+    }
+  });
+  gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(header, {
+    scrollTrigger: {
+      trigger: ".features",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+      markers: true
+    },
+    // position: "sticky",
+    // top: 0,
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "back.out(1.5)"
+  }); // ScrollTrigger.create({
+  //   start: "top -280",
+  //   end: "bottom bottom",
+  //   toggleClass: {
+  //     className: "main-header--fixed",
+  //     targets: ".main-header",
+  //   },
+  // });
+}
+
+/***/ }),
+
 /***/ "./src/scripts/modules/mobile-nav.js":
 /*!*******************************************!*\
   !*** ./src/scripts/modules/mobile-nav.js ***!
@@ -24881,20 +24932,22 @@ var __webpack_exports__ = {};
   \*****************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mobile_nav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/mobile-nav */ "./src/scripts/modules/mobile-nav.js");
-/* harmony import */ var _modules_gsap_features__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/gsap/features */ "./src/scripts/modules/gsap/features.js");
-/* harmony import */ var _modules_setEqualBlockHeight__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/setEqualBlockHeight */ "./src/scripts/modules/setEqualBlockHeight.js");
-/* harmony import */ var _modules_setEqualBlockHeight__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_modules_setEqualBlockHeight__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _modules_services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/services */ "./src/scripts/modules/services.js");
-/* harmony import */ var _modules_particles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/particles */ "./src/scripts/modules/particles.js");
-/* harmony import */ var _modules_gsap_grid_lines__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/gsap/grid-lines */ "./src/scripts/modules/gsap/grid-lines.js");
-/* harmony import */ var _modules_gsap_grid_lines__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modules_gsap_grid_lines__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _modules_gsap_faq_text_line_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/gsap/faq-text-line.js */ "./src/scripts/modules/gsap/faq-text-line.js");
-/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/accordeon */ "./src/scripts/modules/accordeon.js");
-/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_modules_accordeon__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _modules_swiper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/swiper */ "./src/scripts/modules/swiper.js");
-/* harmony import */ var _modules_gsap_page_up_btn__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/gsap/page-up-btn */ "./src/scripts/modules/gsap/page-up-btn.js");
-/* harmony import */ var _modules_stuff_card__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/stuff-card */ "./src/scripts/modules/stuff-card.js");
-/* harmony import */ var _modules_stuff_card__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_modules_stuff_card__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _modules_gsap_sticky_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/gsap/sticky-header */ "./src/scripts/modules/gsap/sticky-header.js");
+/* harmony import */ var _modules_gsap_features__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/gsap/features */ "./src/scripts/modules/gsap/features.js");
+/* harmony import */ var _modules_setEqualBlockHeight__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/setEqualBlockHeight */ "./src/scripts/modules/setEqualBlockHeight.js");
+/* harmony import */ var _modules_setEqualBlockHeight__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_setEqualBlockHeight__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _modules_services__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/services */ "./src/scripts/modules/services.js");
+/* harmony import */ var _modules_particles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/particles */ "./src/scripts/modules/particles.js");
+/* harmony import */ var _modules_gsap_grid_lines__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/gsap/grid-lines */ "./src/scripts/modules/gsap/grid-lines.js");
+/* harmony import */ var _modules_gsap_grid_lines__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_modules_gsap_grid_lines__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _modules_gsap_faq_text_line__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/gsap/faq-text-line */ "./src/scripts/modules/gsap/faq-text-line.js");
+/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/accordeon */ "./src/scripts/modules/accordeon.js");
+/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_modules_accordeon__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _modules_swiper__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/swiper */ "./src/scripts/modules/swiper.js");
+/* harmony import */ var _modules_gsap_page_up_btn__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/gsap/page-up-btn */ "./src/scripts/modules/gsap/page-up-btn.js");
+/* harmony import */ var _modules_stuff_card__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/stuff-card */ "./src/scripts/modules/stuff-card.js");
+/* harmony import */ var _modules_stuff_card__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_stuff_card__WEBPACK_IMPORTED_MODULE_11__);
+
 
 
 

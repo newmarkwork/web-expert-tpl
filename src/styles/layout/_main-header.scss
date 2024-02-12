@@ -1,9 +1,17 @@
 .main-header {
   position: relative;
-  // position: sticky;
-  // top: 0;
+
   padding: 24px 0;
   background-color: var(--white);
+  z-index: 100;
+  transition: opacity var(--main-transition);
+
+  &--fix-prepared {
+    position: sticky;
+    top: 0;
+    transform: translateY(-100px);
+    opacity: 0;
+  }
 
   .main-logo {
     width: 100%;
