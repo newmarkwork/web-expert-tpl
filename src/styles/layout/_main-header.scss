@@ -1,17 +1,15 @@
 .main-header {
   position: relative;
+  top: 0;
 
   padding: 24px 0;
   background-color: var(--white);
-  z-index: 100;
-  transition: opacity var(--main-transition);
+  z-index: 0;
+  // transition: all var(--main-transition);
 
-  &--fix-prepared {
-    position: sticky;
-    top: 0;
-    transform: translateY(-100px);
-    opacity: 0;
-  }
+  // position: sticky;
+  // top: 0;
+
 
   .main-logo {
     width: 100%;
@@ -48,6 +46,7 @@
       width: 50px;
       height: 50px;
       padding: 5px;
+
       span {
         display: none;
       }
@@ -57,7 +56,7 @@
       }
     }
 
-    @include m-b-mobile-lg-down {
+    @include m-b-tablet-down {
       display: none;
     }
   }

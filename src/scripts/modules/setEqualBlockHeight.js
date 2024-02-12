@@ -26,7 +26,7 @@ const serviceCardPreviewTextBlocks = document.querySelectorAll(
   ".service-card__preview-text"
 );
 
-if (serviceCardPreviewTextBlocks) {
+if (serviceCardPreviewTextBlocks.length) {
   init(serviceCardPreviewTextBlocks);
 }
 
@@ -34,6 +34,6 @@ const serviceCardStuffBlocks = document.querySelectorAll(
   ".service-card__section--stuff"
 );
 
-if (serviceCardStuffBlocks) {
+if (serviceCardStuffBlocks.length) {
   init(serviceCardStuffBlocks);
 }

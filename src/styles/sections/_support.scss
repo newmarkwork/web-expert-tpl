@@ -1,6 +1,10 @@
 .support {
   margin: 0;
 
+  @include m-b-up(1500px) {
+    padding: 300px 0 200px;
+  }
+
   &__container {
     @extend .base-grid-container;
   }

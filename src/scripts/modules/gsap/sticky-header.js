@@ -8,38 +8,46 @@ if (header) {
   console.log("header");
 
   ScrollTrigger.create({
-    start: "top -70",
-    end: "bottom bottom",
-    toggleClass: {
-      className: "main-header--fix-prepared",
-      targets: ".main-header",
-    },
+    start: 'top -200',
+    onUpdate: (self) => {
+      if(self.progress > 0.10) {
+        !isHeaderStickied ?
+        gsap.set( header , {zIndex: 100, position: 'sticky', yPercent: -150})
+        : null;
+      } else {
+        gsap.set( header , {zIndex: 0, position: 'relative', yPercent: 0})
+      }       
+    }
   });
 
-  gsap.to(header, {
-    scrollTrigger: {
-      trigger: ".features",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-      markers: true,
-    },
+  let isHeaderStickied = false;
 
-    // position: "sticky",
-    // top: 0,
+  ScrollTrigger.create({
+    start: 'top -400',
+    onUpdate: (self) => {
+      if(self.progress > 0.15 && !isHeaderStickied) {
+        isHeaderStickied = true;
+        gsap.to( header ,{
+          yPercent: 0,
+          duration: .3,
+          opacity: 1,
+          delay: .2,
+          ease: 'linear',
+        })
+      }
 
-    y: 0,
-    opacity: 1,
-    duration: 1,
-    ease: "back.out(1.5)",
+      if(self.progress < 0.15 && isHeaderStickied) {
+        gsap.to( header , {
+          opacity: 0,
+          yPercent: -150,
+          duration: .3,
+          ease: 'linear',
+          onComplete: () => {
+            gsap.set( header , {zIndex: 0, position: 'relative', yPercent: 0, opacity: 1});
+            isHeaderStickied = false;
+          }
+        })
+      }
+    }
   });
-
-  // ScrollTrigger.create({
-  //   start: "top -280",
-  //   end: "bottom bottom",
-  //   toggleClass: {
-  //     className: "main-header--fixed",
-  //     targets: ".main-header",
-  //   },
-  // });
 }

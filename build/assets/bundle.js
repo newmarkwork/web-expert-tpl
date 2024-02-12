@@ -7,21 +7,18 @@
   \******************************************/
 /***/ (() => {
 
-var accordeons = document.querySelectorAll('.accordeon');
-
+const accordeons = document.querySelectorAll('.accordeon');
 if (accordeons) {
-  accordeons.forEach(function (accordeon) {
-    var headers = accordeon.querySelectorAll('.accordeon__item-header');
-
-    var onClickHandler = function onClickHandler(evt) {
-      var isOpened = !evt.currentTarget.classList.contains('collapsed');
-      headers.forEach(function (header) {
+  accordeons.forEach(accordeon => {
+    const headers = accordeon.querySelectorAll('.accordeon__item-header');
+    const onClickHandler = evt => {
+      const isOpened = !evt.currentTarget.classList.contains('collapsed');
+      headers.forEach(header => {
         !header.classList.contains('collapsed') ? header.classList.add('collapsed') : null;
       });
       isOpened ? evt.currentTarget.classList.add('collapsed') : evt.currentTarget.classList.remove('collapsed');
     };
-
-    headers.forEach(function (header) {
+    headers.forEach(header => {
       header.addEventListener('click', onClickHandler);
     });
   });
@@ -56,11 +53,10 @@ gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(".faq__label--bottom", {
     trigger: ".faq",
     start: "center bottom",
     scrub: true,
-    end: "+=3000" // markers: true,
-
+    end: "+=3000"
+    // markers: true,
   },
   left: "100vw" // x ????
-
 });
 
 /***/ }),
@@ -78,15 +74,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
-var features = document.querySelector(".features");
-
+const features = document.querySelector(".features");
 if (features) {
   gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(".features", {
     scrollTrigger: {
       trigger: ".hero",
       start: "center center",
-      scrub: true // markers: true,
-
+      scrub: true
+      // markers: true,
     },
     y: 75
   });
@@ -100,41 +95,34 @@ if (features) {
   \************************************************/
 /***/ (() => {
 
-var sections = document.querySelectorAll(".grid-section");
-
+const sections = document.querySelectorAll(".grid-section");
 if (sections) {
-  var _LINES_COUNT = 4;
-
-  var fillLines = function fillLines(parentNode, offset, nodeWidth) {
-    var isExist = parentNode.querySelector(".grid-section-line");
-
+  const _LINES_COUNT = 4;
+  const fillLines = (parentNode, offset, nodeWidth) => {
+    const isExist = parentNode.querySelector(".grid-section-line");
     if (isExist === null) {
-      for (var i = 0; i < _LINES_COUNT; i++) {
-        var line = document.createElement("div");
+      for (let i = 0; i < _LINES_COUNT; i++) {
+        const line = document.createElement("div");
         line.classList.add("grid-section-line");
         parentNode.append(line);
       }
     }
-
     calculateLinePos(parentNode, nodeWidth, offset);
   };
-
-  var calculateLinePos = function calculateLinePos(parentNode, nodeWidth, offset) {
-    var lines = parentNode.querySelectorAll(".grid-section-line");
-    lines.forEach(function (line, i) {
-      i === 0 ? line.style.left = offset : i === 1 ? line.style.left = "".concat(nodeWidth / (_LINES_COUNT - 1), "px") : i === 2 ? line.style.right = "".concat(nodeWidth / (_LINES_COUNT - 1), "px") : i === 3 ? line.style.right = offset : null;
+  const calculateLinePos = (parentNode, nodeWidth, offset) => {
+    const lines = parentNode.querySelectorAll(".grid-section-line");
+    lines.forEach((line, i) => {
+      i === 0 ? line.style.left = offset : i === 1 ? line.style.left = `${nodeWidth / (_LINES_COUNT - 1)}px` : i === 2 ? line.style.right = `${nodeWidth / (_LINES_COUNT - 1)}px` : i === 3 ? line.style.right = offset : null;
     });
   };
-
-  var calculateLineProps = function calculateLineProps() {
-    sections.forEach(function (section) {
-      var container = section.querySelector(".container");
-      var nodeWidth = container.getBoundingClientRect().width;
-      var offset = getComputedStyle(container).paddingLeft;
+  const calculateLineProps = () => {
+    sections.forEach(section => {
+      const container = section.querySelector(".container");
+      const nodeWidth = container.getBoundingClientRect().width;
+      const offset = getComputedStyle(container).paddingLeft;
       fillLines(section, offset, nodeWidth);
     });
   };
-
   calculateLineProps();
   window.addEventListener("resize", calculateLineProps);
 }
@@ -156,42 +144,115 @@ __webpack_require__.r(__webpack_exports__);
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger, gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_2__.ScrollToPlugin);
-var btn = document.querySelector(".page-up-btn");
-
+const btn = document.querySelector(".page-up-btn");
 if (btn) {
-  btn.addEventListener("click", function () {
+  btn.addEventListener("click", () => {
     gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(window, {
       duration: 2,
       scrollTo: 0
     });
   });
-  var media = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.matchMedia();
-  media.add("(min-width: 1639px)", function () {
+  let media = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.matchMedia();
+  media.add("(min-width: 1639px)", () => {
     gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(btn, {
       scrollTrigger: {
         trigger: ".offer",
         start: "top top",
         end: "bottom bottom",
-        scrub: true // markers: true,
-
+        scrub: true
+        // markers: true,
       },
       width: "285px",
       rotate: 0
     });
   });
 }
-
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(btn, {
   scrollTrigger: {
     trigger: ".support",
     start: "top top",
     end: "bottom bottom",
-    scrub: true // markers: true,
-
+    scrub: true
+    // markers: true,
   },
   opacity: 1,
   visibility: "visible"
 });
+
+/***/ }),
+
+/***/ "./src/scripts/modules/gsap/service-page-list.js":
+/*!*******************************************************!*\
+  !*** ./src/scripts/modules/gsap/service-page-list.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+
+
+gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
+const items = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray('.service-content__list-item');
+if (items.length) {
+  items.forEach(item => {
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set(item, {
+      y: 100,
+      opacity: 0
+    });
+  });
+
+  // usage:
+  batch(items, {
+    interval: 0.8,
+    // time window (in seconds) for batching to occur. The first callback that occurs (of its type) will start the timer, and when it elapses, any other similar callbacks for other targets will be batched into an array and fed to the callback. Default is 0.1
+    batchMax: 5,
+    // maximum batch size (targets)
+    onEnter: batch => gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(batch, {
+      autoAlpha: 1,
+      y: 0,
+      stagger: 0.25,
+      overwrite: true,
+      duration: 0.8,
+      ease: 'ease-in'
+    })
+    // onLeave: batch => gsap.set(batch, {autoAlpha: 0, overwrite: true}),
+    // onEnterBack: batch => gsap.to(batch, {autoAlpha: 1, stagger: 0.15, overwrite: true}),
+    // onLeaveBack: batch => gsap.set(batch, {autoAlpha: 0, overwrite: true})
+    // you can also define things like start, end, etc.
+  });
+
+  // the magical helper function (no longer necessary in GSAP 3.3.1 because it was added as ScrollTrigger.batch())...
+  function batch(targets, vars) {
+    let varsCopy = {},
+      interval = vars.interval || 0.1,
+      proxyCallback = (type, callback) => {
+        let batch = [],
+          delay = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.delayedCall(interval, () => {
+            callback(batch);
+            batch.length = 0;
+          }).pause();
+        return self => {
+          batch.length || delay.restart(true);
+          batch.push(self.trigger);
+          vars.batchMax && vars.batchMax <= batch.length && delay.progress(1);
+        };
+      },
+      p;
+    for (p in vars) {
+      varsCopy[p] = ~p.indexOf("Enter") || ~p.indexOf("Leave") ? proxyCallback(p, vars[p]) : vars[p];
+    }
+    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray(targets).forEach(target => {
+      let config = {};
+      for (p in varsCopy) {
+        config[p] = varsCopy[p];
+      }
+      config.trigger = target;
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create(config);
+    });
+  }
+}
 
 /***/ }),
 
@@ -208,40 +269,60 @@ __webpack_require__.r(__webpack_exports__);
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
-var header = document.querySelector(".main-header");
-
+const header = document.querySelector(".main-header");
 if (header) {
   console.log("header");
   gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
-    start: "top -70",
-    end: "bottom bottom",
-    toggleClass: {
-      className: "main-header--fix-prepared",
-      targets: ".main-header"
+    start: 'top -200',
+    onUpdate: self => {
+      if (self.progress > 0.10) {
+        !isHeaderStickied ? gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set(header, {
+          zIndex: 100,
+          position: 'sticky',
+          yPercent: -150
+        }) : null;
+      } else {
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set(header, {
+          zIndex: 0,
+          position: 'relative',
+          yPercent: 0
+        });
+      }
     }
   });
-  gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(header, {
-    scrollTrigger: {
-      trigger: ".features",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: true,
-      markers: true
-    },
-    // position: "sticky",
-    // top: 0,
-    y: 0,
-    opacity: 1,
-    duration: 1,
-    ease: "back.out(1.5)"
-  }); // ScrollTrigger.create({
-  //   start: "top -280",
-  //   end: "bottom bottom",
-  //   toggleClass: {
-  //     className: "main-header--fixed",
-  //     targets: ".main-header",
-  //   },
-  // });
+  let isHeaderStickied = false;
+  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
+    start: 'top -400',
+    onUpdate: self => {
+      if (self.progress > 0.15 && !isHeaderStickied) {
+        isHeaderStickied = true;
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(header, {
+          yPercent: 0,
+          duration: .3,
+          opacity: 1,
+          delay: .2,
+          ease: 'linear'
+        });
+      }
+      if (self.progress < 0.15 && isHeaderStickied) {
+        gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(header, {
+          opacity: 0,
+          yPercent: -150,
+          duration: .3,
+          ease: 'linear',
+          onComplete: () => {
+            gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set(header, {
+              zIndex: 0,
+              position: 'relative',
+              yPercent: 0,
+              opacity: 1
+            });
+            isHeaderStickied = false;
+          }
+        });
+      }
+    }
+  });
 }
 
 /***/ }),
@@ -256,45 +337,38 @@ if (header) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 
-var matchMedia = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].matchMedia();
-var nav = document.querySelector(".main-header .main-nav");
-
-var bodyLocker = function bodyLocker(bool) {
-  var body = document.querySelector("body");
-
+let matchMedia = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].matchMedia();
+const nav = document.querySelector(".main-header .main-nav");
+const bodyLocker = bool => {
+  const body = document.querySelector("body");
   if (bool) {
     body.style.overflow = "hidden";
   } else {
     body.style.overflow = "auto";
   }
 };
-
 if (nav) {
-  var opener = document.querySelector(".burger");
-  var closer = nav.querySelector(".main-nav__closer");
-  var submenuBtns = nav.querySelectorAll(".main-nav__list-item > .main-nav__next-btn");
-  var backBtn = nav.querySelector(".main-nav__back-btn");
-  backBtn.addEventListener("click", function () {
+  const opener = document.querySelector(".burger");
+  const closer = nav.querySelector(".main-nav__closer");
+  const submenuBtns = nav.querySelectorAll(".main-nav__list-item > .main-nav__next-btn");
+  const backBtn = nav.querySelector(".main-nav__back-btn");
+  backBtn.addEventListener("click", () => {
     refreshSubMenu();
   });
-
-  var onClickHandler = function onClickHandler(evt) {
+  const onClickHandler = evt => {
     if (evt.target.classList.contains("main-nav__list-item-icon")) {
-      var target = evt.target;
-
+      const target = evt.target;
       if (target.parentNode.nextElementSibling !== null && target.parentNode.nextElementSibling.classList.contains("main-nav__inner-list")) {
         evt.preventDefault();
         openSubmenu(target.parentNode.parentNode);
       }
     }
   };
-
-  var linkIcons = nav.querySelectorAll(".main-nav__list-item > a");
-  linkIcons.forEach(function (item) {
+  const linkIcons = nav.querySelectorAll(".main-nav__list-item > a");
+  linkIcons.forEach(item => {
     item.addEventListener("click", onClickHandler);
   });
-
-  var refreshSubMenu = function refreshSubMenu() {
+  const refreshSubMenu = () => {
     if (!nav.querySelector(".main-nav__list-item.opened")) return;
     gsap__WEBPACK_IMPORTED_MODULE_0__["default"].set(".main-nav__list-item.opened .main-nav__list-item-icon", {
       pointerEvents: "initial"
@@ -307,7 +381,7 @@ if (nav) {
     });
     gsap__WEBPACK_IMPORTED_MODULE_0__["default"].set(".main-nav__list-item.opened", {
       classList: "main-nav__list-item",
-      onComplete: function onComplete() {
+      onComplete: () => {
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].fromTo(".main-nav__back-btn", {
           opacity: 1
         }, {
@@ -318,20 +392,18 @@ if (nav) {
       }
     });
   };
-
-  var onClickOpenSubmenu = function onClickOpenSubmenu(evt) {
-    var subMenu = evt.currentTarget.parentNode;
+  const onClickOpenSubmenu = evt => {
+    const subMenu = evt.currentTarget.parentNode;
     openSubmenu(subMenu);
   };
-
-  var openSubmenu = function openSubmenu(sub) {
+  const openSubmenu = sub => {
     gsap__WEBPACK_IMPORTED_MODULE_0__["default"].fromTo(sub, {
       opacity: 0
     }, {
       classList: "main-nav__list-item opened",
       opacity: 1,
       duration: 0.6,
-      onComplete: function onComplete() {
+      onComplete: () => {
         gsap__WEBPACK_IMPORTED_MODULE_0__["default"].set(".main-nav__list-item.opened .main-nav__list-item-icon", {
           pointerEvents: "none"
         });
@@ -351,32 +423,28 @@ if (nav) {
       visibility: "hidden"
     });
   };
-
-  submenuBtns.forEach(function (btn) {
+  submenuBtns.forEach(btn => {
     btn.addEventListener("click", onClickOpenSubmenu);
   });
-  matchMedia.add("(min-width: 768px)", function () {
+  matchMedia.add("(min-width: 768px)", () => {
     if (document.querySelector(".main-header .main-nav.active")) {
       bodyLocker(false);
     }
-
     gsap__WEBPACK_IMPORTED_MODULE_0__["default"].set(".main-header .main-nav", {
       display: "flex",
       opacity: 1
     });
     refreshSubMenu();
   });
-  matchMedia.add("(max-width: 767px)", function () {
+  matchMedia.add("(max-width: 767px)", () => {
     if (document.querySelector(".main-header .main-nav.active")) {
       bodyLocker(true);
     }
-
     gsap__WEBPACK_IMPORTED_MODULE_0__["default"].set(".main-nav__back-btn", {
       display: "none",
       opacity: 0
     });
-
-    var onClickOpenNavHandler = function onClickOpenNavHandler() {
+    const onClickOpenNavHandler = () => {
       bodyLocker(true);
       nav.classList.add("active");
       opener.removeEventListener("click", onClickOpenNavHandler);
@@ -389,14 +457,13 @@ if (nav) {
         duration: 0.6
       });
     };
-
-    var onClickCloseNavHandler = function onClickCloseNavHandler() {
+    const onClickCloseNavHandler = () => {
       closer.removeEventListener("click", onClickCloseNavHandler);
       gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(".main-header .main-nav", {
         opacity: 0,
         duration: 0.6,
         display: "none",
-        onComplete: function onComplete() {
+        onComplete: () => {
           nav.classList.remove("active");
           opener.addEventListener("click", onClickOpenNavHandler);
           bodyLocker(false);
@@ -404,7 +471,6 @@ if (nav) {
       });
       refreshSubMenu();
     };
-
     opener.addEventListener("click", onClickOpenNavHandler);
   });
 }
@@ -422,7 +488,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var particles_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! particles.js */ "./node_modules/particles.js/particles.js");
 /* harmony import */ var particles_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(particles_js__WEBPACK_IMPORTED_MODULE_0__);
 
-var particles = {
+const particles = {
   number: {
     value: 60,
     density: {
@@ -490,7 +556,7 @@ var particles = {
     }
   }
 };
-var interactivity = {
+const interactivity = {
   detect_on: "canvas",
   events: {
     onhover: {
@@ -529,12 +595,11 @@ var interactivity = {
     }
   }
 };
-var isExisted = document.querySelector("#particles");
-
+const isExisted = document.querySelector("#particles");
 if (isExisted) {
   particlesJS("particles", {
-    particles: particles,
-    interactivity: interactivity,
+    particles,
+    interactivity,
     retina_detect: true
   });
 }
@@ -554,17 +619,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_1__["default"]);
-var cardTogglers = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].utils.toArray(".service-card__header-more-btn");
-
+const cardTogglers = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].utils.toArray(".service-card__header-more-btn");
 if (cardTogglers) {
-  var btns = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].utils.toArray(".service-card__header-more-btn");
-
-  var onClickOpenCard = function onClickOpenCard(evt) {
-    var card = evt.currentTarget.closest(".service-card");
-    var offsetTop = card.getBoundingClientRect().top + window.scrollY;
-    var content = card.querySelector(".service-card__content");
+  let btns = gsap__WEBPACK_IMPORTED_MODULE_0__["default"].utils.toArray(".service-card__header-more-btn");
+  const onClickOpenCard = evt => {
+    const card = evt.currentTarget.closest(".service-card");
+    const offsetTop = card.getBoundingClientRect().top + window.scrollY;
+    const content = card.querySelector(".service-card__content");
     evt.currentTarget.classList.toggle("active");
-    btns.forEach(function (btn) {
+    btns.forEach(btn => {
       if (!btn.classList.contains("active")) {
         btn.querySelector("span").textContent = "Что входит";
         btn.querySelector("img").style.transform = "rotate(0)";
@@ -582,7 +645,7 @@ if (cardTogglers) {
       height: "100%",
       duration: 1,
       ease: "ease-in",
-      onComplete: function onComplete() {}
+      onComplete: () => {}
     });
     gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(window, {
       duration: 0.4,
@@ -593,8 +656,7 @@ if (cardTogglers) {
       }
     });
   };
-
-  cardTogglers.forEach(function (toggler) {
+  cardTogglers.forEach(toggler => {
     toggler.addEventListener("click", onClickOpenCard);
   });
 }
@@ -608,36 +670,31 @@ if (cardTogglers) {
 /***/ (() => {
 
 function setEqualBlockHeight(arr) {
-  arr.forEach(function (el) {
+  arr.forEach(el => {
     el.style.minHeight = "initial";
   });
-  var max = arr[0].offsetHeight;
-  arr.forEach(function (el) {
+  let max = arr[0].offsetHeight;
+  arr.forEach(el => {
     if (max < el.offsetHeight) {
       max = el.offsetHeight;
     }
   });
-  arr.forEach(function (el) {
-    el.style.minHeight = "".concat(max, "px");
+  arr.forEach(el => {
+    el.style.minHeight = `${max}px`;
   });
 }
-
-var init = function init(arr) {
+const init = arr => {
   setEqualBlockHeight(arr);
-  window.addEventListener("resize", function () {
+  window.addEventListener("resize", () => {
     setEqualBlockHeight(arr);
   });
 };
-
-var serviceCardPreviewTextBlocks = document.querySelectorAll(".service-card__preview-text");
-
-if (serviceCardPreviewTextBlocks) {
+const serviceCardPreviewTextBlocks = document.querySelectorAll(".service-card__preview-text");
+if (serviceCardPreviewTextBlocks.length) {
   init(serviceCardPreviewTextBlocks);
 }
-
-var serviceCardStuffBlocks = document.querySelectorAll(".service-card__section--stuff");
-
-if (serviceCardStuffBlocks) {
+const serviceCardStuffBlocks = document.querySelectorAll(".service-card__section--stuff");
+if (serviceCardStuffBlocks.length) {
   init(serviceCardStuffBlocks);
 }
 
@@ -649,33 +706,27 @@ if (serviceCardStuffBlocks) {
   \*******************************************/
 /***/ (() => {
 
-var items = document.querySelectorAll(".service-stuff__list-item");
-
+const items = document.querySelectorAll(".service-stuff__list-item");
 if (items) {
-  var isOdd = items.length % 2 === 1 ? true : false;
-
-  var setClass = function setClass(item) {
-    var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  const isOdd = items.length % 2 === 1 ? true : false;
+  const setClass = function (item) {
+    let type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
     item.classList.add("service-stuff__list-item--related");
-
     if (type && type === "top") {
       item.classList.add("service-stuff__list-item--related-position-top");
     }
-
     if (type && type === "right") {
       item.classList.add("service-stuff__list-item--related-position-right");
     }
   };
-
   if (items.length === 2) {
     setClass(items[0], "right");
   } else {
-    for (var i = 2; i < items.length - 1; i++) {
+    for (let i = 2; i < items.length - 1; i++) {
       if (i % 2 === 0) {
         setClass(items[i]);
       }
     }
-
     if (isOdd && items.length !== 1) {
       setClass(items[items.length - 1], "top");
     }
@@ -695,7 +746,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
 swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.FreeMode, swiper__WEBPACK_IMPORTED_MODULE_0__.Mousewheel, swiper__WEBPACK_IMPORTED_MODULE_0__.Scrollbar, swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation]);
-var scrollableSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".scrollable-slider", {
+const scrollableSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".scrollable-slider", {
   slidesPerView: "auto",
   loop: true,
   spaceBetween: 15,
@@ -722,10 +773,10 @@ var scrollableSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".scro
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CSSPlugin": () => (/* binding */ CSSPlugin),
-/* harmony export */   "_createElement": () => (/* binding */ _createElement),
-/* harmony export */   "_getBBox": () => (/* binding */ _getBBox),
-/* harmony export */   "checkPrefix": () => (/* binding */ _checkPropPrefix),
+/* harmony export */   CSSPlugin: () => (/* binding */ CSSPlugin),
+/* harmony export */   _createElement: () => (/* binding */ _createElement),
+/* harmony export */   _getBBox: () => (/* binding */ _getBBox),
+/* harmony export */   checkPrefix: () => (/* binding */ _checkPropPrefix),
 /* harmony export */   "default": () => (/* binding */ CSSPlugin)
 /* harmony export */ });
 /* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gsap-core.js */ "./node_modules/gsap/gsap-core.js");
@@ -2286,16 +2337,16 @@ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(CSSPlugin);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Observer": () => (/* binding */ Observer),
-/* harmony export */   "_getProxyProp": () => (/* binding */ _getProxyProp),
-/* harmony export */   "_getScrollFunc": () => (/* binding */ _getScrollFunc),
-/* harmony export */   "_getTarget": () => (/* binding */ _getTarget),
-/* harmony export */   "_getVelocityProp": () => (/* binding */ _getVelocityProp),
-/* harmony export */   "_horizontal": () => (/* binding */ _horizontal),
-/* harmony export */   "_isViewport": () => (/* binding */ _isViewport),
-/* harmony export */   "_proxies": () => (/* binding */ _proxies),
-/* harmony export */   "_scrollers": () => (/* binding */ _scrollers),
-/* harmony export */   "_vertical": () => (/* binding */ _vertical),
+/* harmony export */   Observer: () => (/* binding */ Observer),
+/* harmony export */   _getProxyProp: () => (/* binding */ _getProxyProp),
+/* harmony export */   _getScrollFunc: () => (/* binding */ _getScrollFunc),
+/* harmony export */   _getTarget: () => (/* binding */ _getTarget),
+/* harmony export */   _getVelocityProp: () => (/* binding */ _getVelocityProp),
+/* harmony export */   _horizontal: () => (/* binding */ _horizontal),
+/* harmony export */   _isViewport: () => (/* binding */ _isViewport),
+/* harmony export */   _proxies: () => (/* binding */ _proxies),
+/* harmony export */   _scrollers: () => (/* binding */ _scrollers),
+/* harmony export */   _vertical: () => (/* binding */ _vertical),
 /* harmony export */   "default": () => (/* binding */ Observer)
 /* harmony export */ });
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -2995,7 +3046,7 @@ _getGSAP() && gsap.registerPlugin(Observer);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ScrollToPlugin": () => (/* binding */ ScrollToPlugin),
+/* harmony export */   ScrollToPlugin: () => (/* binding */ ScrollToPlugin),
 /* harmony export */   "default": () => (/* binding */ ScrollToPlugin)
 /* harmony export */ });
 /*!
@@ -3279,7 +3330,7 @@ _getGSAP() && gsap.registerPlugin(ScrollToPlugin);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ScrollTrigger": () => (/* binding */ ScrollTrigger),
+/* harmony export */   ScrollTrigger: () => (/* binding */ ScrollTrigger),
 /* harmony export */   "default": () => (/* binding */ ScrollTrigger)
 /* harmony export */ });
 /* harmony import */ var _Observer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Observer.js */ "./node_modules/gsap/Observer.js");
@@ -5771,75 +5822,75 @@ _getGSAP() && gsap.registerPlugin(ScrollTrigger);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Animation": () => (/* binding */ Animation),
-/* harmony export */   "Back": () => (/* binding */ Back),
-/* harmony export */   "Bounce": () => (/* binding */ Bounce),
-/* harmony export */   "Circ": () => (/* binding */ Circ),
-/* harmony export */   "Cubic": () => (/* binding */ Cubic),
-/* harmony export */   "Elastic": () => (/* binding */ Elastic),
-/* harmony export */   "Expo": () => (/* binding */ Expo),
-/* harmony export */   "GSCache": () => (/* binding */ GSCache),
-/* harmony export */   "Linear": () => (/* binding */ Linear),
-/* harmony export */   "Power0": () => (/* binding */ Power0),
-/* harmony export */   "Power1": () => (/* binding */ Power1),
-/* harmony export */   "Power2": () => (/* binding */ Power2),
-/* harmony export */   "Power3": () => (/* binding */ Power3),
-/* harmony export */   "Power4": () => (/* binding */ Power4),
-/* harmony export */   "PropTween": () => (/* binding */ PropTween),
-/* harmony export */   "Quad": () => (/* binding */ Quad),
-/* harmony export */   "Quart": () => (/* binding */ Quart),
-/* harmony export */   "Quint": () => (/* binding */ Quint),
-/* harmony export */   "Sine": () => (/* binding */ Sine),
-/* harmony export */   "SteppedEase": () => (/* binding */ SteppedEase),
-/* harmony export */   "Strong": () => (/* binding */ Strong),
-/* harmony export */   "Timeline": () => (/* binding */ Timeline),
-/* harmony export */   "TimelineLite": () => (/* binding */ Timeline),
-/* harmony export */   "TimelineMax": () => (/* binding */ Timeline),
-/* harmony export */   "Tween": () => (/* binding */ Tween),
-/* harmony export */   "TweenLite": () => (/* binding */ Tween),
-/* harmony export */   "TweenMax": () => (/* binding */ Tween),
-/* harmony export */   "_checkPlugin": () => (/* binding */ _checkPlugin),
-/* harmony export */   "_colorExp": () => (/* binding */ _colorExp),
-/* harmony export */   "_colorStringFilter": () => (/* binding */ _colorStringFilter),
-/* harmony export */   "_config": () => (/* binding */ _config),
-/* harmony export */   "_forEachName": () => (/* binding */ _forEachName),
-/* harmony export */   "_getCache": () => (/* binding */ _getCache),
-/* harmony export */   "_getProperty": () => (/* binding */ _getProperty),
-/* harmony export */   "_getSetter": () => (/* binding */ _getSetter),
-/* harmony export */   "_isString": () => (/* binding */ _isString),
-/* harmony export */   "_isUndefined": () => (/* binding */ _isUndefined),
-/* harmony export */   "_missingPlugin": () => (/* binding */ _missingPlugin),
-/* harmony export */   "_numExp": () => (/* binding */ _numExp),
-/* harmony export */   "_numWithUnitExp": () => (/* binding */ _numWithUnitExp),
-/* harmony export */   "_parseRelative": () => (/* binding */ _parseRelative),
-/* harmony export */   "_plugins": () => (/* binding */ _plugins),
-/* harmony export */   "_relExp": () => (/* binding */ _relExp),
-/* harmony export */   "_removeLinkedListItem": () => (/* binding */ _removeLinkedListItem),
-/* harmony export */   "_renderComplexString": () => (/* binding */ _renderComplexString),
-/* harmony export */   "_replaceRandom": () => (/* binding */ _replaceRandom),
-/* harmony export */   "_round": () => (/* binding */ _round),
-/* harmony export */   "_roundModifier": () => (/* binding */ _roundModifier),
-/* harmony export */   "_setDefaults": () => (/* binding */ _setDefaults),
-/* harmony export */   "_sortPropTweensByPriority": () => (/* binding */ _sortPropTweensByPriority),
-/* harmony export */   "_ticker": () => (/* binding */ _ticker),
-/* harmony export */   "clamp": () => (/* binding */ clamp),
+/* harmony export */   Animation: () => (/* binding */ Animation),
+/* harmony export */   Back: () => (/* binding */ Back),
+/* harmony export */   Bounce: () => (/* binding */ Bounce),
+/* harmony export */   Circ: () => (/* binding */ Circ),
+/* harmony export */   Cubic: () => (/* binding */ Cubic),
+/* harmony export */   Elastic: () => (/* binding */ Elastic),
+/* harmony export */   Expo: () => (/* binding */ Expo),
+/* harmony export */   GSCache: () => (/* binding */ GSCache),
+/* harmony export */   Linear: () => (/* binding */ Linear),
+/* harmony export */   Power0: () => (/* binding */ Power0),
+/* harmony export */   Power1: () => (/* binding */ Power1),
+/* harmony export */   Power2: () => (/* binding */ Power2),
+/* harmony export */   Power3: () => (/* binding */ Power3),
+/* harmony export */   Power4: () => (/* binding */ Power4),
+/* harmony export */   PropTween: () => (/* binding */ PropTween),
+/* harmony export */   Quad: () => (/* binding */ Quad),
+/* harmony export */   Quart: () => (/* binding */ Quart),
+/* harmony export */   Quint: () => (/* binding */ Quint),
+/* harmony export */   Sine: () => (/* binding */ Sine),
+/* harmony export */   SteppedEase: () => (/* binding */ SteppedEase),
+/* harmony export */   Strong: () => (/* binding */ Strong),
+/* harmony export */   Timeline: () => (/* binding */ Timeline),
+/* harmony export */   TimelineLite: () => (/* binding */ Timeline),
+/* harmony export */   TimelineMax: () => (/* binding */ Timeline),
+/* harmony export */   Tween: () => (/* binding */ Tween),
+/* harmony export */   TweenLite: () => (/* binding */ Tween),
+/* harmony export */   TweenMax: () => (/* binding */ Tween),
+/* harmony export */   _checkPlugin: () => (/* binding */ _checkPlugin),
+/* harmony export */   _colorExp: () => (/* binding */ _colorExp),
+/* harmony export */   _colorStringFilter: () => (/* binding */ _colorStringFilter),
+/* harmony export */   _config: () => (/* binding */ _config),
+/* harmony export */   _forEachName: () => (/* binding */ _forEachName),
+/* harmony export */   _getCache: () => (/* binding */ _getCache),
+/* harmony export */   _getProperty: () => (/* binding */ _getProperty),
+/* harmony export */   _getSetter: () => (/* binding */ _getSetter),
+/* harmony export */   _isString: () => (/* binding */ _isString),
+/* harmony export */   _isUndefined: () => (/* binding */ _isUndefined),
+/* harmony export */   _missingPlugin: () => (/* binding */ _missingPlugin),
+/* harmony export */   _numExp: () => (/* binding */ _numExp),
+/* harmony export */   _numWithUnitExp: () => (/* binding */ _numWithUnitExp),
+/* harmony export */   _parseRelative: () => (/* binding */ _parseRelative),
+/* harmony export */   _plugins: () => (/* binding */ _plugins),
+/* harmony export */   _relExp: () => (/* binding */ _relExp),
+/* harmony export */   _removeLinkedListItem: () => (/* binding */ _removeLinkedListItem),
+/* harmony export */   _renderComplexString: () => (/* binding */ _renderComplexString),
+/* harmony export */   _replaceRandom: () => (/* binding */ _replaceRandom),
+/* harmony export */   _round: () => (/* binding */ _round),
+/* harmony export */   _roundModifier: () => (/* binding */ _roundModifier),
+/* harmony export */   _setDefaults: () => (/* binding */ _setDefaults),
+/* harmony export */   _sortPropTweensByPriority: () => (/* binding */ _sortPropTweensByPriority),
+/* harmony export */   _ticker: () => (/* binding */ _ticker),
+/* harmony export */   clamp: () => (/* binding */ clamp),
 /* harmony export */   "default": () => (/* binding */ gsap),
-/* harmony export */   "distribute": () => (/* binding */ distribute),
-/* harmony export */   "getUnit": () => (/* binding */ getUnit),
-/* harmony export */   "gsap": () => (/* binding */ gsap),
-/* harmony export */   "interpolate": () => (/* binding */ interpolate),
-/* harmony export */   "mapRange": () => (/* binding */ mapRange),
-/* harmony export */   "normalize": () => (/* binding */ normalize),
-/* harmony export */   "pipe": () => (/* binding */ pipe),
-/* harmony export */   "random": () => (/* binding */ random),
-/* harmony export */   "selector": () => (/* binding */ selector),
-/* harmony export */   "shuffle": () => (/* binding */ shuffle),
-/* harmony export */   "snap": () => (/* binding */ snap),
-/* harmony export */   "splitColor": () => (/* binding */ splitColor),
-/* harmony export */   "toArray": () => (/* binding */ toArray),
-/* harmony export */   "unitize": () => (/* binding */ unitize),
-/* harmony export */   "wrap": () => (/* binding */ wrap),
-/* harmony export */   "wrapYoyo": () => (/* binding */ wrapYoyo)
+/* harmony export */   distribute: () => (/* binding */ distribute),
+/* harmony export */   getUnit: () => (/* binding */ getUnit),
+/* harmony export */   gsap: () => (/* binding */ gsap),
+/* harmony export */   interpolate: () => (/* binding */ interpolate),
+/* harmony export */   mapRange: () => (/* binding */ mapRange),
+/* harmony export */   normalize: () => (/* binding */ normalize),
+/* harmony export */   pipe: () => (/* binding */ pipe),
+/* harmony export */   random: () => (/* binding */ random),
+/* harmony export */   selector: () => (/* binding */ selector),
+/* harmony export */   shuffle: () => (/* binding */ shuffle),
+/* harmony export */   snap: () => (/* binding */ snap),
+/* harmony export */   splitColor: () => (/* binding */ splitColor),
+/* harmony export */   toArray: () => (/* binding */ toArray),
+/* harmony export */   unitize: () => (/* binding */ unitize),
+/* harmony export */   wrap: () => (/* binding */ wrap),
+/* harmony export */   wrapYoyo: () => (/* binding */ wrapYoyo)
 /* harmony export */ });
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -10297,31 +10348,31 @@ var Power0 = _easeMap.Power0,
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Back": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Back),
-/* harmony export */   "Bounce": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Bounce),
-/* harmony export */   "CSSPlugin": () => (/* reexport safe */ _CSSPlugin_js__WEBPACK_IMPORTED_MODULE_1__.CSSPlugin),
-/* harmony export */   "Circ": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Circ),
-/* harmony export */   "Cubic": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Cubic),
-/* harmony export */   "Elastic": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Elastic),
-/* harmony export */   "Expo": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Expo),
-/* harmony export */   "Linear": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Linear),
-/* harmony export */   "Power0": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Power0),
-/* harmony export */   "Power1": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Power1),
-/* harmony export */   "Power2": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Power2),
-/* harmony export */   "Power3": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Power3),
-/* harmony export */   "Power4": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Power4),
-/* harmony export */   "Quad": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Quad),
-/* harmony export */   "Quart": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Quart),
-/* harmony export */   "Quint": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Quint),
-/* harmony export */   "Sine": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Sine),
-/* harmony export */   "SteppedEase": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.SteppedEase),
-/* harmony export */   "Strong": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Strong),
-/* harmony export */   "TimelineLite": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.TimelineLite),
-/* harmony export */   "TimelineMax": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.TimelineMax),
-/* harmony export */   "TweenLite": () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.TweenLite),
-/* harmony export */   "TweenMax": () => (/* binding */ TweenMaxWithCSS),
+/* harmony export */   Back: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Back),
+/* harmony export */   Bounce: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Bounce),
+/* harmony export */   CSSPlugin: () => (/* reexport safe */ _CSSPlugin_js__WEBPACK_IMPORTED_MODULE_1__.CSSPlugin),
+/* harmony export */   Circ: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Circ),
+/* harmony export */   Cubic: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Cubic),
+/* harmony export */   Elastic: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Elastic),
+/* harmony export */   Expo: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Expo),
+/* harmony export */   Linear: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Linear),
+/* harmony export */   Power0: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Power0),
+/* harmony export */   Power1: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Power1),
+/* harmony export */   Power2: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Power2),
+/* harmony export */   Power3: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Power3),
+/* harmony export */   Power4: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Power4),
+/* harmony export */   Quad: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Quad),
+/* harmony export */   Quart: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Quart),
+/* harmony export */   Quint: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Quint),
+/* harmony export */   Sine: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Sine),
+/* harmony export */   SteppedEase: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.SteppedEase),
+/* harmony export */   Strong: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.Strong),
+/* harmony export */   TimelineLite: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.TimelineLite),
+/* harmony export */   TimelineMax: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.TimelineMax),
+/* harmony export */   TweenLite: () => (/* reexport safe */ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.TweenLite),
+/* harmony export */   TweenMax: () => (/* binding */ TweenMaxWithCSS),
 /* harmony export */   "default": () => (/* binding */ gsapWithCSS),
-/* harmony export */   "gsap": () => (/* binding */ gsapWithCSS)
+/* harmony export */   gsap: () => (/* binding */ gsapWithCSS)
 /* harmony export */ });
 /* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gsap-core.js */ "./node_modules/gsap/gsap-core.js");
 /* harmony import */ var _CSSPlugin_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CSSPlugin.js */ "./node_modules/gsap/CSSPlugin.js");
@@ -11893,92 +11944,92 @@ window.particlesJS.load = function(tag_id, path_config_json, callback){
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "$": () => (/* binding */ $),
-/* harmony export */   "add": () => (/* binding */ add),
-/* harmony export */   "addClass": () => (/* binding */ addClass),
-/* harmony export */   "animate": () => (/* binding */ animate),
-/* harmony export */   "animationEnd": () => (/* binding */ animationEnd),
-/* harmony export */   "append": () => (/* binding */ append),
-/* harmony export */   "appendTo": () => (/* binding */ appendTo),
-/* harmony export */   "attr": () => (/* binding */ attr),
-/* harmony export */   "blur": () => (/* binding */ blur),
-/* harmony export */   "change": () => (/* binding */ change),
-/* harmony export */   "children": () => (/* binding */ children),
-/* harmony export */   "click": () => (/* binding */ click),
-/* harmony export */   "closest": () => (/* binding */ closest),
-/* harmony export */   "css": () => (/* binding */ css),
-/* harmony export */   "data": () => (/* binding */ data),
-/* harmony export */   "dataset": () => (/* binding */ dataset),
+/* harmony export */   $: () => (/* binding */ $),
+/* harmony export */   add: () => (/* binding */ add),
+/* harmony export */   addClass: () => (/* binding */ addClass),
+/* harmony export */   animate: () => (/* binding */ animate),
+/* harmony export */   animationEnd: () => (/* binding */ animationEnd),
+/* harmony export */   append: () => (/* binding */ append),
+/* harmony export */   appendTo: () => (/* binding */ appendTo),
+/* harmony export */   attr: () => (/* binding */ attr),
+/* harmony export */   blur: () => (/* binding */ blur),
+/* harmony export */   change: () => (/* binding */ change),
+/* harmony export */   children: () => (/* binding */ children),
+/* harmony export */   click: () => (/* binding */ click),
+/* harmony export */   closest: () => (/* binding */ closest),
+/* harmony export */   css: () => (/* binding */ css),
+/* harmony export */   data: () => (/* binding */ data),
+/* harmony export */   dataset: () => (/* binding */ dataset),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "detach": () => (/* binding */ detach),
-/* harmony export */   "each": () => (/* binding */ each),
-/* harmony export */   "empty": () => (/* binding */ empty),
-/* harmony export */   "eq": () => (/* binding */ eq),
-/* harmony export */   "filter": () => (/* binding */ filter),
-/* harmony export */   "find": () => (/* binding */ find),
-/* harmony export */   "focus": () => (/* binding */ focus),
-/* harmony export */   "focusin": () => (/* binding */ focusin),
-/* harmony export */   "focusout": () => (/* binding */ focusout),
-/* harmony export */   "hasClass": () => (/* binding */ hasClass),
-/* harmony export */   "height": () => (/* binding */ height),
-/* harmony export */   "hide": () => (/* binding */ hide),
-/* harmony export */   "html": () => (/* binding */ html),
-/* harmony export */   "index": () => (/* binding */ index),
-/* harmony export */   "insertAfter": () => (/* binding */ insertAfter),
-/* harmony export */   "insertBefore": () => (/* binding */ insertBefore),
-/* harmony export */   "is": () => (/* binding */ is),
-/* harmony export */   "keydown": () => (/* binding */ keydown),
-/* harmony export */   "keypress": () => (/* binding */ keypress),
-/* harmony export */   "keyup": () => (/* binding */ keyup),
-/* harmony export */   "mousedown": () => (/* binding */ mousedown),
-/* harmony export */   "mouseenter": () => (/* binding */ mouseenter),
-/* harmony export */   "mouseleave": () => (/* binding */ mouseleave),
-/* harmony export */   "mousemove": () => (/* binding */ mousemove),
-/* harmony export */   "mouseout": () => (/* binding */ mouseout),
-/* harmony export */   "mouseover": () => (/* binding */ mouseover),
-/* harmony export */   "mouseup": () => (/* binding */ mouseup),
-/* harmony export */   "next": () => (/* binding */ next),
-/* harmony export */   "nextAll": () => (/* binding */ nextAll),
-/* harmony export */   "off": () => (/* binding */ off),
-/* harmony export */   "offset": () => (/* binding */ offset),
-/* harmony export */   "on": () => (/* binding */ on),
-/* harmony export */   "once": () => (/* binding */ once),
-/* harmony export */   "outerHeight": () => (/* binding */ outerHeight),
-/* harmony export */   "outerWidth": () => (/* binding */ outerWidth),
-/* harmony export */   "parent": () => (/* binding */ parent),
-/* harmony export */   "parents": () => (/* binding */ parents),
-/* harmony export */   "prepend": () => (/* binding */ prepend),
-/* harmony export */   "prependTo": () => (/* binding */ prependTo),
-/* harmony export */   "prev": () => (/* binding */ prev),
-/* harmony export */   "prevAll": () => (/* binding */ prevAll),
-/* harmony export */   "prop": () => (/* binding */ prop),
-/* harmony export */   "remove": () => (/* binding */ remove),
-/* harmony export */   "removeAttr": () => (/* binding */ removeAttr),
-/* harmony export */   "removeClass": () => (/* binding */ removeClass),
-/* harmony export */   "removeData": () => (/* binding */ removeData),
-/* harmony export */   "resize": () => (/* binding */ resize),
-/* harmony export */   "scroll": () => (/* binding */ scroll),
-/* harmony export */   "scrollLeft": () => (/* binding */ scrollLeft),
-/* harmony export */   "scrollTo": () => (/* binding */ scrollTo),
-/* harmony export */   "scrollTop": () => (/* binding */ scrollTop),
-/* harmony export */   "show": () => (/* binding */ show),
-/* harmony export */   "siblings": () => (/* binding */ siblings),
-/* harmony export */   "stop": () => (/* binding */ stop),
-/* harmony export */   "styles": () => (/* binding */ styles),
-/* harmony export */   "submit": () => (/* binding */ submit),
-/* harmony export */   "text": () => (/* binding */ text),
-/* harmony export */   "toggleClass": () => (/* binding */ toggleClass),
-/* harmony export */   "touchend": () => (/* binding */ touchend),
-/* harmony export */   "touchmove": () => (/* binding */ touchmove),
-/* harmony export */   "touchstart": () => (/* binding */ touchstart),
-/* harmony export */   "transform": () => (/* binding */ transform),
-/* harmony export */   "transition": () => (/* binding */ transition),
-/* harmony export */   "transitionEnd": () => (/* binding */ transitionEnd),
-/* harmony export */   "transitionStart": () => (/* binding */ transitionStart),
-/* harmony export */   "trigger": () => (/* binding */ trigger),
-/* harmony export */   "val": () => (/* binding */ val),
-/* harmony export */   "value": () => (/* binding */ value),
-/* harmony export */   "width": () => (/* binding */ width)
+/* harmony export */   detach: () => (/* binding */ detach),
+/* harmony export */   each: () => (/* binding */ each),
+/* harmony export */   empty: () => (/* binding */ empty),
+/* harmony export */   eq: () => (/* binding */ eq),
+/* harmony export */   filter: () => (/* binding */ filter),
+/* harmony export */   find: () => (/* binding */ find),
+/* harmony export */   focus: () => (/* binding */ focus),
+/* harmony export */   focusin: () => (/* binding */ focusin),
+/* harmony export */   focusout: () => (/* binding */ focusout),
+/* harmony export */   hasClass: () => (/* binding */ hasClass),
+/* harmony export */   height: () => (/* binding */ height),
+/* harmony export */   hide: () => (/* binding */ hide),
+/* harmony export */   html: () => (/* binding */ html),
+/* harmony export */   index: () => (/* binding */ index),
+/* harmony export */   insertAfter: () => (/* binding */ insertAfter),
+/* harmony export */   insertBefore: () => (/* binding */ insertBefore),
+/* harmony export */   is: () => (/* binding */ is),
+/* harmony export */   keydown: () => (/* binding */ keydown),
+/* harmony export */   keypress: () => (/* binding */ keypress),
+/* harmony export */   keyup: () => (/* binding */ keyup),
+/* harmony export */   mousedown: () => (/* binding */ mousedown),
+/* harmony export */   mouseenter: () => (/* binding */ mouseenter),
+/* harmony export */   mouseleave: () => (/* binding */ mouseleave),
+/* harmony export */   mousemove: () => (/* binding */ mousemove),
+/* harmony export */   mouseout: () => (/* binding */ mouseout),
+/* harmony export */   mouseover: () => (/* binding */ mouseover),
+/* harmony export */   mouseup: () => (/* binding */ mouseup),
+/* harmony export */   next: () => (/* binding */ next),
+/* harmony export */   nextAll: () => (/* binding */ nextAll),
+/* harmony export */   off: () => (/* binding */ off),
+/* harmony export */   offset: () => (/* binding */ offset),
+/* harmony export */   on: () => (/* binding */ on),
+/* harmony export */   once: () => (/* binding */ once),
+/* harmony export */   outerHeight: () => (/* binding */ outerHeight),
+/* harmony export */   outerWidth: () => (/* binding */ outerWidth),
+/* harmony export */   parent: () => (/* binding */ parent),
+/* harmony export */   parents: () => (/* binding */ parents),
+/* harmony export */   prepend: () => (/* binding */ prepend),
+/* harmony export */   prependTo: () => (/* binding */ prependTo),
+/* harmony export */   prev: () => (/* binding */ prev),
+/* harmony export */   prevAll: () => (/* binding */ prevAll),
+/* harmony export */   prop: () => (/* binding */ prop),
+/* harmony export */   remove: () => (/* binding */ remove),
+/* harmony export */   removeAttr: () => (/* binding */ removeAttr),
+/* harmony export */   removeClass: () => (/* binding */ removeClass),
+/* harmony export */   removeData: () => (/* binding */ removeData),
+/* harmony export */   resize: () => (/* binding */ resize),
+/* harmony export */   scroll: () => (/* binding */ scroll),
+/* harmony export */   scrollLeft: () => (/* binding */ scrollLeft),
+/* harmony export */   scrollTo: () => (/* binding */ scrollTo),
+/* harmony export */   scrollTop: () => (/* binding */ scrollTop),
+/* harmony export */   show: () => (/* binding */ show),
+/* harmony export */   siblings: () => (/* binding */ siblings),
+/* harmony export */   stop: () => (/* binding */ stop),
+/* harmony export */   styles: () => (/* binding */ styles),
+/* harmony export */   submit: () => (/* binding */ submit),
+/* harmony export */   text: () => (/* binding */ text),
+/* harmony export */   toggleClass: () => (/* binding */ toggleClass),
+/* harmony export */   touchend: () => (/* binding */ touchend),
+/* harmony export */   touchmove: () => (/* binding */ touchmove),
+/* harmony export */   touchstart: () => (/* binding */ touchstart),
+/* harmony export */   transform: () => (/* binding */ transform),
+/* harmony export */   transition: () => (/* binding */ transition),
+/* harmony export */   transitionEnd: () => (/* binding */ transitionEnd),
+/* harmony export */   transitionStart: () => (/* binding */ transitionStart),
+/* harmony export */   trigger: () => (/* binding */ trigger),
+/* harmony export */   val: () => (/* binding */ val),
+/* harmony export */   value: () => (/* binding */ value),
+/* harmony export */   width: () => (/* binding */ width)
 /* harmony export */ });
 /* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
 /**
@@ -13492,11 +13543,11 @@ const scroll = shortcut('scroll');
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "extend": () => (/* binding */ extend),
-/* harmony export */   "getDocument": () => (/* binding */ getDocument),
-/* harmony export */   "getWindow": () => (/* binding */ getWindow),
-/* harmony export */   "ssrDocument": () => (/* binding */ ssrDocument),
-/* harmony export */   "ssrWindow": () => (/* binding */ ssrWindow)
+/* harmony export */   extend: () => (/* binding */ extend),
+/* harmony export */   getDocument: () => (/* binding */ getDocument),
+/* harmony export */   getWindow: () => (/* binding */ getWindow),
+/* harmony export */   ssrDocument: () => (/* binding */ ssrDocument),
+/* harmony export */   ssrWindow: () => (/* binding */ ssrWindow)
 /* harmony export */ });
 /**
  * SSR Window 4.0.2
@@ -24373,7 +24424,7 @@ function effectVirtualTransitionEnd({
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getBrowser": () => (/* binding */ getBrowser)
+/* harmony export */   getBrowser: () => (/* binding */ getBrowser)
 /* harmony export */ });
 /* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
 
@@ -24414,7 +24465,7 @@ function getBrowser() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getDevice": () => (/* binding */ getDevice)
+/* harmony export */   getDevice: () => (/* binding */ getDevice)
 /* harmony export */ });
 /* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
 /* harmony import */ var _get_support_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./get-support.js */ "./node_modules/swiper/shared/get-support.js");
@@ -24487,7 +24538,7 @@ function getDevice(overrides = {}) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getSupport": () => (/* binding */ getSupport)
+/* harmony export */   getSupport: () => (/* binding */ getSupport)
 /* harmony export */ });
 /* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
 
@@ -24543,15 +24594,15 @@ function getSupport() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "animateCSSModeScroll": () => (/* binding */ animateCSSModeScroll),
-/* harmony export */   "deleteProps": () => (/* binding */ deleteProps),
-/* harmony export */   "extend": () => (/* binding */ extend),
-/* harmony export */   "getComputedStyle": () => (/* binding */ getComputedStyle),
-/* harmony export */   "getTranslate": () => (/* binding */ getTranslate),
-/* harmony export */   "isObject": () => (/* binding */ isObject),
-/* harmony export */   "nextTick": () => (/* binding */ nextTick),
-/* harmony export */   "now": () => (/* binding */ now),
-/* harmony export */   "setCSSProperty": () => (/* binding */ setCSSProperty)
+/* harmony export */   animateCSSModeScroll: () => (/* binding */ animateCSSModeScroll),
+/* harmony export */   deleteProps: () => (/* binding */ deleteProps),
+/* harmony export */   extend: () => (/* binding */ extend),
+/* harmony export */   getComputedStyle: () => (/* binding */ getComputedStyle),
+/* harmony export */   getTranslate: () => (/* binding */ getTranslate),
+/* harmony export */   isObject: () => (/* binding */ isObject),
+/* harmony export */   nextTick: () => (/* binding */ nextTick),
+/* harmony export */   now: () => (/* binding */ now),
+/* harmony export */   setCSSProperty: () => (/* binding */ setCSSProperty)
 /* harmony export */ });
 /* harmony import */ var ssr_window__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ssr-window */ "./node_modules/ssr-window/ssr-window.esm.js");
 
@@ -24763,31 +24814,31 @@ function animateCSSModeScroll({
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "A11y": () => (/* reexport safe */ _modules_a11y_a11y_js__WEBPACK_IMPORTED_MODULE_11__["default"]),
-/* harmony export */   "Autoplay": () => (/* reexport safe */ _modules_autoplay_autoplay_js__WEBPACK_IMPORTED_MODULE_14__["default"]),
-/* harmony export */   "Controller": () => (/* reexport safe */ _modules_controller_controller_js__WEBPACK_IMPORTED_MODULE_10__["default"]),
-/* harmony export */   "EffectCards": () => (/* reexport safe */ _modules_effect_cards_effect_cards_js__WEBPACK_IMPORTED_MODULE_24__["default"]),
-/* harmony export */   "EffectCoverflow": () => (/* reexport safe */ _modules_effect_coverflow_effect_coverflow_js__WEBPACK_IMPORTED_MODULE_22__["default"]),
-/* harmony export */   "EffectCreative": () => (/* reexport safe */ _modules_effect_creative_effect_creative_js__WEBPACK_IMPORTED_MODULE_23__["default"]),
-/* harmony export */   "EffectCube": () => (/* reexport safe */ _modules_effect_cube_effect_cube_js__WEBPACK_IMPORTED_MODULE_20__["default"]),
-/* harmony export */   "EffectFade": () => (/* reexport safe */ _modules_effect_fade_effect_fade_js__WEBPACK_IMPORTED_MODULE_19__["default"]),
-/* harmony export */   "EffectFlip": () => (/* reexport safe */ _modules_effect_flip_effect_flip_js__WEBPACK_IMPORTED_MODULE_21__["default"]),
-/* harmony export */   "FreeMode": () => (/* reexport safe */ _modules_free_mode_free_mode_js__WEBPACK_IMPORTED_MODULE_16__["default"]),
-/* harmony export */   "Grid": () => (/* reexport safe */ _modules_grid_grid_js__WEBPACK_IMPORTED_MODULE_17__["default"]),
-/* harmony export */   "HashNavigation": () => (/* reexport safe */ _modules_hash_navigation_hash_navigation_js__WEBPACK_IMPORTED_MODULE_13__["default"]),
-/* harmony export */   "History": () => (/* reexport safe */ _modules_history_history_js__WEBPACK_IMPORTED_MODULE_12__["default"]),
-/* harmony export */   "Keyboard": () => (/* reexport safe */ _modules_keyboard_keyboard_js__WEBPACK_IMPORTED_MODULE_2__["default"]),
-/* harmony export */   "Lazy": () => (/* reexport safe */ _modules_lazy_lazy_js__WEBPACK_IMPORTED_MODULE_9__["default"]),
-/* harmony export */   "Manipulation": () => (/* reexport safe */ _modules_manipulation_manipulation_js__WEBPACK_IMPORTED_MODULE_18__["default"]),
-/* harmony export */   "Mousewheel": () => (/* reexport safe */ _modules_mousewheel_mousewheel_js__WEBPACK_IMPORTED_MODULE_3__["default"]),
-/* harmony export */   "Navigation": () => (/* reexport safe */ _modules_navigation_navigation_js__WEBPACK_IMPORTED_MODULE_4__["default"]),
-/* harmony export */   "Pagination": () => (/* reexport safe */ _modules_pagination_pagination_js__WEBPACK_IMPORTED_MODULE_5__["default"]),
-/* harmony export */   "Parallax": () => (/* reexport safe */ _modules_parallax_parallax_js__WEBPACK_IMPORTED_MODULE_7__["default"]),
-/* harmony export */   "Scrollbar": () => (/* reexport safe */ _modules_scrollbar_scrollbar_js__WEBPACK_IMPORTED_MODULE_6__["default"]),
-/* harmony export */   "Swiper": () => (/* reexport safe */ _core_core_js__WEBPACK_IMPORTED_MODULE_0__["default"]),
-/* harmony export */   "Thumbs": () => (/* reexport safe */ _modules_thumbs_thumbs_js__WEBPACK_IMPORTED_MODULE_15__["default"]),
-/* harmony export */   "Virtual": () => (/* reexport safe */ _modules_virtual_virtual_js__WEBPACK_IMPORTED_MODULE_1__["default"]),
-/* harmony export */   "Zoom": () => (/* reexport safe */ _modules_zoom_zoom_js__WEBPACK_IMPORTED_MODULE_8__["default"]),
+/* harmony export */   A11y: () => (/* reexport safe */ _modules_a11y_a11y_js__WEBPACK_IMPORTED_MODULE_11__["default"]),
+/* harmony export */   Autoplay: () => (/* reexport safe */ _modules_autoplay_autoplay_js__WEBPACK_IMPORTED_MODULE_14__["default"]),
+/* harmony export */   Controller: () => (/* reexport safe */ _modules_controller_controller_js__WEBPACK_IMPORTED_MODULE_10__["default"]),
+/* harmony export */   EffectCards: () => (/* reexport safe */ _modules_effect_cards_effect_cards_js__WEBPACK_IMPORTED_MODULE_24__["default"]),
+/* harmony export */   EffectCoverflow: () => (/* reexport safe */ _modules_effect_coverflow_effect_coverflow_js__WEBPACK_IMPORTED_MODULE_22__["default"]),
+/* harmony export */   EffectCreative: () => (/* reexport safe */ _modules_effect_creative_effect_creative_js__WEBPACK_IMPORTED_MODULE_23__["default"]),
+/* harmony export */   EffectCube: () => (/* reexport safe */ _modules_effect_cube_effect_cube_js__WEBPACK_IMPORTED_MODULE_20__["default"]),
+/* harmony export */   EffectFade: () => (/* reexport safe */ _modules_effect_fade_effect_fade_js__WEBPACK_IMPORTED_MODULE_19__["default"]),
+/* harmony export */   EffectFlip: () => (/* reexport safe */ _modules_effect_flip_effect_flip_js__WEBPACK_IMPORTED_MODULE_21__["default"]),
+/* harmony export */   FreeMode: () => (/* reexport safe */ _modules_free_mode_free_mode_js__WEBPACK_IMPORTED_MODULE_16__["default"]),
+/* harmony export */   Grid: () => (/* reexport safe */ _modules_grid_grid_js__WEBPACK_IMPORTED_MODULE_17__["default"]),
+/* harmony export */   HashNavigation: () => (/* reexport safe */ _modules_hash_navigation_hash_navigation_js__WEBPACK_IMPORTED_MODULE_13__["default"]),
+/* harmony export */   History: () => (/* reexport safe */ _modules_history_history_js__WEBPACK_IMPORTED_MODULE_12__["default"]),
+/* harmony export */   Keyboard: () => (/* reexport safe */ _modules_keyboard_keyboard_js__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   Lazy: () => (/* reexport safe */ _modules_lazy_lazy_js__WEBPACK_IMPORTED_MODULE_9__["default"]),
+/* harmony export */   Manipulation: () => (/* reexport safe */ _modules_manipulation_manipulation_js__WEBPACK_IMPORTED_MODULE_18__["default"]),
+/* harmony export */   Mousewheel: () => (/* reexport safe */ _modules_mousewheel_mousewheel_js__WEBPACK_IMPORTED_MODULE_3__["default"]),
+/* harmony export */   Navigation: () => (/* reexport safe */ _modules_navigation_navigation_js__WEBPACK_IMPORTED_MODULE_4__["default"]),
+/* harmony export */   Pagination: () => (/* reexport safe */ _modules_pagination_pagination_js__WEBPACK_IMPORTED_MODULE_5__["default"]),
+/* harmony export */   Parallax: () => (/* reexport safe */ _modules_parallax_parallax_js__WEBPACK_IMPORTED_MODULE_7__["default"]),
+/* harmony export */   Scrollbar: () => (/* reexport safe */ _modules_scrollbar_scrollbar_js__WEBPACK_IMPORTED_MODULE_6__["default"]),
+/* harmony export */   Swiper: () => (/* reexport safe */ _core_core_js__WEBPACK_IMPORTED_MODULE_0__["default"]),
+/* harmony export */   Thumbs: () => (/* reexport safe */ _modules_thumbs_thumbs_js__WEBPACK_IMPORTED_MODULE_15__["default"]),
+/* harmony export */   Virtual: () => (/* reexport safe */ _modules_virtual_virtual_js__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   Zoom: () => (/* reexport safe */ _modules_zoom_zoom_js__WEBPACK_IMPORTED_MODULE_8__["default"]),
 /* harmony export */   "default": () => (/* reexport safe */ _core_core_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
 /* harmony import */ var _core_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core/core.js */ "./node_modules/swiper/core/core.js");
@@ -24947,6 +24998,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_gsap_page_up_btn__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/gsap/page-up-btn */ "./src/scripts/modules/gsap/page-up-btn.js");
 /* harmony import */ var _modules_stuff_card__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/stuff-card */ "./src/scripts/modules/stuff-card.js");
 /* harmony import */ var _modules_stuff_card__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_modules_stuff_card__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _modules_gsap_service_page_list__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/gsap/service-page-list */ "./src/scripts/modules/gsap/service-page-list.js");
+
 
 
 

@@ -1,6 +1,10 @@
 .reviews {
   margin-top: 0;
 
+  @include m-b-up(1500px) {
+    padding: 200px 0 300px;
+  }
+
   .main-title {
     text-align: center;
     margin-bottom: 0;

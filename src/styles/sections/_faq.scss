@@ -10,9 +10,11 @@
     display: grid;
     grid-template-columns: 4fr 7fr;
     grid-gap: 5vw;
-    padding-top: clamp(150px, 36vw, 400px);
-    padding-bottom: clamp(150px, 36vw, 400px);
-    overflow-x: hidden;
+    padding-top: clamp(150px, 36vw, 200px);
+    padding-bottom: clamp(150px, 36vw, 200px);
+    
+    overflow: hidden;
+    // overflow-x: hidden;
 
     @include m-b-laptop-down {
       grid-template-columns: 1fr;
@@ -57,13 +59,13 @@
 
     &--top {
       // top: 100px;
-      top: clamp(38px, 9vw, 100px);
+      top: 0;//clamp(38px, 9vw, 100px);
       right: -100vw;
     }
 
     &--bottom {
       // bottom: 100px;
-      bottom: clamp(38px, 9vw, 100px);
+      bottom: 0;//clamp(38px, 9vw, 100px);
       left: -100vw;
     }
   }

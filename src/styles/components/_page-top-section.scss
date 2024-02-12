@@ -9,7 +9,8 @@
     @include m-b-up(1500px) {
       margin-top: 150px;
     }
-    padding: 100px 0 100px;
+    padding: 50px 0 0;//100px 0 100px;
+    // padding-bottom: 0;
   
     @include m-b-tablet-down {
       padding: 35px 0;
@@ -19,11 +20,11 @@
     &__container {
         display: grid;
         align-items: center;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 2fr 3fr;//repeat(2, 1fr);
         grid-gap: 40px;
         padding-top: clamp(90px, 17vw, 150px);
         // padding-bottom: clamp(60px, 17vw, 150px);
-        max-width: 1440px;
+        // max-width: 1440px;
         margin: 0 auto;
 
         @include m-b-tablet-down {
