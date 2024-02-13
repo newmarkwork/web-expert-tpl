@@ -47,7 +47,6 @@ if (nav) {
   });
 
   const refreshSubMenu = () => {
-
     if (!nav.querySelector(".main-nav__list-item.opened")) return;
 
     gsap.set(".main-nav__list-item.opened .main-nav__list-item-icon", {
@@ -151,6 +150,8 @@ if (nav) {
       nav.classList.add("active");
       opener.removeEventListener("click", onClickOpenNavHandler);
       closer.addEventListener("click", onClickCloseNavHandler);
+
+      // gsap.set(".main-header", { zIndex: 100 });
 
       gsap.fromTo(
         ".main-header .main-nav",

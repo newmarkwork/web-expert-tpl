@@ -4,7 +4,41 @@ footer.main-footer
       include ../components/main-logo
       span.main-footer__company-rights © 2024 WEB-EXPERT
       a(href="#").main-footer__company-policy Политика конфиденциальности
-    include ./main-nav
+
+    nav.main-nav
+      <ul class="main-nav__list">
+        <li class="main-nav__list-item">
+          <a href="#">
+            <div class="main-nav__list-item-icon">
+              <img src="./assets/img/icon-menu-company.svg" alt="Закрыть" width="20" height="20">
+            </div>
+            <span>О компании</span>
+          </a>
+        </li>
+        <li class="main-nav__list-item">
+          <a href="service-detail.html">
+            <span>Услуги</span>
+          </a>
+        </li>
+        <li class="main-nav__list-item">
+
+          <a href="#">
+            <span>Акции</span>
+          </a>
+        </li>
+        <li class="main-nav__list-item">
+
+          <a href="#">
+            <span>Блог</span>
+          </a>
+        </li>
+        <li class="main-nav__list-item">
+          <a href="#">
+            <span>Контакты</span>
+          </a>
+        </li>
+      </ul>
+
     include ../components/contact-block
 
 include ../components/page-up-btn
