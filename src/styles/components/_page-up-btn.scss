@@ -9,6 +9,11 @@
   visibility: hidden;
   opacity: 0;
 
+  img {
+    filter: drop-shadow(-32px 190px 110.4px rgba(255, 245, 0, 0.2))
+      drop-shadow(49px -169px 250px rgba(235, 0, 255, 0.5));
+  }
+
   z-index: 30;
 
   @include m-b-desktop-down {

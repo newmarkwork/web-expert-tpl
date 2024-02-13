@@ -188,8 +188,8 @@ gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(btn, {
     // start: "top top",
     // start: () => `+=${window.innerHeight / 3} +=${window.innerHeight / 3}`,
     // end: "bottom bottom",
-    scrub: true,
-    markers: true
+    scrub: true // markers: true,
+
   },
   opacity: 1,
   visibility: "visible"
@@ -213,66 +213,16 @@ gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPAC
 var items = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray(".service-content__list-item");
 
 if (items.length) {
-  items.forEach(function (item) {
-    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.set(item, {
-      y: 100,
-      opacity: 0
-    });
-  }); // usage:
-
-  batch(items, {
-    interval: 0.2,
-    // time window (in seconds) for batching to occur. The first callback that occurs (of its type) will start the timer, and when it elapses, any other similar callbacks for other targets will be batched into an array and fed to the callback. Default is 0.1
-    batchMax: 15,
-    // maximum batch size (targets)
-    onEnter: function onEnter(batch) {
-      return gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(batch, {
-        autoAlpha: 1,
-        y: 0,
-        stagger: 0.25,
-        overwrite: true,
-        duration: 0.6,
-        ease: "ease-in"
+  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.refresh();
+  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.batch(items, {
+    onEnter: function onEnter(elements) {
+      gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.from(elements, {
+        autoAlpha: 0,
+        y: 100,
+        stagger: 0.25
       });
-    } // onLeave: batch => gsap.set(batch, {autoAlpha: 0, overwrite: true}),
-    // onEnterBack: batch => gsap.to(batch, {autoAlpha: 1, stagger: 0.15, overwrite: true}),
-    // onLeaveBack: batch => gsap.set(batch, {autoAlpha: 0, overwrite: true})
-    // you can also define things like start, end, etc.
-
-  }); // the magical helper function (no longer necessary in GSAP 3.3.1 because it was added as ScrollTrigger.batch())...
-
-  function batch(targets, vars) {
-    var varsCopy = {},
-        interval = vars.interval || 0.1,
-        proxyCallback = function proxyCallback(type, callback) {
-      var batch = [],
-          delay = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.delayedCall(interval, function () {
-        callback(batch);
-        batch.length = 0;
-      }).pause();
-      return function (self) {
-        batch.length || delay.restart(true);
-        batch.push(self.trigger);
-        vars.batchMax && vars.batchMax <= batch.length && delay.progress(1);
-      };
-    },
-        p;
-
-    for (p in vars) {
-      varsCopy[p] = ~p.indexOf("Enter") || ~p.indexOf("Leave") ? proxyCallback(p, vars[p]) : vars[p];
     }
-
-    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.utils.toArray(targets).forEach(function (target) {
-      var config = {};
-
-      for (p in varsCopy) {
-        config[p] = varsCopy[p];
-      }
-
-      config.trigger = target;
-      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create(config);
-    });
-  }
+  });
 }
 
 /***/ }),

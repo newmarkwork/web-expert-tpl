@@ -36,7 +36,7 @@ gsap.to(btn, {
     // start: () => `+=${window.innerHeight / 3} +=${window.innerHeight / 3}`,
     // end: "bottom bottom",
     scrub: true,
-    markers: true,
+    // markers: true,
   },
 
   opacity: 1,
